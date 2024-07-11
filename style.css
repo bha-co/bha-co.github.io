@@ -19,14 +19,17 @@ body {
 }
 
 header {
+    position: fixed;
+    top: 0;
     width: 100%;
     background-color: #fff;
     text-align: center;
-    padding: 22px 0;
-    box-shadow: 2px 4px 10px #e5e5e5;
+    padding: 16px 0;
+    box-shadow: 2px 0px 4px #e0e0e0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1000;
 }
 
 .logo {
@@ -39,17 +42,28 @@ header {
     margin-left: 10px;
 }
 
+hr {
+    background-color: #e5e5e5;
+    border: none;
+    height: 1px;
+    margin: 14px 0;
+}
+
 .header-button {
-    background-color: #3094EA;
+    background-color: #013966;
     color: #fff;
     border: none;
-    padding: 12px 22px;
+    padding: 14px 28px;
     border-radius: 28px;
     cursor: pointer;
     margin-right: 6%;
     font-family: 'Vazirmatn';
     font-size: 16px;
-    font-weight: lighter;
+    transition: background-color 0.3s;
+}
+
+.header-button:hover {
+    background-color: #007bff;
 }
 
 nav ul {
@@ -77,7 +91,7 @@ nav ul li a:hover {
 
 .banner {
     position: relative;
-    margin-top: 20px;
+    margin-top: 112px;
     width: 88%;
     max-width: 1280px;
     margin-left: auto;
@@ -122,14 +136,17 @@ nav ul li a:hover {
     width: 40%;
 }
 
-.content-wrapper {
-    margin: 0 6%;
+h3 {
+    text-align: right;
+    margin-top: 20px;
 }
 
 main {
     padding: 20px 0;
     text-align: justify;
     line-height: 1.8;
+    width: 90%;
+    margin: 0 auto;
 }
 
 section {
@@ -137,74 +154,193 @@ section {
     padding: 10px;
 }
 
-/* Products list styles */
 .products-list {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .product-item {
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
-  padding: 18px;
-  margin-top: 22px;
-  width: 20%;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    text-align: right;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.product-item:hover {
-  transform: scale(1.04);
+.product-carousel {
+    position: relative;
+    height: 220px;
+    margin-bottom: 10px;
 }
 
-.product-item img {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 12px;
-  margin-bottom: 12px;
-}
-
-.product-item h4 {
-  color: #3094ea;
-  font-size: 16px;
-  margin: 6px 0; 
-}
-
-.product-item p {
-  font-size: 14px;
-}
-
-footer {
+.product-carousel img {
     width: 100%;
-    background-color: #333;
-    color: #fff;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.product-carousel img:first-child {
+    display: block;
+}
+
+.product-carousel button {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    background: rgba(244, 244, 244, 0.75);
+    color: #555555;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 100%;
+    /* border: 1px solid #f6f6f6; */
+}
+
+.product-carousel .prev {
+    left: 0;
+}
+
+.product-carousel .next {
+    right: 0;
+}
+
+.product-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 10px 0;
+    align-self: flex-start; /* افزودن این خط */
+}
+
+.chip {
+    background-color: #f5f5f5;
+    padding: 6px 10px;
+    border-radius: 16px;
+    font-size: 12px;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
     text-align: center;
-    padding: 10px 0;
-    margin: 0;
 }
 
-/* Tablet Styles */
-@media only screen and (max-width: 768px) {
-    body {
-        font-size: 16px;
+.contact-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form {
+    flex: 1;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    margin-bottom: 20px; /* فاصله اضافی بین فرم و تصویر */
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+form input,
+form textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+}
+
+form textarea {
+    height: 160px; /* افزایش ارتفاع تکست‌اریا */
+}
+
+form button {
+    background-color: #3094EA;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    float: left; /* اضافه کردن float برای جابجایی به سمت چپ */
+}
+
+form button:hover {
+    background-color: #007bff;
+}
+
+.contact-image {
+    flex: 1;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    margin-left: 20px; /* فاصله اضافی بین تصویر و فرم در دسکتاپ */
+}
+
+.contact-image img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .product-item {
+        width: calc(33.33% - 20px);
     }
-    header {
-        font-size: 24px;
+
+    .contact-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-image {
+        order: -1;
+        margin-bottom: 20px;
     }
 }
 
-/* Mobile Styles */
-@media only screen and (max-width: 480px) {
-    body {
-        font-size: 14px;
+@media (max-width: 768px) {
+    .product-item {
+        width: calc(50% - 20px);
     }
-    header {
-        font-size: 20px;
-    }
+
     nav ul {
-        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form,
+    .contact-image {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item {
+        width: 100%;
     }
 }
