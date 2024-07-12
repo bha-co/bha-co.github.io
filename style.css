@@ -63,7 +63,7 @@ header {
 .hamburger-menu {
     display: none;
     font-size: 36px;
-    margin-right: 5%;
+    margin-right: 3%;
 }
 
 nav ul {
@@ -336,7 +336,7 @@ form button:hover {
 
     header .header-button {
         display: block;
-        margin-left: 3%;
+        margin-left: 6%;
         margin-right: auto;
         padding: 12px 14px;
         font-size: 14px;
