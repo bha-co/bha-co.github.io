@@ -36,7 +36,6 @@ header {
 }
 
 .logo img {
-    width: auto;
     height: 54px;
     margin-left: 10px;
 }
@@ -50,12 +49,9 @@ header {
 .header-button {
     background-color: #013966;
     color: #fff;
-    border: none;
     padding: 14px 24px;
     border-radius: 10px;
-    cursor: pointer;
     margin-left: 6%;
-    font-family: 'Vazirmatn';
     font-size: 16px;
     transition: background-color 0.3s;
 }
@@ -67,7 +63,7 @@ header {
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
@@ -90,16 +86,14 @@ nav ul li a {
     margin-top: 112px;
     width: 88%;
     max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 112px auto 0;
 }
 
 .main-banner img,
 .sub-banner img {
     width: 100%;
-    height: auto;
-    display: none;
     border-radius: 14px;
+    display: none;
 }
 
 .main-banner img.active,
@@ -109,17 +103,24 @@ nav ul li a {
 
 .sub-banners {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 16px;
 }
 
-.sub-banner:first-child {
-    width: 60%;
-    margin-left: 16px;
+.sub-banner {
+    flex: 1;
+    margin: 0 5px;
+    overflow: hidden;
 }
 
-.sub-banner:last-child {
-    width: 40%;
+.sub-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sub-banner1 {
+    flex: 2;
 }
 
 main {
@@ -275,7 +276,7 @@ form button:hover {
 
     .main-banner img,
     .sub-banner img {
-        max-height: calc(100% - 40px); /* کاهش ارتفاع بنرها */
+        max-height: calc(100% - 40px);
     }
 }
 
@@ -310,20 +311,13 @@ form button:hover {
         display: block;
     }
 
-    .main-banner img {
-        max-height: 60vh;
-    }
-
-    .sub-banner img {
-        max-height: 40vh;
-    }
-
-    .banner {
-        margin-top: 100px;
+    .sub-banners {
+        flex-direction: column;
     }
 
     .sub-banner {
-        display: none;
+        margin: 10px 0;
+        height: auto;
     }
 
     .header-button, .logo {
@@ -336,7 +330,7 @@ form button:hover {
 
     header .header-button {
         display: block;
-        margin-left: 6%;
+        margin-left: 5%;
         margin-right: auto;
         padding: 12px 14px;
         font-size: 14px;
@@ -353,7 +347,12 @@ form button:hover {
         max-height: 50vh;
     }
 
-    .sub-banner img {
-        max-height: 30vh;
+    .sub-banners {
+        flex-direction: column;
+    }
+
+    .sub-banner {
+        margin: 10px 0;
+        height: auto;
     }
 }
