@@ -15,7 +15,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
-    color: #333333;
+    color: #333;
 }
 
 header {
@@ -23,7 +23,6 @@ header {
     top: 0;
     width: 100%;
     background-color: #fff;
-    text-align: center;
     padding: 16px 0;
     box-shadow: 2px 0px 4px #e0e0e0;
     display: flex;
@@ -33,7 +32,7 @@ header {
 }
 
 .logo {
-    margin-left: 6%;
+    margin-right: 6%;
 }
 
 .logo img {
@@ -42,28 +41,29 @@ header {
     margin-left: 10px;
 }
 
-hr {
-    background-color: #e5e5e5;
+.header-button, .hamburger-menu {
+    background: none;
     border: none;
-    height: 1px;
-    margin: 14px 0;
+    cursor: pointer;
 }
 
 .header-button {
     background-color: #013966;
     color: #fff;
     border: none;
-    padding: 14px 28px;
-    border-radius: 28px;
+    padding: 14px 24px;
+    border-radius: 10px;
     cursor: pointer;
-    margin-right: 6%;
+    margin-left: 6%;
     font-family: 'Vazirmatn';
     font-size: 16px;
     transition: background-color 0.3s;
 }
 
-.header-button:hover {
-    background-color: #007bff;
+.hamburger-menu {
+    display: none;
+    font-size: 36px;
+    margin-right: 5%;
 }
 
 nav ul {
@@ -76,17 +76,13 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 28px;
+    margin: 0 32px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #666666;
+    color: #333;
     transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #3094ea;
 }
 
 .banner {
@@ -98,20 +94,10 @@ nav ul li a:hover {
     margin-right: auto;
 }
 
-.main-banner,
-.sub-banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 14px;
-}
-
 .main-banner img,
 .sub-banner img {
     width: 100%;
     height: auto;
-    max-height: 420px;
     display: none;
     border-radius: 14px;
 }
@@ -136,11 +122,6 @@ nav ul li a:hover {
     width: 40%;
 }
 
-h3 {
-    text-align: right;
-    margin-top: 20px;
-}
-
 main {
     padding: 20px 0;
     text-align: justify;
@@ -149,15 +130,9 @@ main {
     margin: 0 auto;
 }
 
-section {
-    margin-bottom: 20px;
-    padding: 10px;
-}
-
 .products-list {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
 }
 
 .product-item {
@@ -168,10 +143,10 @@ section {
     margin: 10px;
     text-align: right;
     width: calc(25% - 20px);
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .product-carousel {
@@ -182,7 +157,6 @@ section {
 
 .product-carousel img {
     width: 100%;
-    height: auto;
     position: absolute;
     top: 0;
     left: 0;
@@ -196,15 +170,13 @@ section {
 .product-carousel button {
     position: absolute;
     top: 70%;
-    transform: translateY(-50%);
     background: rgba(244, 244, 244, 0.75);
-    color: #555555;
+    color: #555;
     border: none;
     padding: 10px 14px;
     cursor: pointer;
     font-size: 14px;
     border-radius: 100%;
-    /* border: 1px solid #f6f6f6; */
 }
 
 .product-carousel .prev {
@@ -220,7 +192,6 @@ section {
     flex-wrap: wrap;
     gap: 5px;
     margin: 10px 0;
-    align-self: flex-start; /* افزودن این خط */
 }
 
 .chip {
@@ -252,12 +223,7 @@ form {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: right;
-    margin-bottom: 20px; /* فاصله اضافی بین فرم و تصویر */
-}
-
-form label {
-    display: block;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
 }
 
 form input,
@@ -267,11 +233,10 @@ form textarea {
     margin-bottom: 12px;
     border: 1px solid #ddd;
     border-radius: 6px;
-    font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
 }
 
 form textarea {
-    height: 160px; /* افزایش ارتفاع تکست‌اریا */
+    height: 160px;
 }
 
 form button {
@@ -282,7 +247,6 @@ form button {
     border-radius: 24px;
     cursor: pointer;
     transition: background-color 0.3s;
-    float: left; /* اضافه کردن float برای جابجایی به سمت چپ */
 }
 
 form button:hover {
@@ -291,10 +255,9 @@ form button:hover {
 
 .contact-image {
     flex: 1;
-    height: auto;
     max-width: 100%;
     object-fit: cover;
-    margin-left: 20px; /* فاصله اضافی بین تصویر و فرم در دسکتاپ */
+    margin-left: 20px;
 }
 
 .contact-image img {
@@ -302,8 +265,6 @@ form button:hover {
     height: 570px;
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-right: 20px;
 }
 
 /* Media Queries */
@@ -312,14 +273,9 @@ form button:hover {
         width: calc(33.33% - 20px);
     }
 
-    .contact-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .contact-image {
-        order: -1;
-        margin-bottom: 20px;
+    .main-banner img,
+    .sub-banner img {
+        max-height: calc(100% - 40px); /* کاهش ارتفاع بنرها */
     }
 }
 
@@ -329,19 +285,78 @@ form button:hover {
     }
 
     nav ul {
+        display: none;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-end; /* تغییر align-items به flex-end */
+        background-color: #fff;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
     }
 
-    form,
-    .contact-image {
+    nav ul.menu-items.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        color: #666;
+        text-align: right;
+        padding: 10px 20px;
         width: 100%;
-        max-width: none;
+        display: block;
+    }
+
+    .main-banner img {
+        max-height: 60vh;
+    }
+
+    .sub-banner img {
+        max-height: 40vh;
+    }
+
+    .banner {
+        margin-top: 100px;
+    }
+
+    .sub-banner {
+        display: none;
+    }
+
+    .header-button, .logo {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    header .header-button {
+        display: block;
+        margin-left: 5%;
+        margin-right: auto;
+        padding: 12px 14px;
+        font-size: 14px;
+        font-weight: lighter;
     }
 }
 
 @media (max-width: 480px) {
     .product-item {
         width: 100%;
+    }
+
+    .main-banner img {
+        max-height: 50vh;
+    }
+
+    .sub-banner img {
+        max-height: 30vh;
     }
 }

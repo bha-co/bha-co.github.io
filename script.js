@@ -9,25 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         banners[bannerIndex].classList.add('active');
     }, 3000);
 
-    // کد برای بنرهای فرعی (sub-banners)
-    const subBanners1 = document.querySelectorAll('.sub-banner1 img');
-    let subBannerIndex1 = 0;
-
-    setInterval(() => {
-        subBanners1.forEach(banner => banner.classList.remove('active'));
-        subBannerIndex1 = (subBannerIndex1 + 1) % subBanners1.length;
-        subBanners1[subBannerIndex1].classList.add('active');
-    }, 3000);
-
-    const subBanners2 = document.querySelectorAll('.sub-banner2 img');
-    let subBannerIndex2 = 0;
-
-    setInterval(() => {
-        subBanners2.forEach(banner => banner.classList.remove('active'));
-        subBannerIndex2 = (subBannerIndex2 + 1) % subBanners2.length;
-        subBanners2[subBannerIndex2].classList.add('active');
-    }, 3000);
-
     // کد برای کاروسل محصولات
     const carousels = document.querySelectorAll('.product-carousel');
 
@@ -48,5 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
             currentImageIndex = (currentImageIndex + 1) % images.length;
             images[currentImageIndex].style.display = 'block';
         });
+    });
+
+    // کد برای همبرگر منو
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const menuItems = document.querySelector('nav ul.menu-items');
+
+    hamburgerMenu.addEventListener('click', () => {
+        menuItems.classList.toggle('show');
     });
 });
