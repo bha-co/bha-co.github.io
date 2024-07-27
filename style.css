@@ -16,6 +16,7 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
     color: #333;
+    line-height: 1.6;
 }
 
 header {
@@ -56,6 +57,10 @@ header {
     transition: background-color 0.3s;
 }
 
+.header-button:hover {
+    background-color: #0056b3;
+}
+
 .hamburger-menu {
     display: none;
     font-size: 36px;
@@ -79,6 +84,10 @@ nav ul li a {
     text-decoration: none;
     color: #333;
     transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #0056b3;
 }
 
 .banner {
@@ -126,7 +135,6 @@ nav ul li a {
 main {
     padding: 20px 0;
     text-align: justify;
-    line-height: 1.8;
     width: 90%;
     margin: 0 auto;
 }
@@ -150,6 +158,10 @@ main {
     box-sizing: border-box;
 }
 
+.product-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .product-carousel {
     position: relative;
     height: 220px;
@@ -158,6 +170,8 @@ main {
 
 .product-carousel img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -170,22 +184,23 @@ main {
 
 .product-carousel button {
     position: absolute;
-    top: 70%;
+    top: 50%;
     background: rgba(244, 244, 244, 0.75);
     color: #555;
     border: none;
     padding: 10px 14px;
     cursor: pointer;
     font-size: 14px;
-    border-radius: 100%;
+    border-radius: 50%;
+    transform: translateY(-50%);
 }
 
 .product-carousel .prev {
-    left: 0;
+    left: 10px;
 }
 
 .product-carousel .next {
-    right: 0;
+    right: 10px;
 }
 
 .product-details {
@@ -268,16 +283,225 @@ form button:hover {
     border-radius: 12px;
 }
 
-/* Media Queries */
-@media (max-width: 1024px) {
-    .product-item {
-        width: calc(33.33% - 20px);
-    }
+.blog-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+}
 
-    .main-banner img,
-    .sub-banner img {
-        max-height: calc(100% - 40px);
-    }
+.blog-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1 1 calc(25% - 16px);
+    box-shadow: none;
+    transition: transform 0.3s;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-item:hover {
+    transform: translateY(-5px);
+}
+
+.blog-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.blog-content {
+    padding: 16px;
+}
+
+.blog-content h4 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    text-align: right;
+    direction: rtl;
+}
+
+.blog-content p {
+    font-size: 14px;
+    margin-bottom: 16px;
+    text-align: justify;
+    direction: rtl;
+}
+
+.read-more {
+    align-self: flex-start;
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    background-color: #0056b3;
+}
+
+.view-all {
+    display: block;
+    margin: 16px auto;
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.view-all:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #013966;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer .column {
+    flex: 1;
+    padding: 20px;
+    text-align: right;
+}
+
+footer .```css
+footer .column h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+footer .column ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .column ul li {
+    margin-bottom: 10px;
+}
+
+footer .column ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer .column ul li a:hover {
+    color: #fff;
+}
+
+footer .social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+footer .social-media img {
+    max-height: 48px;
+}
+
+footer .licenses img {
+  max-height: 64px;
+
+}
+
+footer .social-media a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer .social-media a:hover {
+    color: #0056b3;
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+footer .footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer .footer-links a:hover {
+    color: #0056b3;
+}
+
+footer .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer .footer-contact p {
+    margin: 5px 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer .column {
+    flex: 1;
+    padding: 20px;
+}
+
+footer .column:nth-child(1) {
+    order: 1;
+}
+
+footer .column:nth-child(2) {
+    order: 2;
+    text-align: center;
+}
+
+footer .column:nth-child(3) {
+    order: 3;
+    text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -336,6 +560,31 @@ form button:hover {
         font-size: 14px;
         font-weight: lighter;
     }
+
+    .product-item {
+        width: calc(33.33% - 20px);
+    }
+
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .column {
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    footer .column:nth-child(1), footer .column:nth-child(3) {
+        order: unset;
+    }
+
+    footer .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -354,5 +603,9 @@ form button:hover {
     .sub-banner {
         margin: 10px 0;
         height: auto;
+    }
+
+    footer .container .social-media a {
+        font-size: 20px;
     }
 }

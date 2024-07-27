@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // کد برای همبرگر منو
     const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const menuItems = document.querySelector('nav ul.menu-items');
+    const menuItems = document.querySelector('.menu-items');
 
-    hamburgerMenu.addEventListener('click', () => {
+    hamburgerMenu.addEventListener('click', function() {
         menuItems.classList.toggle('show');
     });
 });
