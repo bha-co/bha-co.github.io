@@ -51,7 +51,8 @@ header {
 }
 
 hr {
-  border: 1px solid var(--color-border);
+  border: 0.5px solid #EFEFEF;
+  width: 100%;
 }
 
 .logo {
