@@ -637,7 +637,7 @@ footer .footer-contact p {
     }
 
     .blog-item {
-        flex: 0 0 calc(100% / 1.4 - 24px); /* نمایش 1.5 پست در موبایل */
+        flex: 0 0 calc(100% / 1.2 - 24px); /* نمایش 1.5 پست در موبایل */
     }
 
     footer .container {
