@@ -1,3 +1,20 @@
+:root {
+    --color-bg: #FFFFFF;
+    --color-primary: #02229D;
+    --color-primary-dark: #9D0268;
+    --color-accent: #9D0268;
+    --color-accent-dark: #6A003F;
+    --color-accent-darker: #D9D9D9;
+    --color-border: #E9E9E9;
+    --color-text: #333333;
+    --color-text-light: #9D0268;
+    --color-footer-bg: #02229D;
+    --color-footer-text: #D9D9D9;
+    --color-footer-link: #FFFFFF;
+    --color-footer-link-hover: #D9D9D9;
+}
+
+/* فونت‌ها */
 @font-face {
     font-family: 'Vazirmatn';
     src: url('fonts/Vazirmatn-Regular.woff2') format('woff2'),
@@ -7,15 +24,16 @@
     font-style: normal;
 }
 
+/* استایل‌های عمومی */
 body {
     font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
     direction: rtl;
-    background-color: #f9f9f9;
+    background-color: var(--color-bg);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
-    color: #333;
+    color: var(--color-text);
     line-height: 1.6;
 }
 
@@ -23,13 +41,17 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--color-bg);
     padding: 16px 0;
-    box-shadow: 2px 0px 4px #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+}
+
+hr {
+  border: 1px solid var(--color-border);
 }
 
 .logo {
@@ -41,24 +63,48 @@ header {
     margin-left: 10px;
 }
 
+/* دکمه‌های هدر */
 .header-button, .hamburger-menu {
     background: none;
     border: none;
     cursor: pointer;
+    font-family: 'Vazirmatn';
 }
 
 .header-button {
-    background-color: #013966;
-    color: #fff;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
     padding: 14px 24px;
     border-radius: 10px;
     margin-left: 6%;
     font-size: 16px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .header-button:hover {
-    background-color: #0056b3;
+    background-color: var(--color-primary-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.show-button {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.show-button:hover {
+    background-color: var(--color-accent-dark);
+    transform: translateY(-2px);
+}
+
+.show-button:active {
+    background-color: var(--color-accent-darker);
+    transform: translateY(1px);
 }
 
 .hamburger-menu {
@@ -67,6 +113,7 @@ header {
     margin-right: 4%;
 }
 
+/* ناوبری */
 nav ul {
     list-style: none;
     padding: 0;
@@ -82,14 +129,15 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: var(--color-text);
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #0056b3;
+    color: var(--color-accent);
 }
 
+/* بنرها */
 .banner {
     position: relative;
     margin-top: 112px;
@@ -139,14 +187,15 @@ main {
     margin: 0 auto;
 }
 
+/* محصولات */
 .products-list {
     display: flex;
     flex-wrap: wrap;
 }
 
 .product-item {
-    background-color: #fff;
-    border: 1px solid #e5e5e5;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: 20px;
     margin: 10px;
@@ -156,9 +205,12 @@ main {
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
+    transition: box-shadow 0.3s;
 }
 
 .product-item:hover {
+    transform: scale(1.02);
+    transition: transform 0.6s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -203,6 +255,7 @@ main {
     right: 10px;
 }
 
+/* جزئیات محصول */
 .product-details {
     display: flex;
     flex-wrap: wrap;
@@ -211,7 +264,7 @@ main {
 }
 
 .chip {
-    background-color: #f5f5f5;
+    background-color: #F5F5F5;
     padding: 6px 10px;
     border-radius: 16px;
     font-size: 12px;
@@ -224,6 +277,7 @@ main {
     text-align: center;
 }
 
+/* تماس */
 .contact-container {
     display: flex;
     align-items: flex-start;
@@ -234,7 +288,7 @@ main {
 form {
     flex: 1;
     max-width: 500px;
-    background-color: #fff;
+    background-color: var(--color-bg);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -247,7 +301,7 @@ form textarea {
     width: calc(100% - 22px);
     padding: 10px;
     margin-bottom: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-border);
     border-radius: 6px;
 }
 
@@ -256,17 +310,18 @@ form textarea {
 }
 
 form button {
-    background-color: #3094EA;
-    color: #fff;
+    background-color: var(--color-accent);
+    color: var(--color-bg);
     border: none;
     padding: 12px 24px;
     border-radius: 24px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 form button:hover {
-    background-color: #007bff;
+    background-color: var(--color-accent-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .contact-image {
@@ -283,6 +338,7 @@ form button:hover {
     border-radius: 12px;
 }
 
+/* وبلاگ */
 .blog-list {
     display: flex;
     flex-wrap: wrap;
@@ -291,12 +347,12 @@ form button:hover {
 }
 
 .blog-item {
-    background-color: white;
+    background-color: var(--color-bg);
     border-radius: 8px;
     overflow: hidden;
     flex: 1 1 calc(25% - 16px);
     box-shadow: none;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
     text-align: right;
     display: flex;
     flex-direction: column;
@@ -307,13 +363,14 @@ form button:hover {
 
 .blog-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .blog-item img {
     width: 100%;
     height: 150px;
     object-fit: cover;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--color-border);
 }
 
 .blog-content {
@@ -321,7 +378,7 @@ form button:hover {
 }
 
 .blog-content h4 {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-size: 18px;
     text-align: right;
     direction: rtl;
@@ -337,40 +394,45 @@ form button:hover {
 .read-more {
     align-self: flex-start;
     padding: 8px 16px;
-    background-color: #007BFF;
-    color: white;
+    background-color: var(--color-accent);
+    color: var(--color-bg);
     border: none;
     border-radius: 24px;
     cursor: pointer;
     text-align: center;
     font-size: 14px;
     text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .read-more:hover {
-    background-color: #0056b3;
+    background-color: var(--color-accent-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .view-all {
     display: block;
     margin: 16px auto;
     padding: 12px 24px;
-    background-color: #007BFF;
+    background-color: var(--color-primary);
     color: white;
     border: none;
     border-radius: 24px;
     text-align: center;
     font-size: 16px;
     text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .view-all:hover {
-    background-color: #0056b3;
+    background-color: var(--color-primary-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* فوتر */
 footer {
-    background-color: #013966;
-    color: white;
+    background-color: var(--color-footer-bg);
+    color: var(--color-footer-text);
     text-align: center;
     padding: 40px 0;
     position: relative;
@@ -391,15 +453,13 @@ footer .container {
 footer .column {
     flex: 1;
     padding: 20px;
-    text-align: right;
 }
 
-footer .```css
 footer .column h4 {
     font-size: 18px;
     margin-bottom: 20px;
     text-transform: uppercase;
-    color: #fff;
+    color: var(--color-footer-text);
 }
 
 footer .column ul {
@@ -412,20 +472,19 @@ footer .column ul li {
 }
 
 footer .column ul li a {
-    color: #bbb;
+    color: var(--color-footer-link);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 footer .column ul li a:hover {
-    color: #fff;
+    color: var(--color-footer-link-hover);
 }
 
 footer .social-media {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-
 }
 
 footer .social-media img {
@@ -433,19 +492,18 @@ footer .social-media img {
 }
 
 footer .licenses img {
-  max-height: 64px;
-
+    max-height: 64px;
 }
 
 footer .social-media a {
-    color: #fff;
+    color: var(--color-footer-text);
     font-size: 24px;
     margin: 0 10px;
     transition: color 0.3s;
 }
 
 footer .social-media a:hover {
-    color: #0056b3;
+    color: var(--color-accent);
 }
 
 footer .footer-links {
@@ -456,13 +514,13 @@ footer .footer-links {
 }
 
 footer .footer-links a {
-    color: white;
+    color: var(--color-footer-text);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 footer .footer-links a:hover {
-    color: #0056b3;
+    color: var(--color-accent);
 }
 
 footer .footer-contact {
@@ -475,41 +533,13 @@ footer .footer-contact p {
     margin: 5px 0;
 }
 
-footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-footer .column {
-    flex: 1;
-    padding: 20px;
-}
-
-footer .column:nth-child(1) {
-    order: 1;
-}
-
-footer .column:nth-child(2) {
-    order: 2;
-    text-align: center;
-}
-
-footer .column:nth-child(3) {
-    order: 3;
-    text-align: left;
-}
-
+/* مدیا کوئری‌ها */
 @media (max-width: 768px) {
     nav ul {
         display: none;
         flex-direction: column;
         align-items: flex-end;
-        background-color: #fff;
+        background-color: var(--color-bg);
         position: fixed;
         top: 60px;
         right: 0;
@@ -528,7 +558,7 @@ footer .column:nth-child(3) {
     }
 
     nav ul li a {
-        color: #666;
+        color: var(--color-text-light);
         text-align: right;
         padding: 10px 20px;
         width: 100%;
@@ -565,6 +595,15 @@ footer .column:nth-child(3) {
         width: calc(33.33% - 20px);
     }
 
+    .blog-list {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .blog-item {
+        flex: 0 0 calc(100% / 1.5 - 16px); /* نمایش 1.5 پست در موبایل */
+    }
+
     footer .container {
         flex-direction: column;
         align-items: center;
@@ -593,7 +632,7 @@ footer .column:nth-child(3) {
     }
 
     .main-banner img {
-        max-height: 50vh;
+        max-height: 75vh;
     }
 
     .sub-banners {
