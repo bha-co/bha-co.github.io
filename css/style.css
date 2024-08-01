@@ -1,0 +1,666 @@
+:root {
+    --color-bg: #FFFFFF;
+    --color-primary: #013966;
+    --color-primary-dark: #9D0268;
+    --color-accent: #9D0268;
+    --color-accent-dark: #6A003F;
+    --color-accent-darker: #D9D9D9;
+    --color-border: #E9E9E9;
+    --color-text: #333333;
+    --color-text-light: #9D0268;
+    --color-footer-bg: #013966;
+    --color-footer-text: #D9D9D9;
+    --color-footer-link: #FFFFFF;
+    --color-footer-link-hover: #D9D9D9;
+}
+
+/* فونت‌ها */
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('fonts/Vazirmatn-Regular.woff2') format('woff2'),
+         url('fonts/Vazirmatn-Regular.woff') format('woff'),
+         url('fonts/Vazirmatn-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.logo {
+    margin-right: 6%;
+}
+
+/* استایل‌های عمومی */
+body {
+    font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+    direction: rtl;
+    background-color: var(--color-bg);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+nav ul li {
+    margin: 0 32px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--color-accent);
+}
+
+/* هدر */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--color-bg);
+    padding: 16px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.header-button, .hamburger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Vazirmatn';
+}
+
+.header-button {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    padding: 14px 24px;
+    border-radius: 10px;
+    margin-left: 6%;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.logo img {
+    height: 54px;
+    margin-left: 10px;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.nav ul li {
+    margin: 0 16px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: var(--color-bg);
+    transition: color 0.3s;
+    font-size: 16px;
+}
+
+.nav ul li a:hover {
+    color: var(--color-accent);
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 36px;
+    color: var(--color-bg);
+}
+
+/* بنرها */
+
+.hero {
+    position: relative;
+    background-image: url('../img/header-banner.png'); /* آدرس تصویر پس‌زمینه */
+    background-size: cover; /* اندازه تصویر پس‌زمینه را تنظیم می‌کند */
+    background-position: center; /* تصویر پس‌زمینه را در مرکز قرار می‌دهد */
+    height: 100vh; /* ارتفاع بخش را به اندازه‌ای که نیاز دارید تنظیم کنید */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* رنگ متن را به سفید تغییر می‌دهد */
+    text-align: center;
+    padding: 0 20px; /* فاصله از لبه‌های صفحه */
+    overflow: hidden; /* اطمینان از اینکه محتوای اضافی دیده نمی‌شود */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* رنگ نیمه‌شفاف مشکی */
+    background: inherit;
+    filter: blur(4px); /* میزان بلور */
+    z-index: 1; /* لایه‌ی رنگی باید زیر متن قرار گیرد */
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2; /* اطمینان از اینکه محتوای متنی بالای لایه‌ی رنگی قرار گیرد */
+    max-width: 860px; /* حداکثر عرض برای جلوگیری از کشیده شدن متن */
+    padding: 20px; /* فاصله داخلی برای متن و دکمه‌ها */
+}
+
+.hero h2 {
+    font-size: 2.8em; /* اندازه فونت برای عنوان */
+    margin-bottom: 48px; /* فاصله پایین عنوان */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* سایه متن با شدت و محوشدگی بیشتر */
+}
+
+.hero p {
+    font-size: 1.9em; /* اندازه فونت برای متن فرعی */
+    margin-bottom:68px; /* فاصله پایین متن فرعی */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* سایه متن با شدت و محوشدگی بیشتر */
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 12px 28px; /* فاصله داخلی دکمه‌ها */
+    margin: 0 5px; /* فاصله بین دکمه‌ها */
+    border-radius: 8px; /* گوشه‌های گرد دکمه‌ها */
+    text-decoration: none;
+    border: 1px dashed #FFFFFF;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    z-index: 2; /* اطمینان از اینکه دکمه‌ها بالای لایه‌ی رنگی قرار گیرد */
+}
+
+.hero .btn.primary {
+    background-color: #007bff; /* رنگ دکمه اولیه */
+}
+
+.hero .btn.secondary {
+    background-color: #6c757d; /* رنگ دکمه ثانویه */
+}
+
+/* فاصله بین دکمه‌ها */
+.hero .btn.primary {
+    margin-right: 20px; /* فاصله بیشتر بین دکمه‌ها */
+}
+
+.hero .btn.secondary {
+    margin-left: 20px; /* فاصله بیشتر بین دکمه‌ها */
+}
+
+
+.btn.primary:hover {
+    background-color: #0056b3; /* رنگ پس‌زمینه دکمه اصلی در حالت hover */
+}
+
+.btn.secondary:hover {
+    background-color: #5a6268; /* رنگ پس‌زمینه دکمه ثانویه در حالت hover */
+}
+
+
+.products {
+    padding: 40px 0;
+    background-color: var(--color-bg);
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.view-options {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-view {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-family: 'Vazirmatn';
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-view:active {
+    background-color: var(--color-accent-dark);
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+/* مزایای محصولات */
+.benefits {
+    background-color: var(--color-accent-darker);
+    padding: 40px 0;
+}
+
+.benefits h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-bg);
+}
+
+.benefits-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.benefit-item {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    color: var(--color-text);
+}
+
+.benefit-item i {
+    font-size: 24px;
+    color: var(--color-primary);
+}
+
+/* درباره ما */
+.about {
+    padding: 40px 0;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-content img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* وبلاگ */
+.blog {
+    background-color: var(--color-bg);
+    padding: 40px 0;
+}
+
+.blog h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.blog-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    margin-top: 28px;
+}
+
+.blog-item {
+    background-color: var(--color-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1 1 calc(25% - 16px);
+    box-shadow: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e9e9e9;
+    margin-bottom: 18px;
+}
+
+.blog-item:hover {
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.blog-item img {
+    width: 100%;
+    height: 200px; /* ارتفاع ثابت برای تصاویر */
+    object-fit: cover; /* پر کردن کامل فضای عنصر و جلوگیری از کشیدگی */
+    display: block; /* حذف فضای اضافی زیر تصویر */
+}
+
+.blog-content {
+    padding: 16px;
+    flex: 1; /* برای استفاده از فضای باقی‌مانده */
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-content h4 {
+    margin-bottom: 0; /* حذف فاصله پایین از عنوان */
+    margin-top: 6px; /* فاصله از بالا */
+    font-size: 18px;
+    text-align: right;
+    direction: rtl;
+}
+
+.blog-content p {
+    font-size: 14px;
+    margin-bottom: 16px;
+    text-align: justify;
+    direction: rtl;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* محدود کردن به ۲ خط */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* نمایش "..." در انتهای متن طولانی */
+}
+
+.read-more {
+    font-family: 'Vazirmatn';
+    font-size: 14px; /* تنظیم اندازه فونت دکمه به اندازه فونت متن */
+    /* background-color: var(--color-primary); */
+    color: var(--color-primary);
+    border: none;
+    padding: 8px 18px; /* افزایش ارتفاع و عرض دکمه */
+    border-radius: 24px;
+    cursor: pointer;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex; /* برای مرکزچین کردن عمودی متن */
+    align-items: center; /* مرکزچین عمودی متن */
+    justify-content: center; /* مرکزچین افقی متن */
+
+}
+
+.read-more:hover {
+    background-color: var(--color-accent-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* نظرات مشتریان */
+.testimonials {
+    background-color: var(--color-accent-darker);
+    padding: 40px 0;
+}
+
+.testimonials-wrapper {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.testimonials-grid {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 1rem;
+}
+
+.testimonial-item {
+    flex: 0 0 auto;
+    width: 300px; /* یا عرض دلخواه شما */
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-bg);
+}
+
+.testimonials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonial-item {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    color: var(--color-text);
+}
+
+.rating {
+    margin-top: 10px;
+}
+
+.rating i {
+    color: #f39c12;
+}
+
+/* تیم ما */
+.team {
+    padding: 40px 0;
+}
+
+.team h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.team-member {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+}
+
+/* فرم تماس */
+.appointment {
+    background-color: var(--color-bg);
+    padding: 40px 0;
+}
+
+.appointment form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--color-accent-darker);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.appointment form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-text);
+}
+
+.appointment form input,
+.appointment form select,
+.appointment form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.appointment form button {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.appointment form button:hover {
+    background-color: var(--color-accent-dark);
+}
+
+/* فوتر */
+footer {
+    background-color: var(--color-footer-bg);
+    color: var(--color-footer-text);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: var(--color-footer-link);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--color-footer-link-hover);
+}
+
+.footer-copyright {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    header .header-button {
+        display: block;
+        margin-left: 5%;
+        margin-right: auto;
+        padding: 12px 14px;
+        font-size: 14px;
+        font-weight: lighter;
+    }
+
+    nav ul.menu-items.show {
+        display: flex;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav.active ul {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .product-grid,
+    .benefits-grid,
+    .blog-grid,
+    .testimonials-grid,
+    .team-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
