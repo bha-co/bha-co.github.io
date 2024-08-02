@@ -24,11 +24,6 @@
     font-style: normal;
 }
 
-.logo {
-    margin-right: 6%;
-}
-
-/* استایل‌های عمومی */
 body {
     font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
     direction: rtl;
@@ -41,27 +36,15 @@ body {
     line-height: 1.6;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
+hr {
+  width: 90%;
+  border: 0.5px dashed #d9d9d9;
+  margin-right: auto;
 }
 
-nav ul li {
-    margin: 0 32px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: var(--color-text);
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: var(--color-accent);
+p {
+  text-align: justify;
+  line-height: 32px;
 }
 
 /* هدر */
@@ -70,7 +53,7 @@ header {
     top: 0;
     width: 100%;
     background-color: var(--color-bg);
-    padding: 16px 0;
+    padding: 14px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
@@ -78,21 +61,8 @@ header {
     z-index: 1000;
 }
 
-.header-button, .hamburger-menu {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: 'Vazirmatn';
-}
-
-.header-button {
-    background-color: var(--color-primary);
-    color: var(--color-bg);
-    padding: 14px 24px;
-    border-radius: 10px;
-    margin-left: 6%;
-    font-size: 16px;
-    transition: background-color 0.3s, box-shadow 0.3s;
+.logo {
+    margin-left: 5%;
 }
 
 .logo img {
@@ -100,51 +70,88 @@ header {
     margin-left: 10px;
 }
 
-.nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
+.logo a:hover {
+    transform: None;
 }
 
-.nav ul li {
-    margin: 0 16px;
-}
-
-.nav ul li a {
-    text-decoration: none;
-    color: var(--color-bg);
-    transition: color 0.3s;
-    font-size: 16px;
-}
-
-.nav ul li a:hover {
-    color: var(--color-accent);
+.hamburger-menu, .header-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Vazirmatn';
 }
 
 .hamburger-menu {
     display: none;
-    font-size: 36px;
-    color: var(--color-bg);
+    font-size: 32px;
 }
 
-/* بنرها */
+.header-button {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
 
+/* منو اصلی */
+header nav {
+  margin-right: 5%;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: right;
+    flex-grow: 1;
+}
+
+header li {
+    margin: 0 32px;
+}
+
+header a {
+    display: inline-block;
+    position: relative;
+    color: var(--color-text);
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+header a:hover {
+    color: var(--color-primary);
+    transform: scale(1.1);
+}
+
+header i {
+    display: flex; /* استفاده از فلکس برای مرکزیت عمودی و افقی */
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 50%; /* تبدیل به دایره */
+    background-color: #f5f5f5;
+    color: var(--color-primary);
+    margin-left: 6px;
+}
+
+/* قهرمان (Hero) */
 .hero {
     position: relative;
-    background-image: url('../img/header-banner.png'); /* آدرس تصویر پس‌زمینه */
-    background-size: cover; /* اندازه تصویر پس‌زمینه را تنظیم می‌کند */
-    background-position: center; /* تصویر پس‌زمینه را در مرکز قرار می‌دهد */
-    height: 100vh; /* ارتفاع بخش را به اندازه‌ای که نیاز دارید تنظیم کنید */
+    background-image: url('../img/header-banner.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff; /* رنگ متن را به سفید تغییر می‌دهد */
+    color: #fff;
     text-align: center;
-    padding: 0 20px; /* فاصله از لبه‌های صفحه */
-    overflow: hidden; /* اطمینان از اینکه محتوای اضافی دیده نمی‌شود */
+    padding: 0 20px;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -154,96 +161,105 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* رنگ نیمه‌شفاف مشکی */
-    background: inherit;
-    filter: blur(4px); /* میزان بلور */
-    z-index: 1; /* لایه‌ی رنگی باید زیر متن قرار گیرد */
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
 
 .hero .container {
     position: relative;
-    z-index: 2; /* اطمینان از اینکه محتوای متنی بالای لایه‌ی رنگی قرار گیرد */
-    max-width: 860px; /* حداکثر عرض برای جلوگیری از کشیده شدن متن */
-    padding: 20px; /* فاصله داخلی برای متن و دکمه‌ها */
+    z-index: 2;
+    max-width: 860px;
 }
 
 .hero h2 {
-    font-size: 2.8em; /* اندازه فونت برای عنوان */
-    margin-bottom: 48px; /* فاصله پایین عنوان */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* سایه متن با شدت و محوشدگی بیشتر */
+    font-size: 2.8em;
+    margin-top: 62px;
+    margin-bottom: 48px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .hero p {
-    font-size: 1.9em; /* اندازه فونت برای متن فرعی */
-    margin-bottom:68px; /* فاصله پایین متن فرعی */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* سایه متن با شدت و محوشدگی بیشتر */
+    font-size: 2em;
+    margin-bottom: 92px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.hero .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .hero .btn {
-    display: inline-block;
-    padding: 12px 28px; /* فاصله داخلی دکمه‌ها */
-    margin: 0 5px; /* فاصله بین دکمه‌ها */
-    border-radius: 8px; /* گوشه‌های گرد دکمه‌ها */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px 64px;
+    border-radius: 8px;
     text-decoration: none;
-    border: 1px dashed #FFFFFF;
     color: #fff;
-    font-size: 1em;
+    font-size: 1.1em;
     font-weight: bold;
-    z-index: 2; /* اطمینان از اینکه دکمه‌ها بالای لایه‌ی رنگی قرار گیرد */
+    z-index: 2;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.hero .btn .icon {
+    font-size: 1.8rem;
+    margin-bottom: 14px;
 }
 
 .hero .btn.primary {
-    background-color: #007bff; /* رنگ دکمه اولیه */
+    background-color: rgba(0, 123, 255, 0.8);
+}
+
+.hero .btn.primary:hover {
+    background-color: rgba(0, 123, 255, 1);
 }
 
 .hero .btn.secondary {
-    background-color: #6c757d; /* رنگ دکمه ثانویه */
+    background-color: rgba(248, 249, 250, 0.8);
+    color: #111;
 }
 
-/* فاصله بین دکمه‌ها */
-.hero .btn.primary {
-    margin-right: 20px; /* فاصله بیشتر بین دکمه‌ها */
+.hero .btn.secondary:hover {
+    background-color: rgba(248, 249, 250, 1);
 }
 
-.hero .btn.secondary {
-    margin-left: 20px; /* فاصله بیشتر بین دکمه‌ها */
-}
-
-
-.btn.primary:hover {
-    background-color: #0056b3; /* رنگ پس‌زمینه دکمه اصلی در حالت hover */
-}
-
-.btn.secondary:hover {
-    background-color: #5a6268; /* رنگ پس‌زمینه دکمه ثانویه در حالت hover */
-}
-
-
+/* محصولات */
 .products {
     padding: 40px 0;
     background-color: var(--color-bg);
+    margin: 0 5%;
 }
 
 .products h2 {
-    text-align: center;
+    text-align: right;
     margin-bottom: 20px;
-    color: var(--color-primary);
+    color: var(--color-primary); /* رنگ اصلی هماهنگ با درباره شرکت */
 }
 
 .view-options {
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
 }
 
 .btn-view {
-    background-color: var(--color-primary);
-    color: var(--color-bg);
-    border: none;
-    padding: 10px 15px;
+    background-color: var(--color-neutral);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    padding: 5px;
     margin: 0 5px;
     cursor: pointer;
-    font-family: 'Vazirmatn';
+    font-size: 0.875rem;
     transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-view img {
+    width: 24px; /* سایز مناسب برای آیکون‌ها */
+    height: auto;
 }
 
 .btn-view:active {
@@ -251,20 +267,89 @@ header {
 }
 
 .product-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-    justify-content: center;
+    justify-items: center;
+}
+
+.product-images button {
+    background-color: rgba(255, 255, 255, 0.4); /* پس‌زمینه سفید نیمه‌شفاف */
+    border: none;
+    color: var(--color-primary); /* رنگ متن دکمه‌ها */
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
 }
 
 .product-card {
     background-color: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    padding: 20px;
-    width: 300px;
+    padding: 24px;
     text-align: center;
     transition: box-shadow 0.3s;
+}
+
+.product-card a {
+  text-decoration: none;
+  color: var(--color-primary);
+  padding: 12px 16px;
+  border-radius: 24px;
+  background: #f5f5f5;
+}
+
+.product-carousel {
+    position: relative;
+    width: 100%;
+    height: 300px; /* ارتفاع مناسب برای تصویر */
+    overflow: hidden;
+}
+
+.product-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* نمایش کامل تصویر */
+    display: block; /* حذف فضای خالی زیر تصویر */
+}
+
+.product-carousel img:first-child {
+    display: block; /* نمایش اولین تصویر به طور پیش‌فرض */
+}
+
+.product-carousel button {
+    position: absolute;
+    top: 50%;
+    background: rgba(244, 244, 244, 0.75);
+    color: #555;
+    border: none;
+    padding: 8px 11px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.product-carousel .prev {
+    left: 0;
+}
+
+.product-carousel .next {
+    right: 0;
+}
+
+.product-card a:hover {
+  color: #ffffff;
+  background: var(--color-primary);
+}
+
+.product-card h3 {
+    color: var(--color-text); /* رنگ هماهنگ با درباره شرکت */
 }
 
 .product-card:hover {
@@ -274,6 +359,62 @@ header {
 .product-card img {
     width: 100%;
     height: auto;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination .prev-page,
+.pagination .next-page {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.pagination .prev-page:hover,
+.pagination .next-page:hover {
+    background-color: var(--color-primary);
+}
+
+.product-card hr {
+    border: 1px solid #f9f9f9;
+    margin-top: 18px;
+}
+
+.product-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.chips {
+    background-color: rgba(0, 123, 255, 0.1);
+    color: var(--color-primary);
+    padding: 9px 16px;
+    border-radius: 24px;
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.show-button {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    margin-top: 28px;
+    width: 100%;
+    cursor: pointer;
+    font-family: 'Vazirmatn';
+    border: none;
 }
 
 /* مزایای محصولات */
@@ -311,19 +452,22 @@ header {
 
 /* درباره ما */
 .about {
-    padding: 40px 0;
+    padding: 48px 5%;
 }
 
 .about-content {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 82px;
+    line-height: 36px;
+    vertical-align: top;
+    text-align: justify;
+    font-size: 16px;
 }
 
 .about-content img {
-    width: 300px;
+    width: 280px;
     height: auto;
-    border-radius: 8px;
 }
 
 /* وبلاگ */
@@ -426,7 +570,6 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
 /* نظرات مشتریان */
 .testimonials {
     background-color: var(--color-accent-darker);
@@ -438,7 +581,6 @@ header {
     align-items: center;
     overflow: hidden;
 }
-
 
 .testimonials-grid {
     display: flex;
@@ -470,14 +612,6 @@ header {
     cursor: pointer;
     font-size: 1.5rem;
     z-index: 1;
-}
-
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
 }
 
 .testimonials h2 {
@@ -622,45 +756,48 @@ footer {
     font-size: 14px;
 }
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-    }
-
-    header .header-button {
-        display: block;
-        margin-left: 5%;
-        margin-right: auto;
-        padding: 12px 14px;
-        font-size: 14px;
-        font-weight: lighter;
-    }
-
-    nav ul.menu-items.show {
-        display: flex;
-    }
-
-    .nav ul {
-        flex-direction: column;
-        display: none;
-    }
-
-    .nav.active ul {
-        display: flex;
-    }
-
+/* ریسپانسیو */
+@media (max-width: 991px) {
     .hamburger-menu {
         display: block;
     }
-
-    .product-grid,
-    .benefits-grid,
-    .blog-grid,
-    .testimonials-grid,
-    .team-grid {
+    nav ul {
+        display: none;
+    }
+    .header-button {
+        display: none;
+    }
+    nav ul.open {
+        display: block;
+        background-color: var(--color-bg);
+        position: absolute;
+        top: 64px;
+        right: 0;
+        width: 100%;
+        padding: 20px 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+    }
+    nav ul li {
+        text-align: center;
+        margin: 10px 0;
+    }
+    .hero {
+        text-align: center;
+        padding: 20px;
+    }
+    .hero h2 {
+        font-size: 1.8em;
+    }
+    .hero p {
+        font-size: 1.4em;
+    }
+    .product-grid {
         flex-direction: column;
         align-items: center;
+    }
+    .blog-item {
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
