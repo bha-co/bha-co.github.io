@@ -238,7 +238,7 @@ header i {
 .products h2 {
     text-align: right;
     margin-bottom: 20px;
-    color: var(--color-primary); /* رنگ اصلی هماهنگ با درباره شرکت */
+    color: var(--color-text); /* رنگ اصلی هماهنگ با درباره شرکت */
 }
 
 .view-options {
@@ -404,11 +404,10 @@ header i {
     margin-top: 2px;
 }
 
-/* background: linear-gradient(45deg, #013966, #4091c3, #013966); */
-
 .show-button {
-    background-color: var(--color-primary);
-    color: var(--color-bg);
+    background-color: #ffffff;
+    color: #013966;
+    border: 1px dashed #013966;
     padding: 10px 16px;
     font-size: 14px;
     border-radius: 8px;
@@ -416,7 +415,12 @@ header i {
     width: 100%;
     cursor: pointer;
     font-family: 'Vazirmatn';
-    border: none;
+}
+
+.show-button:hover {
+  background-color: #4091c3;
+  color: var(--color-bg);
+  border: none;
 }
 
 /* مزایای محصولات */
@@ -554,7 +558,6 @@ header i {
 .read-more {
     font-family: 'Vazirmatn';
     font-size: 14px; /* تنظیم اندازه فونت دکمه به اندازه فونت متن */
-    /* background-color: var(--color-primary); */
     color: var(--color-primary);
     border: none;
     padding: 8px 18px; /* افزایش ارتفاع و عرض دکمه */
