@@ -70,16 +70,41 @@
     <div class="container">
         <h2>لیست محصولات</h2>
         <div class="view-options">
-            <span>نوع نمایش:</span>
+            <span>نوع نمایش</span>
             <button class="btn-view" data-columns="3">
                 <i class="fas fa-th-large"></i>
             </button>
             <button class="btn-view" data-columns="4">
+                <i class="fas fa-th-list"></i>
+            </button>
+            <button class="btn-view" data-columns="5">
                 <i class="fas fa-th"></i>
             </button>
         </div>
         <div class="product-grid" id="productGrid">
             <!-- Example Product Card -->
+            <div class="product-card">
+                <div class="product-carousel">
+                    <img src="img/products/product1_1.png" alt="محصول 1">
+                    <img src="img/products/product1_2.png" alt="محصول 1">
+                    <img src="img/products/product1_3.png" alt="محصول 1">
+                    <img src="img/products/product1_4.png" alt="محصول 1">
+                    <button class="next">&lt;</button>
+                    <button class="prev">&gt;</button>
+                </div>
+                <hr>
+                <h4>کاسه نمد مدل A</h4>
+                <p>
+                    کاسه نمد مدل A یکی از پیشرفته‌ترین و باکیفیت‌ترین محصولات طراحی‌شده توسط شرکت معتبر BHE است که ...
+                </p>
+                <div class="product-details">
+                    <span class="chips">نوع خودرو: سبک</span>
+                    <span class="chips">جنس: فلز</span>
+                    <span class="chips">سایز: ۵۰ میلی‌متر</span>
+                </div>
+                <button class="show-button" href="/products/1">مشاهده محصول</button>
+            </div>
+
             <div class="product-card">
                 <div class="product-carousel">
                     <img src="img/products/product1_1.png" alt="محصول 1">
@@ -198,26 +223,29 @@
     </div>
 </section>
 
-
+    <br>
 
     <!-- Benefits Section -->
     <section class="benefits">
         <div class="container">
-            <h2>مزایای محصولات ما</h2>
+            <!-- <h2>مزایای محصولات ما</h2> -->
             <div class="benefits-grid">
                 <div class="benefit-item">
                     <i class="fa fa-check-circle"></i>
-                    <h3>کیفیت بالا</h3>
+                    <h3>کیفیت بالای محصول</h3>
+                    <hr>
                     <p>محصولات ما از مواد با کیفیت بالا تولید می‌شوند که عمر طولانی دارند.</p>
                 </div>
                 <div class="benefit-item">
                     <i class="fa fa-cogs"></i>
-                    <h3>خدمات حرفه‌ای</h3>
+                    <h3>خدمات پس از فروش</h3>
+                    <hr>
                     <p>تیم ما آماده است تا به شما مشاوره و خدمات پس از فروش حرفه‌ای ارائه دهد.</p>
                 </div>
                 <div class="benefit-item">
                     <i class="fa fa-thumbs-up"></i>
-                    <h3>رضایت مشتری</h3>
+                    <h3>جلب رضایت مشتریان</h3>
+                    <hr>
                     <p>ما بر رضایت مشتریان خود تمرکز داریم و نظرات آن‌ها را جدی می‌گیریم.</p>
                 </div>
             </div>

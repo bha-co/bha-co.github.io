@@ -282,7 +282,7 @@ header i {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    padding: 10px;
+    padding: 12px;
     border-radius: 50%;
     transition: background-color 0.3s;
 }
@@ -291,7 +291,7 @@ header i {
     background-color: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    padding: 24px;
+    padding: 18px;
     text-align: center;
     transition: box-shadow 0.3s;
 }
@@ -307,7 +307,6 @@ header i {
 .product-carousel {
     position: relative;
     width: 100%;
-    height: 300px; /* ارتفاع مناسب برای تصویر */
     overflow: hidden;
 }
 
@@ -358,7 +357,7 @@ header i {
 
 .product-card img {
     width: 100%;
-    height: auto;
+    /* max-height: 100%; */
 }
 
 .pagination {
@@ -385,8 +384,8 @@ header i {
 }
 
 .product-card hr {
-    border: 1px solid #f9f9f9;
-    margin-top: 18px;
+    margin-top: 24px;
+    width: 100%;
 }
 
 .product-details {
@@ -396,13 +395,16 @@ header i {
 }
 
 .chips {
-    background-color: rgba(0, 123, 255, 0.1);
+    background-color: #f9f9f9;
+    border: 1px solid #f5f5f5;
     color: var(--color-primary);
     padding: 9px 16px;
     border-radius: 24px;
-    font-size: 13px;
+    font-size: 12px;
     margin-top: 2px;
 }
+
+/* background: linear-gradient(45deg, #013966, #4091c3, #013966); */
 
 .show-button {
     background-color: var(--color-primary);
@@ -419,13 +421,13 @@ header i {
 
 /* مزایای محصولات */
 .benefits {
-    background-color: var(--color-accent-darker);
-    padding: 40px 0;
+    background: linear-gradient(45deg, #013966, #4091c3, #013966);
+    padding: 72px 0;
 }
 
 .benefits h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 48px;
     color: var(--color-bg);
 }
 
@@ -433,20 +435,22 @@ header i {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
 }
 
 .benefit-item {
     background-color: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 20px;
+    color: var(--color-primary);
+    border-radius: 12px;
+    padding: 38px;
     width: 250px;
     text-align: center;
-    color: var(--color-text);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .benefit-item i {
-    font-size: 24px;
+    font-size: 48px;
     color: var(--color-primary);
 }
 
