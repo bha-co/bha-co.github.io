@@ -62,7 +62,7 @@ header {
 }
 
 .logo {
-    margin-left: 5%;
+    margin-left: 4%;
 }
 
 .logo img {
@@ -97,7 +97,7 @@ header {
 
 /* منو اصلی */
 header nav {
-  margin-right: 5%;
+  margin-right: 2%;
 }
 
 header ul {
@@ -291,17 +291,13 @@ header i {
     background-color: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    padding: 18px;
+    padding: 28px;
     text-align: center;
     transition: box-shadow 0.3s;
 }
 
-.product-card a {
-  text-decoration: none;
-  color: var(--color-primary);
-  padding: 12px 16px;
-  border-radius: 24px;
-  background: #f5f5f5;
+.product-card p {
+  font-size: 14px;
 }
 
 .product-carousel {
@@ -395,9 +391,9 @@ header i {
 }
 
 .chips {
-    background-color: #f9f9f9;
-    border: 1px solid #f5f5f5;
-    color: var(--color-primary);
+    background-color: #f2f9ff;
+    border: 1px solid #eaf6ff;
+    color: #333333;
     padding: 9px 16px;
     border-radius: 24px;
     font-size: 12px;
@@ -415,6 +411,11 @@ header i {
     width: 100%;
     cursor: pointer;
     font-family: 'Vazirmatn';
+}
+
+.show-button i  {
+  margin-right: 22px;
+  font-size: 12px;
 }
 
 .show-button:hover {
@@ -447,7 +448,7 @@ header i {
     background-color: var(--color-bg);
     color: var(--color-primary);
     border-radius: 12px;
-    padding: 38px;
+    padding: 32px;
     width: 250px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -455,7 +456,7 @@ header i {
 
 .benefit-item i {
     font-size: 48px;
-    color: var(--color-primary);
+    color: #96cece;
 }
 
 /* درباره ما */
@@ -502,7 +503,7 @@ header i {
     background-color: var(--color-bg);
     border-radius: 8px;
     overflow: hidden;
-    flex: 1 1 calc(25% - 16px);
+    flex: 1 1 calc(25% - 18px);
     box-shadow: none;
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: right;
@@ -518,7 +519,6 @@ header i {
 .blog-item:hover {
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
 }
 
 .blog-item img {
@@ -529,7 +529,7 @@ header i {
 }
 
 .blog-content {
-    padding: 16px;
+    padding: 22px;
     flex: 1; /* برای استفاده از فضای باقی‌مانده */
     display: flex;
     flex-direction: column;
@@ -573,8 +573,8 @@ header i {
 }
 
 .read-more:hover {
-    background-color: var(--color-accent-dark);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-primary);
+    color: var(--color-bg);
 }
 
 /* نظرات مشتریان */
@@ -654,35 +654,79 @@ header i {
 
 /* تیم ما */
 .team {
-    padding: 40px 0;
+    padding: 60px 0;
+    background-color: #f5f5f5;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.team h2 {
+.text-center {
     text-align: center;
     margin-bottom: 20px;
-    color: var(--color-primary);
 }
 
+/* استایل‌های تیم */
 .team-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     justify-content: center;
+    padding: 20px;
 }
 
 .team-member {
-    background-color: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
+    border: 1px solid #ddd;
     padding: 20px;
-    width: 250px;
+    border-radius: 8px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-member img {
     width: 160px;
-    height: 160px;
+    max-width: 160px;
     border-radius: 50%;
+}
+
+.job-title {
+  text-align: center;
+}
+
+/* استایل آیکون‌ها و دکمه‌ها */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    color: #333;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* افکت بزرگنمایی در زمان اسکرول */
+.team-member.active {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    background-color: var(--color-primary);
+    color: var(--color-bg);
 }
 
 /* فرم تماس */
