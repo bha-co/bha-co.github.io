@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     // منوی موبایل
     document.querySelector('.hamburger-menu').addEventListener('click', function() {
@@ -40,8 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     teamGrid.addEventListener('scroll', (e) => e.preventDefault());
 
     // شروع اسکرول خودکار
-    setInterval(scrollNext, 5000);
-
+    setInterval(scrollNext, 4000);
 
     // کاروسل تصاویر محصولات
     document.querySelectorAll('.product-card').forEach(card => {
@@ -86,6 +84,32 @@ document.addEventListener('DOMContentLoaded', function() {
         // نمایش اولین تصویر هنگام بارگذاری
         showImage(currentImageIndex);
     });
+
+    // اسکرول خودکار نظرات مشتریان
+    const testimonials = Array.from(document.querySelectorAll('.testimonial-item'));
+    const visibleCount = 3; // تعداد کارت‌های قابل نمایش
+    let currentIndex = 0;
+
+    function updateVisibleTestimonials() {
+        testimonials.forEach((testimonial, index) => {
+            if (index >= currentIndex && index < currentIndex + visibleCount) {
+                testimonial.style.display = 'block';
+            } else {
+                testimonial.style.display = 'none';
+            }
+        });
+    }
+
+    function scrollNextTestimonial() {
+        currentIndex = (currentIndex + visibleCount) % testimonials.length;
+        updateVisibleTestimonials();
+    }
+
+    // تنظیم کارت‌های اولیه برای نمایش
+    updateVisibleTestimonials();
+
+    // شروع اسکرول خودکار
+    setInterval(scrollNextTestimonial, 7000);
 
     // تایپ انیمیشن تیم
     let text = "ما با تیمی مجرب و خلاق و با تلاش شبانه‌روزی بهترین خدمات را به شما ارائه می‌دهیم.";

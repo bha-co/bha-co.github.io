@@ -590,22 +590,37 @@ header i {
     overflow: hidden;
 }
 
-.testimonials-grid {
-    display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    gap: 1rem;
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* چهار ستون ثابت */
+  gap: 24px;
+  justify-content: center;
+  padding: 26px 20%;
 }
 
 .testimonial-item {
-    flex: 0 0 auto;
-    width: 300px; /* یا عرض دلخواه شما */
-    padding: 1rem;
-    background-color: #fff;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    scroll-snap-align: start;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    color: var(--color-text);
+    flex: 0 0 33.33%; /* سه کارت همزمان نمایش داده شوند */
+    transition: transform 0.5s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.title p {
+  color: var(--color-primary);
+  font-size: 18px;
+}
+
+.item-time p {
+  text-align: center;
+  font-size: 12px;
+  color: #777;
 }
 
 .nav-btn {
@@ -625,7 +640,7 @@ header i {
 .testimonials h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: var(--color-bg);
+    color: #333;
 }
 
 .testimonials-grid {
@@ -633,6 +648,8 @@ header i {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    display: flex;
+    overflow: hidden;
 }
 
 .testimonial-item {
@@ -643,6 +660,8 @@ header i {
     width: 250px;
     text-align: center;
     color: var(--color-text);
+    flex: 0 0 33.33%; /* سه کارت همزمان نمایش داده شوند */
+    transition: transform 0.5s ease;
 }
 
 .rating {
@@ -661,6 +680,10 @@ header i {
     text-align: center;
 }
 
+.title {
+  text-align: center;
+}
+
 .team .title i {
   font-size: 42px;
 }
@@ -675,7 +698,14 @@ header i {
 .text-center {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
 }
+
+.text-center {
+  color: #333;
+}
+
 
 /* استایل‌های تیم */
 .team-grid {
@@ -695,14 +725,14 @@ header i {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.team-member p {
+  font-size: 12px;
+}
+
 .team-member img {
     width: 140px;
     max-width: 140px;
     border-radius: 50%;
-}
-
-.job-title {
-  text-align: center;
 }
 
 /* استایل آیکون‌ها و دکمه‌ها */
