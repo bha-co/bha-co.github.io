@@ -97,7 +97,7 @@ header {
 
 /* منو اصلی */
 header nav {
-  margin-right: 2%;
+  margin-right: 2.5%;
 }
 
 header ul {
@@ -391,12 +391,13 @@ header i {
 }
 
 .chips {
-    background-color: #f2f9ff;
-    border: 1px solid #eaf6ff;
+    background-color: #ffefe8;
+    border: 1px solid #ffe7db;
     color: #333333;
-    padding: 9px 16px;
+    padding: 6px 14px;
     border-radius: 24px;
     font-size: 12px;
+    /* font-weight: bold; */
     margin-top: 2px;
 }
 
@@ -456,7 +457,7 @@ header i {
 
 .benefit-item i {
     font-size: 48px;
-    color: #96cece;
+    color: #e67b68;
 }
 
 /* درباره ما */
@@ -654,13 +655,21 @@ header i {
 
 /* تیم ما */
 .team {
-    padding: 60px 0;
+    padding: 72px 0;
     background-color: #f5f5f5;
+    align-items: center;
+    text-align: center;
 }
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+
+.team .title i {
+  font-size: 42px;
+}
+
+.team .title p {
+  color: #666;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .text-center {

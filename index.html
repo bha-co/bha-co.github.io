@@ -268,9 +268,13 @@
     </section>
 
     <section class="team">
-    <div class="container">
-        <h2 class="text-center">معرفی اعضای تیم</h2>
-        <p class="text-center">تیم ما با تلاش‌های شبانه‌روزی، بهترین خدمات را به شما ارائه می‌دهد.</p>
+  <div class="container">
+    <div class="title">
+      <i class="fa-solid fa-user-group"></i>
+      <h2 class="text-center">معرفی تیم ما</h2>
+      <p id="team-description" class="text-center"></p>
+    </div>
+
         <div class="team-grid">
             <div class="team-member">
                 <img src="img/team/1.jpg" alt="عضو تیم ۱">
@@ -398,6 +402,7 @@
     </section>
 
     <hr>
+
     <!-- Blog Section -->
     <section class="blog">
         <div class="container">
@@ -472,6 +477,32 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        let text = "ما با تیمی مجرب و خلاق و با تلاش شبانه‌روزی بهترین خدمات را به شما ارائه می‌دهیم.";
+        const speed = 60; // سرعت تایپ به میلی‌ثانیه
+        const displayDuration = 2000; // مدت زمان نمایش جمله به میلی‌ثانیه
+        let i = 0;
+
+        // پاک کردن کشش‌ها
+        text = text.replace(/ـ+/g, '');
+
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("team-description").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            } else {
+                setTimeout(() => {
+                    document.getElementById("team-description").innerHTML = ""; // پاک کردن متن
+                    i = 0;
+                    typeWriter(); // تایپ مجدد از ابتدا
+                }, displayDuration);
+            }
+        }
+
+        // شروع انیمیشن بعد از بارگذاری صفحه
+        window.onload = typeWriter;
+    </script>
+
 </body>
 </html>
