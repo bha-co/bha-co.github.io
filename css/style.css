@@ -680,10 +680,10 @@ header i {
 /* استایل‌های تیم */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr); /* چهار ستون ثابت */
+    gap: 25px;
     justify-content: center;
-    padding: 20px;
+    padding: 26px 5%;
 }
 
 .team-member {
@@ -696,8 +696,8 @@ header i {
 }
 
 .team-member img {
-    width: 160px;
-    max-width: 160px;
+    width: 140px;
+    max-width: 140px;
     border-radius: 50%;
 }
 

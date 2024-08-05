@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     // منوی موبایل
     document.querySelector('.hamburger-menu').addEventListener('click', function() {
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('productGrid').style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
         });
     });
-    
+
     // نمایش اعضای تیم با اسکرول خودکار
     const teamGrid = document.querySelector('.team-grid');
     const members = document.querySelectorAll('.team-member');
@@ -30,14 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function scrollNext() {
         index = (index + 1) % members.length;
         updateActiveMember();
-
-        // بررسی تعداد کارت‌ها برای تعیین نحوه اسکرول
-        if (members.length > 4) {
-            // اسکرول کارت‌ها با جابجایی
-            const firstMember = teamGrid.removeChild(members[0]);
-            teamGrid.appendChild(firstMember);
-            members[index].classList.add('active');
-        }
     }
 
     // تنظیم اولین کارت به عنوان فعال
@@ -48,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // شروع اسکرول خودکار
     setInterval(scrollNext, 5000);
+
 
     // کاروسل تصاویر محصولات
     document.querySelectorAll('.product-card').forEach(card => {
@@ -92,4 +86,28 @@ document.addEventListener('DOMContentLoaded', function() {
         // نمایش اولین تصویر هنگام بارگذاری
         showImage(currentImageIndex);
     });
+
+    // تایپ انیمیشن تیم
+    let text = "ما با تیمی مجرب و خلاق و با تلاش شبانه‌روزی بهترین خدمات را به شما ارائه می‌دهیم.";
+    const speed = 50;
+    const displayDuration = 2000;
+    let i = 0;
+    text = text.replace(/ـ+/g, '');
+
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("team-description").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        } else {
+            setTimeout(() => {
+                document.getElementById("team-description").innerHTML = "";
+                i = 0;
+                typeWriter();
+            }, displayDuration);
+        }
+    }
+
+    // شروع انیمیشن بعد از بارگذاری صفحه
+    window.onload = typeWriter;
 });
