@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
   <!-- Header --------------------------------------------------------------------------------->
   <header>
     <button class="hamburger-menu">&#9776;</button>
@@ -32,6 +33,7 @@
       </a>
     </div>
   </header>
+
   <!-- ‌Banner --------------------------------------------------------------------------------->
   <section class="hero">
     <div class="container">
@@ -49,6 +51,7 @@
       </div>
     </div>
   </section>
+
   <!-- About --------------------------------------------------------------------------------->
   <section class="about">
     <div class="container">
@@ -59,7 +62,7 @@
       </div>
     </div>
   </section>
-  <hr>
+
   <!-- Products --------------------------------------------------------------------------------->
   <section class="products" id="products">
     <div class="container">
@@ -219,6 +222,7 @@
       </div>
     </div>
   </section>
+
   <!-- Benefits --------------------------------------------------------------------------------->
   <section class="benefits">
     <div class="container">
@@ -369,7 +373,6 @@
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
-
         </div>
       </div>
 
@@ -418,7 +421,6 @@
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
-
         </div>
       </div>
 
@@ -459,36 +461,46 @@
 
   <!-- Contact --------------------------------------------------------------------------------->
   <section class="appointment">
-    <div class="container">
-      <h2>فرم تماس</h2>
-      <form>
-        <label for="name">نام:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">ایمیل:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="department">دپارتمان:</label>
-        <select id="department" name="department">
-          <option value="sales">فروش</option>
-          <option value="support">پشتیبانی</option>
-        </select>
-        <label for="message">پیام:</label>
-        <textarea id="message" name="message" rows="4"></textarea>
-        <button type="submit">ارسال</button>
-      </form>
+  <div class="container">
+    <div class="appointment-content">
+      <div class="appointment-form-container">
+        <h2>تماس با ما</h2>
+        <form class="appointment-form">
+          <label for="name">نام:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">ایمیل:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="department">دپارتمان:</label>
+          <select id="department" name="department">
+            <option value="sales">فروش</option>
+            <option value="support">پشتیبانی</option>
+          </select>
+          <label for="message">متن درخواست:</label>
+          <textarea id="message" name="message" rows="2.5"></textarea>
+          <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+          <button type="submit">ارسال</button>
+        </form>
+      </div>
+      <div class="appointment-image">
+        <img src="img/contactUs.png" alt="Contact Image">
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
   <hr>
+
   <!-- Blog --------------------------------------------------------------------------------->
   <section class="blog">
     <div class="container">
-      <h2>آخرین پست‌های وبلاگ</h2>
+      <h2>در مجله‌ی ما بخوانید</h2>
       <div class="blog-list">
         <a href="#" class="blog-item">
           <img src="img/blog/blog-post-1.png" alt="Blog 1">
           <div class="blog-content">
             <h4>مکانیزم فنی کاسه نمد چیست؟</h4>
             <p>کاسه نمد ابزاری حیاتی در خودروست که برای حفظ و نگهداری روغن درون محفظه‌ی پشت شفت‌ها استفاده می‌شود. در واقع ...</p>
-            <button class="read-more">ادامه‌ی مطلب</button>
+            <button class="read-more">مشاهده‌ی مطلب</button>
           </div>
         </a>
         <a href="#" class="blog-item">
@@ -496,7 +508,7 @@
           <div class="blog-content">
             <h4>مکانیزم فنی کاسه نمد چیست؟</h4>
             <p>کاسه نمد ابزاری حیاتی در خودروست که برای حفظ و نگهداری روغن درون محفظه‌ی پشت شفت‌ها استفاده می‌شود. در واقع ...</p>
-            <button class="read-more">ادامه‌ی مطلب</button>
+            <button class="read-more">مشاهده‌ی مطلب</button>
           </div>
         </a>
         <a href="#" class="blog-item">
@@ -504,7 +516,7 @@
           <div class="blog-content">
             <h4>مکانیزم فنی کاسه نمد چیست؟</h4>
             <p>کاسه نمد ابزاری حیاتی در خودروست که برای حفظ و نگهداری روغن درون محفظه‌ی پشت شفت‌ها استفاده می‌شود. در واقع ...</p>
-            <button class="read-more">ادامه‌ی مطلب</button>
+            <button class="read-more">مشاهده‌ی مطلب</button>
           </div>
         </a>
         <a href="#" class="blog-item">
@@ -512,44 +524,81 @@
           <div class="blog-content">
             <h4>مکانیزم فنی کاسه نمد چیست؟</h4>
             <p>کاسه نمد ابزاری حیاتی در خودروست که برای حفظ و نگهداری روغن درون محفظه‌ی پشت شفت‌ها استفاده می‌شود. در واقع ...</p>
-            <button class="read-more">ادامه‌ی مطلب</button>
+            <button class="read-more">مشاهده‌ی مطلب</button>
           </div>
         </a>
       </div>
     </div>
   </section>
+
   <!-- Footer --------------------------------------------------------------------------------->
   <footer>
-    <div class="container">
+      <!-- بخش لوگوهای ساماندهی -->
+      <div class="footer-logos">
+          <a href="https://ecunion.ir/" target="_blank">
+              <img src="img/licenses/license-1.png" alt="اتحادیه‌ی کسب و کارهای اینترنتی">
+          </a>
+          <a href="https://reg2.enamad.ir/" target="_blank">
+              <img src="img/licenses/license-2.png" alt="ای‌نماد">
+          </a>
+          <a href="https://samandehi.ir/" target="_blank">
+              <img src="img/licenses/license-3.png" alt="سامان‌دهی">
+          </a>
+      </div>
+
       <div class="footer-content">
-        <div class="footer-section">
-          <h3>اطلاعات شرکت</h3>
-          <ul>
-            <li><a href="#">درباره ما</a></li>
-            <li><a href="#">تماس با ما</a></li>
-            <li><a href="#">استخدام</a></li>
-            <li><a href="#">وبلاگ</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>لینک‌های مفید</h3>
-          <ul>
-            <li><a href="#">بازاریابی</a></li>
-            <li><a href="#">تحلیل کاربر</a></li>
-            <li><a href="#">اشتراک</a></li>
-            <li><a href="#">API</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>آدرس ما</h3>
-          <p>خیابان مثال، شماره ۱۲۳، تهران، ایران</p>
-        </div>
+          <!-- بخش معرفی شرکت -->
+          <div class="footer-section company-intro">
+              <h3>درباره ما</h3>
+              <p>شرکت ما با هدف ارائه بهترین خدمات و محصولات با کیفیت بالا تأسیس شده است. ما متعهد به رضایت مشتریان و ایجاد تجربه‌ای بی‌نظیر برای آنها هستیم.</p>
+          </div>
+
+          <!-- بخش لینک‌های سایت -->
+          <div class="footer-section site-links">
+              <h3>لینک‌های مفید</h3>
+              <p><a href="/">• خانه</a></p>
+              <p><a href="/about">• درباره ما</a></p>
+              <p><a href="/services">• لیست محصولات</a></p>
+              <p><a href="/contact">• تماس با ما</a></p>
+              <p><a href="/contact">• وبلاگ</a></p>
+          </div>
+
+          <!-- بخش تماس -->
+          <div class="footer-section contact-info">
+              <h3>تماس با ما</h3>
+              <p>آدرس: اصفهان، خیابان امام‌خمینی، کوچه ۶۳ (مفتح)</p>
+              <p>کد پستی: ۱۱۱۱۱۱۱۱۱۱</p>
+              <p>شماره تماس: <a href="tel:09104008141">۰۹۱۰۴۰۰۸۱۴۱</a></p>
+              <p>آدرس ایمیل: <a href="mailto:ali@example.com">BHACO.Official@Gmail.com</a></p>
+              <!-- بخش شبکه‌های اجتماعی زیر آدرس -->
+              <div class="social-media">
+                  <a href="https://facebook.com" target="_blank" class="social-icon">
+                      <img src="img/social-media/facebook.png" alt="فیس‌بوک">
+                  </a>
+                  <a href="https://twitter.com" target="_blank" class="social-icon">
+                      <img src="img/social-media/x.png" alt="توییتر">
+                  </a>
+                  <a href="https://instagram.com" target="_blank" class="social-icon">
+                      <img src="img/social-media/instagram.png" alt="اینستاگرام">
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" class="social-icon">
+                      <img src="img/social-media/linkedin.png" alt="لینکدین">
+                  </a>
+              </div>
+          </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 فروشگاه کاسه نمد خودرو. تمامی حقوق محفوظ است.</p>
-      </div>
-    </div>
+
+
+
   </footer>
+
+  <div class="copywrite">
+    <p>&copy کیه‌ی حقوق مادی و معنوی سایت نزد شرکت بی اِچ اِی | BHA Group محفوط می‌باشد.</p>
+  </div>
+
+
+
+
 </body>
 
 </html>
