@@ -128,11 +128,11 @@ header a:hover {
 }
 
 header i {
-    display: flex; /* استفاده از فلکس برای مرکزیت عمودی و افقی */
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 12px;
-    border-radius: 50%; /* تبدیل به دایره */
+    border-radius: 50%;
     background-color: #f5f5f5;
     color: var(--color-primary);
     margin-left: 6px;
@@ -230,20 +230,19 @@ header i {
 
 /* محصولات */
 .products {
-    padding: 40px 0;
+    margin-top: 18px;
+    padding: 24px 0;
     background-color: var(--color-bg);
-    margin: 0 5%;
 }
 
 .products h2 {
     text-align: right;
-    margin-bottom: 20px;
-    color: var(--color-text); /* رنگ اصلی هماهنگ با درباره شرکت */
+    color: var(--color-text);
 }
 
 .view-options {
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
 }
 
 .btn-view {
@@ -258,7 +257,7 @@ header i {
 }
 
 .btn-view img {
-    width: 24px; /* سایز مناسب برای آیکون‌ها */
+    width: 24px;
     height: auto;
 }
 
@@ -274,9 +273,9 @@ header i {
 }
 
 .product-images button {
-    background-color: rgba(255, 255, 255, 0.4); /* پس‌زمینه سفید نیمه‌شفاف */
+    background-color: rgba(255, 255, 255, 0.4);
     border: none;
-    color: var(--color-primary); /* رنگ متن دکمه‌ها */
+    color: var(--color-primary);
     font-size: 1.2rem;
     position: absolute;
     top: 50%;
@@ -309,12 +308,12 @@ header i {
 .product-carousel img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* نمایش کامل تصویر */
-    display: block; /* حذف فضای خالی زیر تصویر */
+    object-fit: cover;
+    display: block;
 }
 
 .product-carousel img:first-child {
-    display: block; /* نمایش اولین تصویر به طور پیش‌فرض */
+    display: block;
 }
 
 .product-carousel button {
@@ -344,7 +343,7 @@ header i {
 }
 
 .product-card h3 {
-    color: var(--color-text); /* رنگ هماهنگ با درباره شرکت */
+    color: var(--color-text);
 }
 
 .product-card:hover {
@@ -353,7 +352,6 @@ header i {
 
 .product-card img {
     width: 100%;
-    /* max-height: 100%; */
 }
 
 .pagination {
@@ -397,7 +395,6 @@ header i {
     padding: 6px 14px;
     border-radius: 24px;
     font-size: 12px;
-    /* font-weight: bold; */
     margin-top: 2px;
 }
 
@@ -429,6 +426,7 @@ header i {
 .benefits {
     background: linear-gradient(45deg, #013966, #4091c3, #013966);
     padding: 72px 0;
+    margin-top: 66px;
 }
 
 .benefits h2 {
@@ -462,7 +460,7 @@ header i {
 
 /* درباره ما */
 .about {
-    padding: 48px 5%;
+    padding: 52px 5%;
 }
 
 .about-content {
@@ -522,21 +520,21 @@ header i {
 
 .blog-item img {
     width: 100%;
-    height: 200px; /* ارتفاع ثابت برای تصاویر */
-    object-fit: cover; /* پر کردن کامل فضای عنصر و جلوگیری از کشیدگی */
-    display: block; /* حذف فضای اضافی زیر تصویر */
+    height: 200px;
+    object-fit: cover;
+    display: block;
 }
 
 .blog-content {
     padding: 22px;
-    flex: 1; /* برای استفاده از فضای باقی‌مانده */
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
 .blog-content h4 {
-    margin-bottom: 0; /* حذف فاصله پایین از عنوان */
-    margin-top: 6px; /* فاصله از بالا */
+    margin-bottom: 0;
+    margin-top: 6px;
     font-size: 16px;
     text-align: right;
     direction: rtl;
@@ -548,26 +546,26 @@ header i {
     text-align: justify;
     direction: rtl;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* محدود کردن به ۲ خط */
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis; /* نمایش "..." در انتهای متن طولانی */
+    text-overflow: ellipsis;
 }
 
 .read-more {
     font-family: 'Vazirmatn';
-    font-size: 14px; /* تنظیم اندازه فونت دکمه به اندازه فونت متن */
+    font-size: 14px;
     color: var(--color-primary);
     border: none;
-    padding: 8px 18px; /* افزایش ارتفاع و عرض دکمه */
+    padding: 8px 18px;
     border-radius: 24px;
     cursor: pointer;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    display: flex; /* برای مرکزچین کردن عمودی متن */
-    align-items: center; /* مرکزچین عمودی متن */
-    justify-content: center; /* مرکزچین افقی متن */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -579,10 +577,10 @@ header i {
 /* نظرات مشتریان */
 .testimonials {
     background: linear-gradient(40deg, #f0f0f0 20%, #ffffff 40%, #f9f9f9 60%, #f0f0f0 100%);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* سایه با عمق بیشتر */
-    padding: 40px 0;
-    position: relative; /* برای استفاده از z-index */
-    z-index: 10; /* اطمینان از اینکه این کامپوننت بالاتر از سایرین قرار گیرد */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    padding: 34px 0;
+    position: relative;
+    z-index: 10;
 }
 
 .testimonials-wrapper {
@@ -593,7 +591,7 @@ header i {
 
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* چهار ستون ثابت */
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   justify-content: center;
   padding: 26px 20%;
@@ -607,7 +605,7 @@ header i {
     width: 250px;
     text-align: center;
     color: var(--color-text);
-    flex: 0 0 33.33%; /* سه کارت همزمان نمایش داده شوند */
+    flex: 0 0 33.33%;
     transition: transform 0.5s ease;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -662,7 +660,7 @@ header i {
     width: 250px;
     text-align: center;
     color: var(--color-text);
-    flex: 0 0 33.33%; /* سه کارت همزمان نمایش داده شوند */
+    flex: 0 0 33.33%;
     transition: transform 0.5s ease;
 }
 
@@ -676,7 +674,7 @@ header i {
 
 /* تیم ما */
 .team {
-    padding: 72px 0;
+    padding: 68px 0;
     background-color: #f5f5f5;
     align-items: center;
     text-align: center;
@@ -711,7 +709,7 @@ header i {
 /* استایل‌های تیم */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* چهار ستون ثابت */
+    grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     justify-content: center;
     padding: 26px 5%;
@@ -773,7 +771,8 @@ header i {
 /* فرم تماس */
 .appointment {
   background-color: var(--color-bg);
-  padding: 72px 0;
+  margin: 20px 0;
+  padding: 66px 0;
 }
 
 .container {
@@ -783,9 +782,9 @@ header i {
 .appointment-content {
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch; /* برای هم‌ارتفاعی فرم و تصویر */
+  align-items: stretch;
   justify-content: space-between;
-  min-height: 500px; /* حداقل ارتفاع کلی برای فرم و تصویر */
+  min-height: 500px;
 }
 
 .appointment-form-container {
@@ -811,8 +810,8 @@ header i {
 .appointment-image img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: cover; /* برای پوشش کامل تصویر */
-  aspect-ratio: 4/3; /* نسبت عرض به ارتفاع تصویر */
+  object-fit: cover;
+  aspect-ratio: 4/3;
   border-radius: 8px;
 }
 
@@ -860,7 +859,8 @@ header i {
 footer {
     background-color: var(--color-footer-bg);
     color: var(--color-footer-text);
-    padding: 40px 5%;
+    margin-top: 18px;
+    padding: 44px 5%;
     text-align: center;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     font-size: 16px;
@@ -874,12 +874,12 @@ footer {
 
 .footer-logos a {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 14px;
 }
 
 .footer-logos img {
-    width: 72px;
-    height: auto;
+    width: auto;
+    height: 86px;
 }
 
 .footer-content {
@@ -901,7 +901,7 @@ footer {
 }
 
 .footer-section .social-media img {
-  width: 52px;
+  width: 48px;
   margin-left: 18px;
   border-radius: 12px;
 }
@@ -964,9 +964,13 @@ footer {
 .copywrite {
   width: 100%;
 }
+
 .copywrite p {
   text-align: center;
+  font-size: 14px;
+  margin:12px;
 }
+
 /* ریسپانسیو */
 @media (max-width: 991px) {
     .hamburger-menu {
