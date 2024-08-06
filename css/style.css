@@ -141,7 +141,6 @@ header i {
 /* قهرمان (Hero) */
 .hero {
     position: relative;
-    background-image: url('../img/header-banner.png');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -152,6 +151,7 @@ header i {
     text-align: center;
     padding: 0 20px;
     overflow: hidden;
+    transition: background-image 1s ease-in-out;
 }
 
 .hero::before {
@@ -580,8 +580,11 @@ header i {
 
 /* نظرات مشتریان */
 .testimonials {
-    background-color: var(--color-accent-darker);
+    background: linear-gradient(40deg, #f0f0f0 20%, #ffffff 40%, #f9f9f9 60%, #f0f0f0 100%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* سایه با عمق بیشتر */
     padding: 40px 0;
+    position: relative; /* برای استفاده از z-index */
+    z-index: 10; /* اطمینان از اینکه این کامپوننت بالاتر از سایرین قرار گیرد */
 }
 
 .testimonials-wrapper {
@@ -615,6 +618,7 @@ header i {
 .title p {
   color: var(--color-primary);
   font-size: 18px;
+  font-weight: normal;
 }
 
 .item-time p {
@@ -706,7 +710,6 @@ header i {
   color: #333;
 }
 
-
 /* استایل‌های تیم */
 .team-grid {
     display: grid;
@@ -726,7 +729,7 @@ header i {
 }
 
 .team-member p {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .team-member img {

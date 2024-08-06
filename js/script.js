@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // 1. تعامل با رابط کاربری (UI Interactions)
     // منوی موبایل
     document.querySelector('.hamburger-menu').addEventListener('click', function() {
         document.querySelector('nav').classList.toggle('active');
@@ -12,34 +13,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // 2. انیمیشن‌ها و اسکرول خودکار (Animations and Auto-Scrolling)
     // نمایش اعضای تیم با اسکرول خودکار
-    const teamGrid = document.querySelector('.team-grid');
-    const members = document.querySelectorAll('.team-member');
+    const teamMembers = Array.from(document.querySelectorAll('.team-member'));
+    let teamIndex = 0;
 
-    let index = 0;
-
-    function updateActiveMember() {
-        members.forEach((member, i) => {
-            member.classList.remove('active');
-            if (i === index) {
-                member.classList.add('active');
-            }
+    function updateActiveTeamMember() {
+        teamMembers.forEach((member, i) => {
+            member.classList.toggle('active', i === teamIndex);
         });
     }
 
-    function scrollNext() {
-        index = (index + 1) % members.length;
-        updateActiveMember();
-    }
-
-    // تنظیم اولین کارت به عنوان فعال
-    members[index].classList.add('active');
-
-    // جلوگیری از اسکرول دستی
-    teamGrid.addEventListener('scroll', (e) => e.preventDefault());
-
-    // شروع اسکرول خودکار
-    setInterval(scrollNext, 4000);
+    setInterval(() => {
+        teamIndex = (teamIndex + 1) % teamMembers.length;
+        updateActiveTeamMember();
+    }, 4000);
 
     // کاروسل تصاویر محصولات
     document.querySelectorAll('.product-card').forEach(card => {
@@ -65,73 +53,60 @@ document.addEventListener('DOMContentLoaded', function() {
             showImage(currentImageIndex);
         });
 
-        // افزودن رویداد کلیک برای دکمه‌های "مشاهده محصول"
-        const showButtons = document.querySelectorAll('.show-button');
-        showButtons.forEach((button, index) => {
-            button.addEventListener('click', () => {
-                window.location.href = `products/${index + 1}.html`;
-            });
-        });
-
-        // افزودن رویداد کلیک برای آیتم‌های بلاگ
-        const blogItems = document.querySelectorAll('.blog-item');
-        blogItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                window.location.href = `blogs/${index + 1}.html`;
-            });
-        });
-
-        // نمایش اولین تصویر هنگام بارگذاری
         showImage(currentImageIndex);
     });
 
     // اسکرول خودکار نظرات مشتریان
     const testimonials = Array.from(document.querySelectorAll('.testimonial-item'));
-    const visibleCount = 3; // تعداد کارت‌های قابل نمایش
     let currentIndex = 0;
 
     function updateVisibleTestimonials() {
         testimonials.forEach((testimonial, index) => {
-            if (index >= currentIndex && index < currentIndex + visibleCount) {
-                testimonial.style.display = 'block';
-            } else {
-                testimonial.style.display = 'none';
-            }
+            testimonial.style.display = (index >= currentIndex && index < currentIndex + 3) ? 'block' : 'none';
         });
     }
 
-    function scrollNextTestimonial() {
-        currentIndex = (currentIndex + visibleCount) % testimonials.length;
+    setInterval(() => {
+        currentIndex = (currentIndex + 3) % testimonials.length;
         updateVisibleTestimonials();
-    }
-
-    // تنظیم کارت‌های اولیه برای نمایش
+    }, 6000);
     updateVisibleTestimonials();
 
-    // شروع اسکرول خودکار
-    setInterval(scrollNextTestimonial, 7000);
-
     // تایپ انیمیشن تیم
-    let text = "ما با تیمی مجرب و خلاق و با تلاش شبانه‌روزی بهترین خدمات را به شما ارائه می‌دهیم.";
-    const speed = 50;
+    const text = "ما با تیمی مجرب و خلاق و با تلاش شبانه‌روزی بهترین خدمات را به شما ارائه می‌دهیم.".replace(/ـ+/g, '');
+    const typingSpeed = 50;
     const displayDuration = 2000;
-    let i = 0;
-    text = text.replace(/ـ+/g, '');
+    let charIndex = 0;
 
     function typeWriter() {
-        if (i < text.length) {
-            document.getElementById("team-description").innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
+        const description = document.getElementById("team-description");
+        if (charIndex < text.length) {
+            description.innerHTML += text.charAt(charIndex++);
+            setTimeout(typeWriter, typingSpeed);
         } else {
             setTimeout(() => {
-                document.getElementById("team-description").innerHTML = "";
-                i = 0;
+                description.innerHTML = "";
+                charIndex = 0;
                 typeWriter();
             }, displayDuration);
         }
     }
+    typeWriter();
 
-    // شروع انیمیشن بعد از بارگذاری صفحه
-    window.onload = typeWriter;
+    // 3. تغییر دوره‌ای پس‌زمینه (Background Change)
+    const hero = document.querySelector('.hero');
+    const images = [
+        'img/headers/header-banner-1.png',
+        'img/headers/header-banner-2.png',
+    ];
+    let currentIndexBg = 0;
+
+    function changeBackground() {
+        hero.style.backgroundImage = `url(${images[currentIndexBg]})`;
+        currentIndexBg = (currentIndexBg + 1) % images.length;
+    }
+
+    // تنظیم بک‌گراند اولیه و شروع تغییر دوره‌ای
+    changeBackground();
+    setInterval(changeBackground, 5000);
 });
