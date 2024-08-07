@@ -1,7 +1,7 @@
 :root {
     --color-bg: #FFFFFF;
-    --color-primary: #013966;
-    --color-primary-dark: #9D0268;
+    --color-primary: #004982;
+    --color-primary-dark: #013966;
     --color-accent: #9D0268;
     --color-accent-dark: #6A003F;
     --color-accent-darker: #D9D9D9;
@@ -47,6 +47,11 @@ p {
   line-height: 32px;
 }
 
+input, textarea, select, button {
+  cursor: pointer;
+  font-family: 'Vazirmatn';
+}
+
 /* هدر */
 header {
     position: fixed;
@@ -70,15 +75,10 @@ header {
     margin-left: 10px;
 }
 
-.logo a:hover {
-    transform: None;
-}
-
 .hamburger-menu, .header-button {
     background: none;
     border: none;
     cursor: pointer;
-    font-family: 'Vazirmatn';
 }
 
 .hamburger-menu {
@@ -230,8 +230,8 @@ header i {
 
 /* محصولات */
 .products {
-    margin-top: 18px;
-    padding: 24px 0;
+    margin-top: 20px;
+    padding: 20px 0;
     background-color: var(--color-bg);
 }
 
@@ -249,11 +249,18 @@ header i {
     background-color: var(--color-neutral);
     color: var(--color-text);
     border: 1px solid var(--color-border);
-    padding: 5px;
-    margin: 0 5px;
+    padding: 8px;
+    margin: 0 4px;
     cursor: pointer;
     font-size: 0.875rem;
     transition: background-color 0.3s, transform 0.2s;
+    border-radius: 4px;
+}
+
+.btn-view:hover {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .btn-view img {
@@ -261,9 +268,7 @@ header i {
     height: auto;
 }
 
-.btn-view:active {
-    background-color: var(--color-accent-dark);
-}
+
 
 .product-grid {
     display: grid;
@@ -319,10 +324,10 @@ header i {
 .product-carousel button {
     position: absolute;
     top: 50%;
-    background: rgba(244, 244, 244, 0.75);
+    background: rgba(244, 244, 244, 0.7);
     color: #555;
     border: none;
-    padding: 8px 11px;
+    padding: 9px 12px;
     cursor: pointer;
     font-size: 12px;
     border-radius: 50%;
@@ -337,6 +342,11 @@ header i {
     right: 0;
 }
 
+.prev:hover, .next:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
 .product-card a:hover {
   color: #ffffff;
   background: var(--color-primary);
@@ -347,7 +357,7 @@ header i {
 }
 
 .product-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .product-card img {
@@ -370,11 +380,6 @@ header i {
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s;
-}
-
-.pagination .prev-page:hover,
-.pagination .next-page:hover {
-    background-color: var(--color-primary);
 }
 
 .product-card hr {
@@ -400,26 +405,26 @@ header i {
 
 .show-button {
     background-color: #ffffff;
-    color: #013966;
-    border: 1px dashed #013966;
+    color: var(--color-primary);
+    border: 1px dashed var(--color-primary);
     padding: 10px 16px;
     font-size: 14px;
     border-radius: 8px;
     margin-top: 28px;
     width: 100%;
     cursor: pointer;
-    font-family: 'Vazirmatn';
+}
+
+.show-button:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-bg);
+  border: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .show-button i  {
   margin-right: 22px;
   font-size: 12px;
-}
-
-.show-button:hover {
-  background-color: #4091c3;
-  color: var(--color-bg);
-  border: none;
 }
 
 /* مزایای محصولات */
@@ -450,7 +455,7 @@ header i {
     padding: 32px;
     width: 250px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .benefit-item i {
@@ -497,25 +502,25 @@ header i {
 }
 
 .blog-item {
+    margin-bottom: 18px;
     background-color: var(--color-bg);
+    color: inherit;
+    border: 1px solid #e9e9e9;
     border-radius: 8px;
     overflow: hidden;
     flex: 1 1 calc(25% - 18px);
-    box-shadow: none;
-    transition: transform 0.3s, box-shadow 0.3s;
     text-align: right;
     display: flex;
     flex-direction: column;
     cursor: pointer;
     text-decoration: none;
-    color: inherit;
-    border: 1px solid #e9e9e9;
-    margin-bottom: 18px;
+    box-shadow: none;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .blog-item:hover {
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .blog-item img {
@@ -553,7 +558,6 @@ header i {
 }
 
 .read-more {
-    font-family: 'Vazirmatn';
     font-size: 14px;
     color: var(--color-primary);
     border: none;
@@ -570,14 +574,15 @@ header i {
 }
 
 .read-more:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-dark);
     color: var(--color-bg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* نظرات مشتریان */
 .testimonials {
     background: linear-gradient(40deg, #f0f0f0 20%, #ffffff 40%, #f9f9f9 60%, #f0f0f0 100%);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     padding: 34px 0;
     position: relative;
     z-index: 10;
@@ -607,7 +612,7 @@ header i {
     color: var(--color-text);
     flex: 0 0 33.33%;
     transition: transform 0.5s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -621,20 +626,6 @@ header i {
   text-align: center;
   font-size: 12px;
   color: #777;
-}
-
-.nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    padding: 0.5rem;
-    cursor: pointer;
-    font-size: 1.5rem;
-    z-index: 1;
 }
 
 .testimonials h2 {
@@ -720,7 +711,7 @@ header i {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -735,14 +726,13 @@ header i {
 }
 
 /* استایل آیکون‌ها و دکمه‌ها */
-.social-icons {
+.contact-icons {
     display: flex;
     justify-content: center;
-    gap: 10px;
-
+    gap: 20px;
 }
 
-.social-icons a {
+.contact-icons a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -755,9 +745,10 @@ header i {
     transition: background-color 0.3s, transform 0.3s;
 }
 
-.social-icons a:hover {
-    background-color: #007bff;
+.contact-icons a:hover {
+    background-color: var(--color-primary-dark);
     color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* افکت بزرگنمایی در زمان اسکرول */
@@ -770,7 +761,6 @@ header i {
 
 /* فرم تماس */
 .appointment {
-  background-color: var(--color-bg);
   margin: 20px 0;
   padding: 66px 0;
 }
@@ -791,7 +781,7 @@ header i {
   flex: 1 1 35%;
   display: flex;
   flex-direction: column;
-  margin-left: 28px;
+  margin-left: 38px;
 }
 
 .appointment-form {
@@ -800,11 +790,18 @@ header i {
   flex-direction: column;
 }
 
+.appointment-form i {
+  margin-right: 20px;
+  font-size: 12px;
+}
+
 .appointment-image {
-  flex: 1 1 45%;
+  flex: 1 1 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .appointment-image img {
@@ -812,7 +809,6 @@ header i {
   max-height: 100%;
   object-fit: cover;
   aspect-ratio: 4/3;
-  border-radius: 8px;
 }
 
 .appointment-form-container h2 {
@@ -842,7 +838,7 @@ header i {
 }
 
 .appointment-form button {
-  background-color: var(--color-primary);
+  background-color: #004982;
   color: var(--color-bg);
   padding: 12px 20px;
   border: none;
@@ -851,7 +847,11 @@ header i {
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
-  font-family: 'Vazirmatn';
+}
+
+.appointment-form button:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* فوتر */
@@ -867,19 +867,14 @@ footer {
     line-height: 1.5;
 }
 
-.footer-logos {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.footer-logos a {
-    display: inline-block;
-    margin: 0 14px;
+footer p {
+  font-size: 15px;
 }
 
 .footer-logos img {
     width: auto;
-    height: 86px;
+    height: 100px;
+    margin-left: 24px;
 }
 
 .footer-content {
@@ -902,8 +897,8 @@ footer {
 
 .footer-section .social-media img {
   width: 48px;
-  margin-left: 18px;
-  border-radius: 12px;
+  margin-left: 22px;
+  border-radius: 8px;
 }
 
 .company-intro {
@@ -953,12 +948,6 @@ footer {
 
 .footer-bottom a:hover {
     color: var(--color-footer-link-hover);
-}
-
-.licences img {
-  width: 82px;
-  margin: 0 12px;
-  border-radius: 12px;
 }
 
 .copywrite {
@@ -1011,6 +1000,7 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+
     .blog-item {
         width: 100%;
         margin-bottom: 20px;
