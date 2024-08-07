@@ -3,20 +3,13 @@
     --color-primary: #004982;
     --color-primary-dark: #013966;
     --color-accent: #9D0268;
-    --color-accent-dark: #6A003F;
-    --color-accent-darker: #D9D9D9;
     --color-border: #E9E9E9;
-    --color-text: #333333;
-    --color-text-light: #9D0268;
-    --color-footer-bg: #013966;
     --color-footer-text: #D9D9D9;
-    --color-footer-link: #FFFFFF;
-    --color-footer-link-hover: #D9D9D9;
+    --color-text: #333;
 }
 
-/* فونت‌ها */
 @font-face {
-    font-family: 'Vazirmatn';
+    font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
     src: url('fonts/Vazirmatn-Regular.woff2') format('woff2'),
          url('fonts/Vazirmatn-Regular.woff') format('woff'),
          url('fonts/Vazirmatn-Regular.ttf') format('truetype');
@@ -27,24 +20,29 @@
 body {
     font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
     direction: rtl;
-    background-color: var(--color-bg);
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    color: var(--color-text);
     line-height: 1.6;
 }
 
 hr {
   width: 90%;
-  border: 0.5px dashed #d9d9d9;
-  margin-right: auto;
+  border: 0.5px solid #e0e0e0;
+}
+
+a {
+  font-size: 16px;
+  color: var(--color-text);
+  text-decoration: none;
 }
 
 p {
-  text-align: justify;
+  font-size: 14px;
   line-height: 32px;
+  text-align: justify;
+}
+
+h2 {
+    color: var(--color-text);
 }
 
 input, textarea, select, button {
@@ -52,14 +50,19 @@ input, textarea, select, button {
   font-family: 'Vazirmatn';
 }
 
-/* هدر */
+button:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-bg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 header {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: var(--color-bg);
     padding: 14px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,18 +70,11 @@ header {
 }
 
 .logo {
-    margin-left: 4%;
+    margin-left: 5%;
 }
 
 .logo img {
     height: 54px;
-    margin-left: 10px;
-}
-
-.hamburger-menu, .header-button {
-    background: none;
-    border: none;
-    cursor: pointer;
 }
 
 .hamburger-menu {
@@ -86,18 +82,8 @@ header {
     font-size: 32px;
 }
 
-.header-button {
-    background-color: var(--color-primary);
-    color: var(--color-bg);
-    padding: 14px 24px;
-    border-radius: 10px;
-    font-size: 16px;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-/* منو اصلی */
 header nav {
-  margin-right: 2.5%;
+  margin-right: 5%;
 }
 
 header ul {
@@ -109,33 +95,28 @@ header ul {
 }
 
 header li {
-    margin: 0 32px;
+    margin-left: 56px;
 }
 
 header a {
     display: inline-block;
     position: relative;
-    color: var(--color-text);
-    font-weight: normal;
-    text-decoration: none;
-    font-size: 16px;
     transition: color 0.3s, transform 0.3s;
 }
 
 header a:hover {
-    color: var(--color-primary);
-    transform: scale(1.1);
+    transform: scale(1.06);
 }
 
 header i {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 12px;
     padding: 12px;
     border-radius: 50%;
     background-color: #f5f5f5;
     color: var(--color-primary);
-    margin-left: 6px;
 }
 
 /* قهرمان (Hero) */
@@ -166,28 +147,27 @@ header i {
 }
 
 .hero .container {
-    position: relative;
-    z-index: 2;
-    max-width: 860px;
+  z-index: 2;
 }
 
-.hero h2 {
+.hero h1 {
     font-size: 2.8em;
     margin-top: 62px;
-    margin-bottom: 48px;
+    margin-bottom: 38px;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 
-.hero p {
+.hero h3 {
     font-size: 2em;
-    margin-bottom: 92px;
+    margin-bottom: 86px;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    font-weight: normal;
 }
 
 .hero .button-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 22px;
 }
 
 .hero .btn {
@@ -197,22 +177,21 @@ header i {
     text-align: center;
     padding: 12px 64px;
     border-radius: 8px;
-    text-decoration: none;
     color: #fff;
     font-size: 1.1em;
     font-weight: bold;
     z-index: 2;
-    border: none;
     transition: background-color 0.3s;
 }
 
 .hero .btn .icon {
     font-size: 1.8rem;
-    margin-bottom: 14px;
+    margin: 4px 0 14px 0;
 }
 
 .hero .btn.primary {
     background-color: rgba(0, 123, 255, 0.8);
+
 }
 
 .hero .btn.primary:hover {
@@ -230,160 +209,73 @@ header i {
 
 /* محصولات */
 .products {
-    margin-top: 20px;
     padding: 20px 0;
-    background-color: var(--color-bg);
-}
-
-.products h2 {
-    text-align: right;
-    color: var(--color-text);
 }
 
 .view-options {
     text-align: left;
-    margin-bottom: 28px;
+    margin-bottom: 26px;
 }
 
 .btn-view {
-    background-color: var(--color-neutral);
+    background-color: var(--color-bg);
     color: var(--color-text);
     border: 1px solid var(--color-border);
     padding: 8px;
     margin: 0 4px;
-    cursor: pointer;
-    font-size: 0.875rem;
-    transition: background-color 0.3s, transform 0.2s;
+    font-size: 0.9rem;
     border-radius: 4px;
 }
-
-.btn-view:hover {
-    background-color: var(--color-primary);
-    color: var(--color-bg);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.btn-view img {
-    width: 24px;
-    height: auto;
-}
-
-
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-    justify-items: center;
-}
-
-.product-images button {
-    background-color: rgba(255, 255, 255, 0.4);
-    border: none;
-    color: var(--color-primary);
-    font-size: 1.2rem;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    padding: 12px;
-    border-radius: 50%;
-    transition: background-color 0.3s;
 }
 
 .product-card {
-    background-color: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: 28px;
-    text-align: center;
     transition: box-shadow 0.3s;
-}
-
-.product-card p {
-  font-size: 14px;
 }
 
 .product-carousel {
     position: relative;
-    width: 100%;
-    overflow: hidden;
 }
 
 .product-carousel img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.product-carousel img:first-child {
-    display: block;
 }
 
 .product-carousel button {
     position: absolute;
     top: 50%;
     background: rgba(244, 244, 244, 0.7);
-    color: #555;
     border: none;
-    padding: 9px 12px;
-    cursor: pointer;
-    font-size: 12px;
+    padding: 8px 14px;
     border-radius: 50%;
-    transform: translateY(-50%);
 }
 
-.product-carousel .prev {
-    left: 0;
+.next:hover, .prev:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-bg);
 }
 
 .product-carousel .next {
     right: 0;
 }
 
-.prev:hover, .next:hover {
-  background-color: var(--color-primary);
-  color: var(--color-bg);
-}
-
-.product-card a:hover {
-  color: #ffffff;
-  background: var(--color-primary);
-}
-
-.product-card h3 {
-    color: var(--color-text);
+.product-carousel .prev {
+    left: 0;
 }
 
 .product-card:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.product-card img {
-    width: 100%;
-}
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.pagination .prev-page,
-.pagination .next-page {
-    background-color: var(--color-accent);
-    color: var(--color-bg);
-    border: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-}
-
 .product-card hr {
-    margin-top: 24px;
+    margin-top: 28px;
     width: 100%;
 }
 
@@ -396,7 +288,6 @@ header i {
 .chips {
     background-color: #ffefe8;
     border: 1px solid #ffe7db;
-    color: #333333;
     padding: 6px 14px;
     border-radius: 24px;
     font-size: 12px;
@@ -404,7 +295,7 @@ header i {
 }
 
 .show-button {
-    background-color: #ffffff;
+    background-color: var(--color-bg);
     color: var(--color-primary);
     border: 1px dashed var(--color-primary);
     padding: 10px 16px;
@@ -412,14 +303,6 @@ header i {
     border-radius: 8px;
     margin-top: 28px;
     width: 100%;
-    cursor: pointer;
-}
-
-.show-button:hover {
-  background-color: var(--color-primary-dark);
-  color: var(--color-bg);
-  border: none;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .show-button i  {
@@ -432,12 +315,6 @@ header i {
     background: linear-gradient(45deg, #013966, #4091c3, #013966);
     padding: 72px 0;
     margin-top: 66px;
-}
-
-.benefits h2 {
-    text-align: center;
-    margin-bottom: 48px;
-    color: var(--color-bg);
 }
 
 .benefits-grid {
@@ -453,7 +330,7 @@ header i {
     color: var(--color-primary);
     border-radius: 12px;
     padding: 32px;
-    width: 250px;
+    width: 260px;
     text-align: center;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -472,54 +349,35 @@ header i {
     display: flex;
     align-items: center;
     gap: 82px;
-    line-height: 36px;
-    vertical-align: top;
-    text-align: justify;
-    font-size: 16px;
 }
 
 .about-content img {
     width: 280px;
-    height: auto;
 }
 
 /* وبلاگ */
 .blog {
-    padding: 40px 0;
+    padding: 24px 0;
 }
 
 .blog h2 {
-    margin-bottom: 32px;
-    font-size: 22px;
+    margin-bottom: 42px;
 }
 
 .blog-list {
     display: flex;
-    flex-wrap: wrap;
     gap: 16px;
-    justify-content: space-between;
-    margin-top: 28px;
 }
 
 .blog-item {
-    margin-bottom: 18px;
-    background-color: var(--color-bg);
     color: inherit;
     border: 1px solid #e9e9e9;
     border-radius: 8px;
-    overflow: hidden;
     flex: 1 1 calc(25% - 18px);
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    text-decoration: none;
-    box-shadow: none;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .blog-item:hover {
-    transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -527,34 +385,25 @@ header i {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    display: block;
+    border-radius: 8px 8px 0 0;
 }
 
 .blog-content {
     padding: 22px;
-    flex: 1;
-    display: flex;
     flex-direction: column;
 }
 
 .blog-content h4 {
+    margin-top: 4px;
     margin-bottom: 0;
-    margin-top: 6px;
-    font-size: 16px;
-    text-align: right;
-    direction: rtl;
 }
 
 .blog-content p {
-    font-size: 14px;
-    margin-bottom: 16px;
-    text-align: justify;
-    direction: rtl;
+    margin-bottom: 22px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .read-more {
@@ -563,35 +412,15 @@ header i {
     border: none;
     padding: 8px 18px;
     border-radius: 24px;
-    cursor: pointer;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
+    margin: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.read-more:hover {
-    background-color: var(--color-primary-dark);
-    color: var(--color-bg);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* نظرات مشتریان */
 .testimonials {
     background: linear-gradient(40deg, #f0f0f0 20%, #ffffff 40%, #f9f9f9 60%, #f0f0f0 100%);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     padding: 34px 0;
-    position: relative;
-    z-index: 10;
-}
-
-.testimonials-wrapper {
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .testimonial-grid {
@@ -603,23 +432,20 @@ header i {
 }
 
 .testimonial-item {
-    background-color: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: 20px;
-    width: 250px;
+    width: 260px;
     text-align: center;
-    color: var(--color-text);
     flex: 0 0 33.33%;
     transition: transform 0.5s ease;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .title p {
   color: var(--color-primary);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: normal;
+  text-align: center;
 }
 
 .item-time p {
@@ -631,28 +457,6 @@ header i {
 .testimonials h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
-}
-
-.testimonials-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    display: flex;
-    overflow: hidden;
-}
-
-.testimonial-item {
-    background-color: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 20px;
-    width: 250px;
-    text-align: center;
-    color: var(--color-text);
-    flex: 0 0 33.33%;
-    transition: transform 0.5s ease;
 }
 
 .rating {
@@ -666,9 +470,7 @@ header i {
 /* تیم ما */
 .team {
     padding: 68px 0;
-    background-color: #f5f5f5;
-    align-items: center;
-    text-align: center;
+    background-color: #f0f0f0;
 }
 
 .title {
@@ -683,45 +485,27 @@ header i {
   color: #666;
   font-size: 18px;
   font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.text-center {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.text-center {
-  color: #333;
+  text-align: center;
 }
 
 /* استایل‌های تیم */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    justify-content: center;
-    padding: 26px 5%;
+    gap: 24px;
+    padding: 32px 5%;
 }
 
 .team-member {
-    border: 1px solid #ddd;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.team-member p {
-  font-size: 14px;
+    transition: transform 0.3s ease;
 }
 
 .team-member img {
     width: 140px;
-    max-width: 140px;
     border-radius: 50%;
 }
 
@@ -740,52 +524,40 @@ header i {
     height: 40px;
     background-color: #f9f9f9;
     border-radius: 50%;
-    color: #333;
-    font-size: 1.2em;
-    transition: background-color 0.3s, transform 0.3s;
 }
 
 .contact-icons a:hover {
-    background-color: var(--color-primary-dark);
-    color: #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-primary-dark);
+  color: var(--color-bg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* افکت بزرگنمایی در زمان اسکرول */
 .team-member.active {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     background-color: var(--color-primary);
     color: var(--color-bg);
+    transform: scale(1.06);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
 /* فرم تماس */
 .appointment {
-  margin: 20px 0;
-  padding: 66px 0;
-}
-
-.container {
+  margin: 88px 0;
   padding: 0 5%;
 }
 
 .appointment-content {
   display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: space-between;
-  min-height: 500px;
 }
 
 .appointment-form-container {
   flex: 1 1 35%;
   display: flex;
   flex-direction: column;
-  margin-left: 38px;
+  margin-left: 32px;
 }
 
 .appointment-form {
-  flex: 1;
   display: flex;
   flex-direction: column;
 }
@@ -798,96 +570,65 @@ header i {
 .appointment-image {
   flex: 1 1 50%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .appointment-image img {
   max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  aspect-ratio: 4/3;
-}
-
-.appointment-form-container h2 {
-  margin-top: 0;
-  margin-bottom: 42px;
-  color: var(--color-text);
-  font-size: 24px;
 }
 
 .appointment-form label {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--color-text);
-  font-size: 16px;
+  margin-bottom: 12px;
 }
 
 .appointment-form input,
 .appointment-form select,
 .appointment-form textarea {
-  width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 16px;
   border: 1px solid var(--color-border);
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-size: 16px;
+  border-radius: 8px;
 }
 
 .appointment-form button {
-  background-color: #004982;
+  background-color: var(--color-primary);
   color: var(--color-bg);
   padding: 12px 20px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 8px;
   font-size: 14px;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .appointment-form button:hover {
   background-color: var(--color-primary-dark);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* فوتر */
-/* استایل فوتر */
 footer {
-    background-color: var(--color-footer-bg);
+    background-color: var(--color-primary);
     color: var(--color-footer-text);
-    margin-top: 18px;
-    padding: 44px 5%;
-    text-align: center;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    line-height: 1.5;
+    margin-top: 32px;
+    padding: 48px 5%;
 }
 
 footer p {
-  font-size: 15px;
+  font-size: 16px;
+}
+
+.footer-logos {
+  text-align: center;
 }
 
 .footer-logos img {
-    width: auto;
     height: 100px;
     margin-left: 24px;
 }
 
 .footer-content {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.footer-section {
-    flex: 1;
-    min-width: 200px;
+    gap: 48px;
+    margin-bottom: 32px;
 }
 
 .footer-section .social-media {
@@ -911,43 +652,12 @@ footer p {
 
 .company-intro h3, .site-links h3, .contact-info h3 {
     font-size: 18px;
-    margin-bottom: 12px;
-    color: var(--color-footer-link);
+    padding-bottom: 18px;
     border-bottom: 2px solid var(--color-accent);
-    padding-bottom: 8px;
-}
-
-.contact-info p, .site-links p {
-    margin: 8px 0;
 }
 
 .site-links a, .contact-info a {
     color: var(--color-footer-link);
-    text-decoration: none;
-}
-
-.site-links a:hover, .contact-info a:hover {
-    color: var(--color-footer-link-hover);
-}
-
-.footer-bottom {
-    font-size: 14px;
-    color: var(--color-footer-text);
-    margin-top: 20px;
-    text-align: center;
-}
-
-.footer-bottom p {
-    margin: 0;
-}
-
-.footer-bottom a {
-    color: var(--color-footer-link);
-    text-decoration: none;
-}
-
-.footer-bottom a:hover {
-    color: var(--color-footer-link-hover);
 }
 
 .copywrite {
@@ -956,8 +666,6 @@ footer p {
 
 .copywrite p {
   text-align: center;
-  font-size: 14px;
-  margin:12px;
 }
 
 /* ریسپانسیو */
