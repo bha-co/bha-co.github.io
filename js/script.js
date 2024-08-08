@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('productGrid').style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
         });
     });
+    $(document).ready(function(){
+  $("#header").load("../templates/header.html");
+});
 
     // 2. انیمیشن‌ها و اسکرول خودکار (Animations and Auto-Scrolling)
     // نمایش اعضای تیم با اسکرول خودکار
@@ -28,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         teamIndex = (teamIndex + 1) % teamMembers.length;
         updateActiveTeamMember();
     }, 4000);
+
 
     // کاروسل تصاویر محصولات
     document.querySelectorAll('.product-card').forEach(card => {
