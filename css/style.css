@@ -743,12 +743,16 @@ footer p {
   }
 
   .hero {
-  height: 100vh; /* ارتفاع تصویر به اندازه کل صفحه موبایل */
-  padding: 48px 24px;
-  line-height: 42px;
-  background-size: cover; /* پوشش کامل تصویر پس‌زمینه */
-  background-position: center; /* تنظیم موقعیت تصویر پس‌زمینه در مرکز */
-}
+    height: 100vh;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+  }
 
 .hero img {
   width: 100%;
