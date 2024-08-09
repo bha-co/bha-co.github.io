@@ -564,13 +564,19 @@ header i {
 
 .appointment-content {
   display: flex;
+  flex-direction: column; /* تغییر جهت برای موبایل */
+  align-items: center; /* مرکز کردن فرم */
+  padding: 0 5%;
+  gap: 20px; /* فاصله بین عکس و فرم */
 }
 
 .appointment-form-container {
-  flex: 1 1 35%;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  margin-left: 32px;
+  margin: 0; /* حذف margin برای مرکز کردن بهتر */
+  width: 100%;
+  max-width: 600px; /* محدود کردن عرض فرم */
 }
 
 .appointment-form {
@@ -584,9 +590,7 @@ header i {
 }
 
 .appointment-image {
-  flex: 1 1 50%;
-  display: flex;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  display: none; /* پنهان کردن تصویر برای موبایل */
 }
 
 .appointment-image img {
@@ -687,11 +691,10 @@ footer p {
 .copywrite p {
   text-align: center;
 }
-
 /* استایل‌های عمومی برای موبایل */
 @media only screen and (max-width: 767px) {
   body {
-    overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+    overflow-x: hidden;
   }
 
   header {
@@ -708,6 +711,7 @@ footer p {
     margin: 0 12px;
     border: none;
     background-color: #fff;
+    font-size: 32px;
   }
 
   header nav {
@@ -752,11 +756,11 @@ footer p {
     text-align: center;
   }
 
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* تنظیم نحوه قرارگیری تصویر درون عنصر */
-}
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   .hero h1 {
     font-size: 1.6em;
@@ -797,17 +801,17 @@ footer p {
   }
 
   .benefits {
-    padding: 40px 0;
-    display: none;
-  }
+  padding: 40px 0;
+}
 
-  .benefits-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+.benefits-grid {
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
 
-  .benefit-item {
-    width: 100%;
+.benefit-item {
+    padding: 24px;
     text-align: center;
   }
 
@@ -817,9 +821,8 @@ footer p {
 
   .team-grid {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
   }
-
-  /* .team-description p {} */
 
   .testimonials {
     display: none;
@@ -829,18 +832,22 @@ footer p {
     padding: 12px 32px;
   }
 
-.container h2 {
-    font-size: 18px;
-
-    margin: 22px 0;
-}
-
-.about-content p {
-  margin: 0;
-}
+  .about-content {
+    display: block;
+    text-align: center;
+  }
 
   .about-content img {
     display: none;
+  }
+
+  .container h2 {
+    font-size: 18px;
+    margin: 22px 0;
+  }
+
+  .about-content p {
+    margin: 0;
   }
 
   .appointment-content {
@@ -850,6 +857,7 @@ footer p {
   .appointment-image {
     display: none;
   }
+
   .blog-list {
     flex-direction: column;
   }
@@ -858,16 +866,54 @@ footer p {
     margin-bottom: 20px;
   }
 
+  /* فوتر */
   footer {
-    padding: 20px 5%;
-    display: none;
-  }
-
-  footer h4 {
-    font-size: 16px;
+    background-color: var(--color-primary);
+    color: var(--color-footer-text);
+    margin-top: 32px;
+    padding: 24px 5%; /* کاهش padding برای ایجاد فضای کمتر */
+    text-align: center; /* مرکز چین کردن محتوای فوتر */
   }
 
   footer p {
-    font-size: 12px;
+    font-size: 14px; /* کاهش اندازه فونت */
+    line-height: 1.4; /* کاهش ارتفاع خط */
   }
+
+  .footer-logos {
+    margin: 16px 0; /* کاهش فاصله برای جایگذاری بهتر */
+  }
+
+  .footer-logos img {
+    height: 80px; /* کاهش ارتفاع لوگو */
+    margin: 0 12px; /* کاهش فاصله بین لوگوها */
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column; /* تنظیم فوتر به صورت ستونی */
+    align-items: center; /* وسط‌چین کردن محتوا */
+    gap: 24px; /* فاصله مناسب بین بخش‌ها */
+  }
+
+  .footer-section {
+    text-align: center; /* وسط‌چین کردن متن */
+  }
+
+  .social-media {
+    display: flex;
+    justify-content: center; /* وسط‌چین کردن آیکون‌ها */
+    gap: 12px; /* فاصله مناسب بین آیکون‌ها */
+    margin: 16px 0; /* فاصله از بالا و پایین */
+  }
+
+  .social-media img {
+    width: 32px; /* کاهش اندازه آیکون‌های شبکه‌های اجتماعی */
+    border-radius: 50%;
+  }
+
+    .copywrite p {
+      font-size: 12px;
+      margin: 14px 5%;
+    }
 }
