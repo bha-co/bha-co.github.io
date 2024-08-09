@@ -609,67 +609,34 @@
     <p>&copy کلیه‌ی حقوق مادی و معنوی سایت نزد شرکت بی اِچ اِی | BHA Group محفوط می‌باشد.</p>
   </div>
   <script>
+
   function changeImage(src) {
       document.getElementById('mainImage').src = src;
     }
 
-    function showTab(tabId) {
-      const tabs = document.querySelectorAll('.product-description');
-      tabs.forEach(tab => {
-        tab.style.display = tab.id === tabId ? 'block' : 'none';
+  document.addEventListener("DOMContentLoaded", function() {
+    const tabs = document.querySelectorAll('.tab-button');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
+
+        // Remove active class from all tabs and hide all content
+        tabs.forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.product-description').forEach(tabContent => tabContent.style.display = 'none');
+
+        // Add active class to clicked tab and display corresponding content
+        this.classList.add('active');
+        targetElement.style.display = 'block';
+
+        // Scroll to the selected tab content
+        targetElement.scrollIntoView({ behavior: 'smooth' });
       });
-      const buttons = document.querySelectorAll('.tab-button');
-      buttons.forEach(button => {
-        button.classList.toggle('active', button.getAttribute('onclick').includes(tabId));
-      });
-    }
-    showTab('description');
+    });
+  });
 
-    function showTab(tabId) {
-      // مخفی کردن همه تب‌ها
-      const tabs = document.querySelectorAll('.product-description');
-      tabs.forEach(tab => tab.style.display = 'none');
-
-      // نمایش تب انتخابی
-      const activeTab = document.getElementById(tabId);
-      if (activeTab) {
-        activeTab.style.display = 'block';
-      }
-
-      // غیر فعال کردن تمام دکمه‌های تب
-      const tabButtons = document.querySelectorAll('.tab-button');
-      tabButtons.forEach(button => button.classList.remove('active'));
-
-      // فعال کردن دکمه تب انتخابی
-      const activeButton = document.querySelector(`.tab-button[data-target="${tabId}"]`);
-      if (activeButton) {
-        activeButton.classList.add('active');
-      }
-
-      // تعیین offset بر اساس اندازه صفحه
-      let offset = 0;
-      if (window.innerWidth < 768) {
-        // موبایل
-        offset = 80;
-      } else {
-        // دسکتاپ
-        offset = 100;
-      }
-
-      // موقعیت عنصر تب‌ها
-      const element = document.querySelector('.product-tabs');
-      if (element) {
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-
-        // اسکرول به موقعیت مورد نظر با در نظر گرفتن offset
-        window.scrollTo({
-          top: elementPosition - offset,
-          behavior: 'smooth'
-        });
-      }
-    }
   </script>
-
 
 </body>
 
