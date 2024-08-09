@@ -75,7 +75,7 @@ header {
 .breadcrumb {
   top: 86px;
   background-color: #014aac;
-  padding: 10px 5% 15px 0;
+  padding: 12px 5% 16px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1001; /* z-index بالا برای برودکمپ برای اینکه بالاتر از هدر قرار گیرد */
 }
