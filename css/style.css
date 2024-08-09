@@ -141,7 +141,7 @@ header i {
   position: relative;
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -158,7 +158,7 @@ header i {
   top: 0;
   left: 0;
   width: 100%;
-  height: 70vh;
+  height: 100%;
   background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
@@ -742,7 +742,7 @@ footer p {
   }
 
   .hero {
-    height: 100vh;
+    height: 80vh;
     padding: 0 24px;
     display: flex;
     flex-direction: column;
@@ -756,8 +756,7 @@ footer p {
 .hero img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* تنظیم نحوه قرارگیری تصویر درون عنصر */
-}
+  object-fit: cover;
 
   .hero h1 {
     font-size: 1.6em;
