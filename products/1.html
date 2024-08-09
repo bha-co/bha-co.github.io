@@ -549,6 +549,22 @@
     <p>&copy کلیه‌ی حقوق مادی و معنوی سایت نزد شرکت بی اِچ اِی | BHA Group محفوط می‌باشد.</p>
   </div>
   <script>
+  function changeImage(src) {
+      document.getElementById('mainImage').src = src;
+    }
+
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.product-description');
+      tabs.forEach(tab => {
+        tab.style.display = tab.id === tabId ? 'block' : 'none';
+      });
+      const buttons = document.querySelectorAll('.tab-button');
+      buttons.forEach(button => {
+        button.classList.toggle('active', button.getAttribute('onclick').includes(tabId));
+      });
+    }
+    showTab('description');
+    
     function showTab(tabId) {
       // مخفی کردن همه تب‌ها
       const tabs = document.querySelectorAll('.product-description');
