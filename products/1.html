@@ -250,6 +250,50 @@
       opacity: 1;
     }
 
+    /* استایل نظرات مشتریان */
+    .customers-reviews {
+      margin-top: 20px;
+    }
+
+    .review {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #f9f9f9;
+    }
+
+    .review h4 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .review .review-date {
+      font-size: 14px;
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    .review ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .review ul li {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    .review p {
+      font-size: 15px;
+      color: #333;
+    }
+
     @media (max-width: 768px) {
       .product-container {
         flex-direction: column;
@@ -429,17 +473,6 @@
     </ul>
     <p>نکته: در صورت نیاز به راهنمایی بیش‌تر قبل از سفارش با تیم پشتیبانی تماس بگیرید.</p>
   </div>
-  <!-- Install Instruction --------------------------------------------------------------------------------->
-  <div class="product-description" id="instruction" style="display: none;">
-    <h3>تعمیرکاران عزیز در زمان نصب به نکات زیر توجه فرمایید:</h3>
-    <ul>
-      <li><strong>به لبه‌ی داخلی کاسه نمد چسب نزنید!</strong></li>
-      <li><strong>پیش از نصب محل نصب را تراش‌کاری و تمیز نمایید.</strong></li>
-      <li><strong>پیش از نصب لبه‌ی بیرونی را کمی با روغن چرب نمایید.</strong></li>
-      <li><strong>در زمان نصب از ضربه‌های مکرر به‌خصوص با ابزارهای نوک تیز خودداری نمایید!</strong></li>
-    </ul>
-    <p>نکته: عدم نصب صحیح، چسب زدن به لبه‌ی داخلی و غیره موجب ابطال گارانتی محصول می‌شود! در صورت نیاز به راهنمایی بیش‌تر با تیم پشتیبانی تماس برقرار نمایید.</p>
-  </div>
   <!-- Warantty --------------------------------------------------------------------------------->
   <div class="product-description" id="warranty" style="display: none;">
     <h3>شرایط گارانتی</h3>
@@ -451,16 +484,43 @@
     </ul>
     <p>نکته: عدم نصب صحیح، چسب زدن به لبه‌ی داخلی و غیره موجب ابطال گارانتی محصول می‌شود! در صورت نیاز به راهنمایی بیش‌تر با تیم پشتیبانی تماس برقرار نمایید.</p>
   </div>
+  <!-- Install Instruction --------------------------------------------------------------------------------->
+  <div class="product-description" id="instruction" style="display: none;">
+    <h3>تعمیرکاران عزیز در زمان نصب به نکات زیر توجه فرمایید:</h3>
+    <ul>
+      <li><strong>به لبه‌ی داخلی کاسه نمد چسب نزنید!</strong></li>
+      <li><strong>پیش از نصب محل نصب را تراش‌کاری و تمیز نمایید.</strong></li>
+      <li><strong>پیش از نصب لبه‌ی بیرونی را کمی با روغن چرب نمایید.</strong></li>
+      <li><strong>در زمان نصب از ضربه‌های مکرر به‌خصوص با ابزارهای نوک تیز خودداری نمایید!</strong></li>
+    </ul>
+    <p>نکته: عدم نصب صحیح، چسب زدن به لبه‌ی داخلی و غیره موجب ابطال گارانتی محصول می‌شود! در صورت نیاز به راهنمایی بیش‌تر با تیم پشتیبانی تماس برقرار نمایید.</p>
+  </div>
   <!-- Reviews --------------------------------------------------------------------------------->
-  <div class="customers-reviews" id="reviews" style="display: none;">
-    <h3>نظر مشتریان</h3>
-    <div class="review">
-      <p>مشتری ۱: این کاسه نمد کیفیت بسیار بالایی دارد و توانسته مشکل نشت روغن خودروی من را به‌طور کامل حل کند. خیلی راضی هستم!</p>
-    </div>
-    <div class="review">
-      <p>مشتری ۲: نصب و استفاده از این کاسه نمد بسیار آسان بود و عملکرد فوق‌العاده‌ای دارد. توصیه می‌کنم به دیگران نیز.</p>
+  <div class="product-description" id="reviews">
+    <h3>نظرات مشتریان:</h3>
+    <div class="customers-reviews">
+      <div class="review">
+        <h4>تهران پارت</h4>
+        <p class="review-date">۱۲ روز پیش</p>
+        <ul>
+          <li>سرعت عمل در ارسال کالا</li>
+          <li>بسته‌بندی مناسب کالا</li>
+          <li>امکان تست محصول پیش از دریافت</li>
+        </ul>
+      </div>
+      <div class="review">
+        <h4>تهران پارت</h4>
+        <p class="review-date">۱۲ روز پیش</p>
+        <p>از کیفت محصول رضایت داشتم و تعدادی خریداری کردم. امیدوارم روی ماشین‌ها خوب جواب بده.</p>
+        <ul>
+          <li>سرعت عمل در ارسال کالا</li>
+          <li>بسته‌بندی مناسب کالا</li>
+          <li>امکان تست محصول پیش از دریافت</li>
+        </ul>
+      </div>
     </div>
   </div>
+
   <hr>
   <!-- Blog --------------------------------------------------------------------------------->
   <section class="blog">
@@ -564,7 +624,7 @@
       });
     }
     showTab('description');
-    
+
     function showTab(tabId) {
       // مخفی کردن همه تب‌ها
       const tabs = document.querySelectorAll('.product-description');
