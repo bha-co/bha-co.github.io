@@ -558,25 +558,18 @@ header i {
 
 /* فرم تماس */
 .appointment {
-  margin: 88px 0;
+  margin: 32px 0;
   padding: 0 5%;
 }
 
 .appointment-content {
   display: flex;
-  flex-direction: column; /* تغییر جهت برای موبایل */
-  align-items: center; /* مرکز کردن فرم */
-  padding: 0 5%;
-  gap: 20px; /* فاصله بین عکس و فرم */
 }
 
 .appointment-form-container {
-  flex: 1;
+  flex: 1 1 35%;
   display: flex;
   flex-direction: column;
-  margin: 0; /* حذف margin برای مرکز کردن بهتر */
-  width: 100%;
-  max-width: 600px; /* محدود کردن عرض فرم */
 }
 
 .appointment-form {
@@ -590,7 +583,10 @@ header i {
 }
 
 .appointment-image {
-  display: none; /* پنهان کردن تصویر برای موبایل */
+  flex: 1 1 50%;
+  display: flex;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin-right: 32px;
 }
 
 .appointment-image img {
@@ -658,7 +654,7 @@ footer p {
 
 .footer-section .social-media img {
   width: 48px;
-  margin-left: 22px;
+  margin: 0 8px;
   border-radius: 8px;
 }
 
@@ -691,12 +687,14 @@ footer p {
 .copywrite p {
   text-align: center;
 }
-/* استایل‌های عمومی برای موبایل */
+/* ----- استایل‌های عمومی برای موبایل ----- */
 @media only screen and (max-width: 767px) {
+  /* ----- استایل‌های عمومی ----- */
   body {
     overflow-x: hidden;
   }
 
+  /* ----- هدر ----- */
   header {
     flex-direction: column;
     align-items: flex-start;
@@ -734,6 +732,7 @@ footer p {
     padding: 12px;
   }
 
+  /* ----- نوار جستجو (Breadcrumb) ----- */
   .breadcrumb {
     top: 50px;
     padding: 12px 5%;
@@ -744,6 +743,7 @@ footer p {
     margin: 4px;
   }
 
+  /* ----- Hero ----- */
   .hero {
     height: 90vh;
     padding: 0 24px;
@@ -784,12 +784,13 @@ footer p {
     font-size: 10px;
   }
 
+  /* ----- محصولات ----- */
   .products {
     padding: 12px 5%;
   }
 
   .view-options {
-    display: none;
+
   }
 
   .product-grid {
@@ -800,21 +801,23 @@ footer p {
     padding: 16px;
   }
 
+  /* ----- مزایای محصولات ----- */
   .benefits {
-  padding: 40px 0;
-}
+    padding: 32px 0;
+  }
 
-.benefits-grid {
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
+  .benefits-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
 
-.benefit-item {
+  .benefit-item {
     padding: 24px;
     text-align: center;
   }
 
+  /* ----- تیم ----- */
   .team {
     padding: 40px 5%;
   }
@@ -824,10 +827,12 @@ footer p {
     gap: 24px;
   }
 
+  /* ----- نظرات ----- */
   .testimonials {
     display: none;
   }
 
+  /* ----- درباره ----- */
   .about {
     padding: 12px 32px;
   }
@@ -835,10 +840,6 @@ footer p {
   .about-content {
     display: block;
     text-align: center;
-  }
-
-  .about-content img {
-    display: none;
   }
 
   .container h2 {
@@ -850,6 +851,11 @@ footer p {
     margin: 0;
   }
 
+  .about img {
+    display: none;
+  }
+
+  /* ----- وقت ملاقات ----- */
   .appointment-content {
     padding: 0;
   }
@@ -858,6 +864,7 @@ footer p {
     display: none;
   }
 
+  /* ----- بلاگ ----- */
   .blog-list {
     flex-direction: column;
   }
@@ -866,54 +873,54 @@ footer p {
     margin-bottom: 20px;
   }
 
-  /* فوتر */
+  /* ----- فوتر ----- */
   footer {
     background-color: var(--color-primary);
     color: var(--color-footer-text);
     margin-top: 32px;
-    padding: 24px 5%; /* کاهش padding برای ایجاد فضای کمتر */
-    text-align: center; /* مرکز چین کردن محتوای فوتر */
+    padding: 24px 5%;
+    text-align: center;
   }
 
   footer p {
-    font-size: 14px; /* کاهش اندازه فونت */
-    line-height: 1.4; /* کاهش ارتفاع خط */
+    font-size: 14px;
+    line-height: 1.4;
   }
 
   .footer-logos {
-    margin: 16px 0; /* کاهش فاصله برای جایگذاری بهتر */
+    margin: 16px 0;
   }
 
   .footer-logos img {
-    height: 80px; /* کاهش ارتفاع لوگو */
-    margin: 0 12px; /* کاهش فاصله بین لوگوها */
+    height: 80px;
+    margin: 0 12px;
   }
 
   .footer-content {
     display: flex;
-    flex-direction: column; /* تنظیم فوتر به صورت ستونی */
-    align-items: center; /* وسط‌چین کردن محتوا */
-    gap: 24px; /* فاصله مناسب بین بخش‌ها */
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
   }
 
   .footer-section {
-    text-align: center; /* وسط‌چین کردن متن */
+    text-align: center;
   }
 
   .social-media {
     display: flex;
-    justify-content: center; /* وسط‌چین کردن آیکون‌ها */
-    gap: 12px; /* فاصله مناسب بین آیکون‌ها */
-    margin: 16px 0; /* فاصله از بالا و پایین */
+    justify-content: center;
+    gap: 12px;
+    margin: 16px 0;
   }
 
   .social-media img {
-    width: 32px; /* کاهش اندازه آیکون‌های شبکه‌های اجتماعی */
+    width: 32px;
     border-radius: 50%;
   }
 
-    .copywrite p {
-      font-size: 12px;
-      margin: 14px 5%;
-    }
+  .copywrite p {
+    font-size: 12px;
+    margin: 14px 5%;
+  }
 }

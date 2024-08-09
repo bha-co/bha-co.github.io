@@ -12,13 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('productGrid').style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
         });
     });
-    $(document).ready(function(){
-  $("#header").load("../templates/header.html");
-});
+
+    // بارگذاری هدر با استفاده از jQuery
+    $(function() {
+        $("#header").load("../templates/header.html");
+    });
 
     // 2. انیمیشن‌ها و اسکرول خودکار (Animations and Auto-Scrolling)
     // نمایش اعضای تیم با اسکرول خودکار
-    const teamMembers = Array.from(document.querySelectorAll('.team-member'));
+    const teamMembers = document.querySelectorAll('.team-member');
     let teamIndex = 0;
 
     function updateActiveTeamMember() {
@@ -32,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         updateActiveTeamMember();
     }, 4000);
 
-
     // کاروسل تصاویر محصولات
     document.querySelectorAll('.product-card').forEach(card => {
         let currentImageIndex = 0;
@@ -42,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function showImage(index) {
             images.forEach((img, i) => {
-                img.classList.toggle('active', i === index);
                 img.style.display = i === index ? 'block' : 'none';
             });
         }
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // اسکرول خودکار نظرات مشتریان
-    const testimonials = Array.from(document.querySelectorAll('.testimonial-item'));
+    const testimonials = document.querySelectorAll('.testimonial-item');
     let currentIndex = 0;
 
     function updateVisibleTestimonials() {
