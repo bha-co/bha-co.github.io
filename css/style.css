@@ -689,60 +689,176 @@ footer p {
   text-align: center;
 }
 
-/* ریسپانسیو */
-@media (max-width: 991px) {
+/* استایل‌های عمومی برای موبایل */
+@media only screen and (max-width: 767px) {
+  body {
+    overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+  }
+
+  /* هدر */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    display: none;
+  }
+
   .hamburger-menu {
     display: block;
+    margin: 0 12px;
+    border: none;
+    background-color: #fff;
   }
 
-  nav ul {
+  header nav {
     display: none;
   }
 
-  .header-button {
-    display: none;
-  }
-
-  nav ul.open {
-    display: block;
-    background-color: var(--color-bg);
-    position: absolute;
-    top: 64px;
-    right: 0;
+  header ul {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    padding: 20px 0;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 999;
   }
 
-  nav ul li {
+  header li {
+    margin: 0;
     text-align: center;
-    margin: 10px 0;
+  }
+
+  header a {
+    display: block;
+    padding: 12px;
+  }
+
+  .breadcrumb {
+    top: 50px;
+    padding: 12px 5%;
+  }
+
+  .breadcrumb a {
+    font-size: 14px;
+    margin: 4px;
   }
 
   .hero {
-    text-align: center;
-    padding: 20px;
+    height: auto;
+    padding: 48px 24px;
+    line-height: 42px;
   }
 
-  .hero h2 {
-    font-size: 1.8em;
+  .hero h1 {
+    font-size: 1.6em;
+    margin-top: 56px;
+    margin-bottom: 48px;
+
   }
 
-  .hero p {
-    font-size: 1.4em;
+  .hero h3 {
+    font-size: 1.5em;
+    margin-bottom: 96px;
   }
 
-  .team-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  .hero .btn {
+    padding: 12px 18px;
+    font-size: 0.8em;
+    line-height: 22px;
+    margin-bottom: 24px;
+  }
+
+  .button-container i {
+    font-size: 10px;
+  }
+
+  .products {
+    padding: 12px 5%;
+  }
+
+  .view-options {
+    display: none;
   }
 
   .product-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .product-card {
+    padding: 16px;
+  }
+
+  .benefits {
+    padding: 40px 0;
+    display: none;
+  }
+
+  .benefits-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefit-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .team {
+    padding: 40px 5%;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  /* .team-description p {} */
+
+  .testimonials {
+    display: none;
+  }
+
+  .about {
+    padding: 12px 32px;
+  }
+
+.container h2 {
+    font-size: 18px;
+
+    margin: 22px 0;
+}
+
+.about-content p {
+  margin: 0;
+}
+
+  .about-content img {
+    display: none;
+  }
+
+  .appointment-content {
+    padding: 0;
+  }
+
+  .appointment-image {
+    display: none;
+  }
+  .blog-list {
+    flex-direction: column;
   }
 
   .blog-item {
-    width: 100%;
     margin-bottom: 20px;
+  }
+
+  footer {
+    padding: 20px 5%;
+    display: none;
+  }
+
+  footer h4 {
+    font-size: 16px;
+  }
+
+  footer p {
+    font-size: 12px;
   }
 }
