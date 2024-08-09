@@ -549,41 +549,21 @@
     <p>&copy کلیه‌ی حقوق مادی و معنوی سایت نزد شرکت بی اِچ اِی | BHA Group محفوط می‌باشد.</p>
   </div>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const tabButtons = document.querySelectorAll('.tab-button');
-      const tabContents = document.querySelectorAll('.product-description');
-      tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          tabButtons.forEach(btn => btn.classList.remove('active'));
-          tabContents.forEach(content => content.style.display = 'none');
-          button.classList.add('active');
-          document.getElementById(button.dataset.target).style.display = 'block';
-        });
-      });
-    });
+  function changeImage(src) {
+    document.getElementById('mainImage').src = src;
+  }
 
-    function showTab(tabId) {
-      // مخفی کردن همه تب‌ها
-      var tabs = document.querySelectorAll('.product-description');
-      tabs.forEach(function (tab) {
-        tab.style.display = 'none';
-      });
-      // نمایش تب انتخاب شده
-      var activeTab = document.getElementById(tabId);
-      if (activeTab) {
-        activeTab.style.display = 'block';
-        // اسکرول به ابتدای تب
-        activeTab.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
-      // تنظیم دکمه فعال
-      var buttons = document.querySelectorAll('.tab-button');
-      buttons.forEach(function (button) {
-        button.classList.remove('active');
-      });
-      document.querySelector('.tab-button-' + tabId).classList.add('active');
-    }
+  function showTab(tabId) {
+    const tabs = document.querySelectorAll('.product-description');
+    tabs.forEach(tab => {
+      tab.style.display = tab.id === tabId ? 'block' : 'none';
+    });
+    const buttons = document.querySelectorAll('.tab-button');
+    buttons.forEach(button => {
+      button.classList.toggle('active', button.getAttribute('onclick').includes(tabId));
+    });
+  }
+  showTab('description');
   </script>
 </body>
 
