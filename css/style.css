@@ -743,16 +743,23 @@ footer p {
   }
 
   .hero {
-    height: auto;
-    padding: 48px 24px;
-    line-height: 42px;
-  }
+  height: 100vh; /* ارتفاع تصویر به اندازه کل صفحه موبایل */
+  padding: 48px 24px;
+  line-height: 42px;
+  background-size: cover; /* پوشش کامل تصویر پس‌زمینه */
+  background-position: center; /* تنظیم موقعیت تصویر پس‌زمینه در مرکز */
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* تنظیم نحوه قرارگیری تصویر درون عنصر */
+}
 
   .hero h1 {
     font-size: 1.6em;
     margin-top: 56px;
     margin-bottom: 48px;
-
   }
 
   .hero h3 {
