@@ -1,17 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
   const hamburgerMenu = document.querySelector('.hamburger-menu');
   const header = document.querySelector('header');
+  const body = document.querySelector('body');
 
   hamburgerMenu.addEventListener('click', function() {
     header.classList.toggle('menu-opened');
+    body.classList.toggle('no-scroll'); // اضافه کردن یا حذف کلاس no-scroll به بادی
   });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    const body = document.querySelector('body');
+
     // 1. تعامل با رابط کاربری (UI Interactions)
     // منوی موبایل
     document.querySelector('.hamburger-menu').addEventListener('click', function() {
         document.querySelector('nav').classList.toggle('open');
+        body.classList.toggle('no-scroll'); // اضافه کردن یا حذف کلاس no-scroll به بادی
     });
 
     // تغییر نمای گرید محصولات
