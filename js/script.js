@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. تعامل با رابط کاربری (UI Interactions)
     // منوی موبایل
     document.querySelector('.hamburger-menu').addEventListener('click', function() {
-        document.querySelector('nav').classList.toggle('active');
+        document.querySelector('nav').classList.toggle('open');
     });
 
     // تغییر نمای گرید محصولات

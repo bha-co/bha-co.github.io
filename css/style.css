@@ -716,6 +716,13 @@ footer p {
     font-size: 32px;
   }
 
+  .open {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
   header nav {
     display: none;
     width: 100%;
@@ -726,7 +733,7 @@ footer p {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
-  header nav.active {
+  header nav.open {
     display: block;
   }
 
