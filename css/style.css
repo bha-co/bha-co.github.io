@@ -687,14 +687,14 @@ footer p {
 .copywrite p {
   text-align: center;
 }
-/* ----- استایل‌های عمومی برای موبایل ----- */
+
+
 @media only screen and (max-width: 767px) {
-  /* ----- استایل‌های عمومی ----- */
+
   body {
     overflow-x: hidden;
   }
 
-  /* ----- هدر ----- */
   header {
     flex-direction: column;
     align-items: flex-start;
@@ -716,24 +716,38 @@ footer p {
     font-size: 32px;
   }
 
+  .active {
+    height: 100vh;
+    margin: 2px 0 0 0;
+  }
+
   header nav {
     display: none;
+    width: 100%;
+    background-color: var(--color-bg);
+    position: absolute;
+    top: 64px;
+    right: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  header nav.active {
+    display: block;
   }
 
   header ul {
-    display: flex;
     flex-direction: column;
-    width: 100%;
+    align-items: flex-start;
   }
 
   header li {
-    margin: 0;
-    text-align: center;
+    text-align: right;
+    padding: 12px 16px;
   }
 
   header a {
-    display: block;
-    padding: 12px;
+    width: 100%;
+    padding: 12px 0;
   }
 
   /* ----- نوار جستجو (Breadcrumb) ----- */
@@ -807,18 +821,21 @@ footer p {
 
   /* ----- مزایای محصولات ----- */
   .benefits {
-    padding: 32px 0;
+    overflow: hidden;
   }
 
   .benefits-grid {
+    width: 100%;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
+
   }
 
   .benefit-item {
-    padding: 24px;
-    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 18px;
   }
 
   /* ----- تیم ----- */
@@ -831,12 +848,10 @@ footer p {
     gap: 24px;
   }
 
-  /* ----- نظرات ----- */
   .testimonials {
     display: none;
   }
 
-  /* ----- درباره ----- */
   .about {
     padding: 12px 32px;
   }
@@ -859,7 +874,6 @@ footer p {
     display: none;
   }
 
-  /* ----- وقت ملاقات ----- */
   .appointment-content {
     padding: 0;
   }
@@ -868,7 +882,6 @@ footer p {
     display: none;
   }
 
-  /* ----- بلاگ ----- */
   .blog-list {
     flex-direction: column;
   }
@@ -927,4 +940,5 @@ footer p {
     font-size: 12px;
     margin: 14px 5%;
   }
+
 }

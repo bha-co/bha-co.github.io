@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const header = document.querySelector('header');
+
+  hamburgerMenu.addEventListener('click', function() {
+    header.classList.toggle('menu-opened');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     // 1. تعامل با رابط کاربری (UI Interactions)
     // منوی موبایل
     document.querySelector('.hamburger-menu').addEventListener('click', function() {
