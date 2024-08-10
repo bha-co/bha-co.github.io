@@ -716,12 +716,6 @@ footer p {
     font-size: 32px;
   }
 
-  .active {
-    height: 100vh;
-    margin: 0;
-    top: 0;
-  }
-
   header nav {
     display: none;
     width: 100%;
