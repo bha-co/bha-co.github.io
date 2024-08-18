@@ -20,13 +20,17 @@
 
     .product-description {
       color: var(--color-text);
-      margin: 0 7%;
+      margin: 0 10%;
+      display: none;
+    }
+
+    .product-description.active {
+      display: block;
     }
 
     .product-description h3 {
       font-size: 22px;
-      margin: 30px 0;
-      margin-top: 58px;
+      margin: 52px 0 24px 0;
     }
 
     .product-description p,
@@ -60,14 +64,14 @@
       display: flex;
       justify-content: space-between;
       align-items: stretch;
-      margin: 32px 5%;
+      margin: 28px 5%;
       gap: 18px;
     }
 
     .product-images {
       flex: 0 0 35%;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       text-align: center;
     }
 
@@ -77,15 +81,15 @@
 
     .product-images .main-image {
       max-width: 320px;
-      border-radius: 8px;
-      height: auto;
-      padding: 18px;
+      height: 320px;
+      padding: 32px 20px;
     }
 
     .product-images .thumbnail-container {
       display: flex;
       flex-wrap: wrap;
       margin-right: 18px;
+      margin-top: 18px;
       gap: 8px;
     }
 
@@ -110,9 +114,9 @@
 
     .details-info {
       width: 100%;
-      padding: 12px 38px;
+      padding: 6px 38px;
       border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
     .details-info ul {
@@ -121,8 +125,7 @@
 
     .details-info li {
       margin: 22px 0;
-      color: var(--color-primary);
-      font-weight: bold;
+      color: var(--color-primary-dark);
     }
 
     .details-info hr {
@@ -133,7 +136,7 @@
       font-size: 18px;
       font-weight: bold;
       text-align: center;
-      margin: 32px 0;
+      margin: 48px 0 32px 0;
       color: #19b16a;
       border: 1.5px dashed #19b16a;
       border-radius: 12px;
@@ -143,22 +146,21 @@
     .product-usage {
       text-align: right;
       font-weight: bold;
-      margin: 32px 18px;
+      margin: 32px 18px 0 18px;
       color: #19b16a;
       border: 1.5px dashed #a91d3a;
       border-radius: 12px;
-      padding: 12px 12px;
+      padding: 0 12px;
       color: #a91d3a;
       text-align: justify;
     }
 
-    .pricing-table {
-      margin-top: 20px;
-    }
+    .pricing-table {}
 
     .pricing-table table {
       width: 100%;
       border-collapse: collapse;
+      margin: 14px 0;
     }
 
     .pricing-table th,
@@ -172,85 +174,47 @@
       background-color: #f4f4f4;
     }
 
+    .details-container {
+      margin: 48px 0;
+      background-color: #f9f9f9;
+      padding: 42px 0;
+    }
+
     .product-tabs {
-      margin: 84px 5% 52px 5%;
-      border-bottom: 2px solid #e5e5e5;
+      display: flex;
+      justify-content: center;
+    }
+
+    .product-tabs i {
+      margin-left: 8px;
     }
 
     .tab-button {
-      margin-right: 12px;
-      background-color: #f0f0f0;
-      opacity: 0.8;
-      color: #fff;
-      border: none;
-      padding: 14px 52px;
+      padding: 15px 32px;
+      border: 1px solid var(--color-primary);
+      border-radius: 8px;
+      background-color: #fff;
+      color: var(--color-primary);
       font-size: 15px;
-      border-radius: 12px 12px 0 0;
+      margin: 0 8px;
       cursor: pointer;
-      transition: background-color 0.3s, opacity 0.3s;
-    }
-
-    .tab-button-1 {
-      background-color: #02346E;
-    }
-
-    .tab-button-1:hover {
-      background-color: #02346E;
-      transform: scale(1.03);
-      transition: color 0.3s, transform 0.6s;
-    }
-
-    .tab-button-2 {
-      background-color: #4F1887;
-    }
-
-    .tab-button-2:hover {
-      background-color: #4F1887;
-      transform: scale(1.03);
-      transition: color 0.3s, transform 0.6s;
-    }
-
-    .tab-button-3 {
-      background-color: #135D66;
-    }
-
-    .tab-button-3:hover {
-      background-color: #135D66;
-      transform: scale(1.03);
-      transition: color 0.3s, transform 0.6s;
-    }
-
-    .tab-button-4 {
-      background-color: #A91D3A;
-    }
-
-    .tab-button-4:hover {
-      background-color: #A91D3A;
-      transform: scale(1.03);
-      transition: color 0.3s, transform 0.6s;
-    }
-
-    .tab-button-5 {
-      background-color: #E76F51;
-    }
-
-    .tab-button-5:hover {
-      background-color: #E76F51;
-      transform: scale(1.03);
-      transition: color 0.3s, transform 0.6s;
+      transition: background-color 0.3s;
     }
 
     .tab-button.active {
-      opacity: 1;
-      transform: none;
-      box-shadow: none;
+      background-color: #02346E;
+      color: #fff;
     }
 
     .tab-button:hover {
       opacity: 1;
     }
 
-    /* استایل نظرات مشتریان */
+    .tab-button.active:hover {
+      box-shadow: none;
+      cursor: default;
+    }
+
     .customers-reviews {
       margin-top: 20px;
     }
@@ -261,7 +225,7 @@
       margin-bottom: 20px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      background-color: #f9f9f9;
+      background-color: #fff;
     }
 
     .review h4 {
@@ -294,6 +258,45 @@
       color: #333;
     }
 
+    .support-section {
+      padding: 24px;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .support-section img {
+      width: 90px;
+    }
+
+    .support-section h3 {
+      margin: 12px 0;
+    }
+
+    .support-section p {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .support-section a {
+      background-color: var(--color-primary);
+      padding: 12px 42px;
+      color: #fff;
+      border-radius: 8px;
+    }
+
+    .product-video {
+      text-align: center;
+      align-items: center;
+    }
+
+    .product-video video {
+      width: 640px;
+      margin: 12px 0 42px 0;
+    }
+
     @media (max-width: 768px) {
       .product-container {
         flex-direction: column;
@@ -312,10 +315,6 @@
       .product-details {
         width: 100%;
         padding: 0;
-      }
-
-      .details-info {
-        padding: 0 20px;
       }
 
       .product-price {
@@ -360,7 +359,7 @@
   <div class="breadcrumb">
     <a href="../index.html">خانه</a>
     <a>></a>
-    <a>کاسه نمد پلوس کوچک</a>
+    <a>کاسه نمد کوچک پلوس</a>
   </div>
   <!-- Part One --------------------------------------------------------------------------------->
   <section class="product-container">
@@ -372,7 +371,9 @@
         <img src="../img/products/product1-3.png" alt="تصویر ۳" onclick="changeImage('../img/products/product1-3.png')" loading="lazy">
         <img src="../img/products/product1-4.png" alt="تصویر ۴" onclick="changeImage('../img/products/product1-4.png')" loading="lazy">
       </div>
-      <div class="product-usage">نکته: این محصول مناسب خودروهای خانواده‌ی پژو ۴۰۵ و زانتیا می‌باشد!</div>
+      <div class="product-usage">
+        <p> نکته: این محصول مناسب خودروهای خانواده‌ی پژو ۴۰۵ و زانتیا می‌باشد! </p>
+      </div>
     </div>
     <div class="product-details">
       <div class="details-info">
@@ -381,12 +382,12 @@
           <li>جلوگیری از نشتی روغن در شرایط حرارتی بالا</li>
           <li>جلوگیری از نشتی روغن در شرایط فشار و دورهای بالا</li>
           <li>آب‌بندی کامل و جلوگیری از نفوذ گرد و غبار و آلودگی‌ها</li>
-          <li>مقاوم در برابر سایش، خوردگی‌ها و عوامل موجب خرابی</li>
+          <li>مقاوم در برابر سایش، خوردگی‌ها و عوامل ایجاد کننده خرابی</li>
         </ul>
-        <hr>
-        <div class="product-price">۲۴۹.۰۰۰ تومان / عدد</div>
+        <div class="product-price">فروش تعداد محدود: ۲۴۹.۰۰۰ تومان / عدد</div>
         <div class="pricing-table">
           <table>
+            <h4>فروش سازمانی به نمایندگان رسمی و تأمین‌کنندگان قطعات یدکی خودرو:</h4>
             <thead>
               <tr>
                 <th>تعداد</th>
@@ -396,7 +397,7 @@
             <tbody>
               <tr>
                 <td>۱ تا ۱۰ عدد</td>
-                <td>۲۴۹.۰۰۰ تومان</td>
+                <td>۲۳۹.۰۰۰ تومان</td>
               </tr>
               <tr>
                 <td>۱۱ تا ۲۵ عدد</td>
@@ -404,124 +405,199 @@
               </tr>
               <tr>
                 <td>۲۶ تا ۵۰ عدد</td>
-                <td>۲۱۹.۰۰۰ تومان</td>
+                <td>۲۲۴.۰۰۰ تومان</td>
               </tr>
               <tr>
-                <td>بیش‌تر از ۵۱ عدد</td>
-                <td>۲۰۹.۰۰۰ تومان</td>
+                <td>۵۱ عدد به بالا</td>
+                <td>۲۱۹.۰۰۰ تومان</td>
               </tr>
             </tbody>
           </table>
-          <p>نکته: امکان خرید در بسته‌بندی چند عددی(۲۰ تایی) نیز فراهم است که هزینه‌ی بسته‌بندی تک عددی از آن کسر می‌گردد.</p>
+          <p>نکته: کلیه‌ی کاسه نمدها با حاشیه‌ی سود اندک ۱۰ ٪ عرضه می‌شوند!</p>
         </div>
       </div>
     </div>
   </section>
   <!-- Product Tabs --------------------------------------------------------------------------------->
-  <div class="product-tabs">
-    <button class="tab-button tab-button-1 active" data-target="description" onclick="showTab('description')">اطلاعات محصول</button>
-    <button class="tab-button tab-button-2" data-target="car-types" onclick="showTab('car-types')">نوع خودرو</button>
-    <button class="tab-button tab-button-3" data-target="warranty" onclick="showTab('warranty')">شرایط گارانتی</button>
-    <button class="tab-button tab-button-4" data-target="instruction" onclick="showTab('instruction')">دستورالعمل تعمیرکاران</button>
-    <button class="tab-button tab-button-5" data-target="reviews" onclick="showTab('reviews')">نظرات مشتریان</button>
-  </div>
-  <!-- Product Description --------------------------------------------------------------------------------->
-  <div class="product-description" id="description">
-    <h3>کاسه نمد پلوس کوچک - شرکت BHA</h3>
-    <p>کاسه نمد یا <strong>Oil Seal</strong> یکی از اجزای حیاتی در سیستم‌های مختلف خودروها و ماشین‌آلات صنعتی است. این قطعه حیاتی به‌طور ویژه برای جلوگیری از نشت سیالاتی مانند روغن و ورود آلودگی‌ها به محفظه‌های حاوی سیالات طراحی شده است. کاسه نمد پلوس کوچک، به‌عنوان یکی از انواع پیشرفته این قطعه، در محل اتصال پلوس و دیفرانسیل یا جعبه‌دنده خودرو قرار می‌گیرد و نقش اساسی در عملکرد بهینه و طول عمر سیستم‌های انتقال قدرت ایفا می‌کند.</p>
-    <h3>کاربرد و اهمیت کاسه نمد پلوس کوچک</h3>
-    <p> در خودروهای مدرن مانند پژو 405، سمند، پارس با جعبه فرمان سری پژو و همچنین مدل‌های زانتیا و...، از کاسه نمد پلوس کوچک به‌عنوان یکی از اجزای اصلی استفاده می‌شود. در خودروهای دیگر، مانند خانواده پراید و تیبا، از کاسه نمدهای هم سایز به کار می‌رود. خرابی کاسه نمد یکی از علل اصلی نشتی روغن در خودروها است که نشان‌دهنده زمان تعویض این قطعه حیاتی می‌باشد. کاسه نمد پلوس کوچک به‌عنوان یک مانع فیزیکی با کیفیت، از نشت روغن از جعبه‌دنده و محفظه دیفرانسیل جلوگیری می‌کند. این قطعه با ایجاد یک مهر و موم قوی و دقیق، از ورود گرد و خاک و ذرات آلاینده به داخل گیربکس و سیستم‌های انتقال قدرت ممانعت می‌کند. این ویژگی‌ها موجب افزایش عمر مفید گیربکس و کاهش نیاز به تعمیرات مکرر می‌شود.</p>
-    <h3>ویژگی‌ها و مزایای ویتون در تولید کاسه نمد</h3>
-    <p><strong>ویتون (Viton)</strong>، نوعی لاستیک مصنوعی با ویژگی‌های استثنایی است که به‌طور گسترده در تولید کاسه نمدهای با کیفیت بالا استفاده می‌شود. این ماده به دلیل ویژگی‌های منحصر به فرد خود، مزایای زیادی نسبت به سایر مواد اولیه دارد:</p>
-    <ul>
-      <li><strong>مقاومت حرارتی بالا</strong>: ویتون قادر است دماهای بسیار بالا را بدون تغییر خواص خود تحمل کند. این ویژگی باعث می‌شود که کاسه نمدهای ساخته شده از ویتون در شرایط دمایی بالا، مانند موتورهای با کارایی بالا، عملکرد پایدار و طولانی‌مدتی داشته باشند.</li>
-      <li><strong>مقاومت شیمیایی عالی</strong>: ویتون در برابر انواع مواد شیمیایی، از جمله روغن‌ها، سوخت‌ها و مواد شیمیایی صنعتی، مقاومت بالایی دارد. این خصوصیت باعث می‌شود که کاسه نمدهای ویتونی در برابر خوردگی و آسیب‌های شیمیایی مقاومت کنند و عملکرد بهینه خود را حفظ کنند.</li>
-      <li><strong>مقاومت در برابر سایش</strong>: ویتون دارای مقاومت بالایی در برابر سایش و فرسایش است، که موجب افزایش طول عمر کاسه نمد و کاهش نیاز به تعویض مکرر می‌شود.</li>
-      <li><strong>مقاومت در برابر فشار</strong>: ویتون به دلیل خاصیت الاستیک و انعطاف‌پذیری بالای خود، قادر است فشارهای بالا را به‌خوبی تحمل کند، که این ویژگی در محیط‌های با فشار بالا و دماهای متغیر بسیار مهم است.</li>
-      <li><strong>حفظ شکل و دوام طولانی‌مدت</strong>: ویتون دارای خاصیت "حافظه پلاستیکی" است، به این معنی که در صورت حرارت دادن و تغییر شکل، به فرم اولیه خود بازمی‌گردد. این ویژگی باعث می‌شود که کاسه نمدها به‌طور مؤثر عملکرد خود را حتی پس از استفاده طولانی‌مدت حفظ کنند.</li>
-    </ul>
-    <h3>اجزای اصلی کاسه نمد</h3>
-    <ul>
-      <li><strong>پلاستیک حرارت‌دیده</strong>: کاسه نمد از ماده پلاستیکی با کیفیت بالا و حرارت‌دیده تولید شده است که به آن توانایی تحمل دماهای بالا و تغییرات حرارتی را می‌دهد.</li>
-      <li><strong>فنر کربنایز شده</strong>: فنر به کار رفته در کاسه نمد، کربنایز شده و با خواص ارتجاعی بالا، به کاسه نمد حالت کشسانی و انعطاف‌پذیری می‌دهد تا از نشت سیال جلوگیری کند و در عین حال دوام بالایی داشته باشد.</li>
-    </ul>
-    <p>برای مقاومت در برابر دما، فشار و مواد شیمیایی، از پلاستیک‌های با کیفیت و فنرهای کربنایز شده استفاده می‌شود. این قطعه در قسمت‌های مختلف خودرو از جمله ورودی و خروجی گیربکس، پلوس، میل لنگ، شیر فرمان و سوپاپ‌ها به کار می‌رود و نقش کلیدی در عملکرد بهینه سیستم‌ها ایفا می‌کند.</p>
-    <h3>عوامل خرابی کاسه نمد پلوس</h3>
-    <ul>
-      <li><strong>روغن و قدرت تحمل شفت و سوراخ</strong>: استفاده از روغن‌های ناپایدار و تحمل پایین شفت می‌تواند باعث خرابی کاسه نمد و کاهش عمر مفید آن شود.</li>
-      <li><strong>سرعت شفت و رطوبت</strong>: سرعت بالا و رطوبت زیاد می‌تواند به فرسودگی زودهنگام کاسه نمد منجر شود.</li>
-      <li><strong>درجه حرارت</strong>: حرارت بالاتر از حد مجاز می‌تواند باعث عملکرد ضعیف و وارفتگی کاسه نمد شود.</li>
-      <li><strong>فشار داخلی</strong>: فشار زیاد می‌تواند باعث تکه‌تکه شدن و خرد شدن کاسه نمد شود.</li>
-      <li><strong>سختی شفت</strong>: سختی بالای شفت می‌تواند به فرسودگی سریع کاسه نمد منجر شود.</li>
-      <li><strong>ناهمواری شفت</strong>: محوریت ناهموار شفت از عمر کاسه نمد می‌کاهد و باعث فرسایش آن می‌شود.</li>
-    </ul>
-    <h3>کاسه نمدهای مدرن و ترکیب مواد</h3>
-    <p>با توجه به نیازهای مدرن موتورهای خودرو، کاسه نمدها با استفاده از مواد پیشرفته مانند Viton تولید می‌شوند که دارای ویژگی‌های برجسته‌ای از جمله مقاومت بالا در برابر حرارت، فشار و مواد شیمیایی هستند. Viton به دلیل ویژگی‌های حرارتی و شیمیایی عالی، به‌طور گسترده‌ای در شرایط سخت و محیط‌های صنعتی به کار می‌رود. این مواد حتی در شرایط کمبود روانکاری نیز عملکرد عالی را حفظ می‌کنند و از نظر عمر مفید و کارایی، مزیت‌های رقابتی چشمگیری دارند.</p>
-    <h3>کاسه نمدهای یکپارچه</h3>
-    <p>کاسه نمدهای یکپارچه نسل جدیدی از این قطعات هستند که به دلیل طراحی مدرن خود، زمان تولید موتورهای سریالی را به‌طور قابل توجهی کاهش می‌دهند. این کاسه نمدها با شفت در تعامل بوده و دارای نوار لاستیکی یا نمدی اضافی هستند که به‌عنوان یک مانع موثر در برابر ذرات آلودگی عمل می‌کند. برخی از این کاسه نمدها حتی با حسگرهای چرخش شفت تجهیز شده‌اند، که باعث افزایش دقت و کنترل در سیستم‌های پیچیده‌تر می‌شود.</p>
-    <h3>نتیجه‌گیری</h3>
-    <p>کاسه نمد پلوس کوچک، یکی از اجزای کلیدی و حیاتی در سیستم‌های مختلف خودرو و ماشین‌آلات صنعتی است که با جلوگیری از نشت روغن و ورود آلودگی‌ها به محفظه‌های سیالات، عملکرد بهینه و طول عمر سیستم‌ها را تضمین می‌کند. شرکت BHA با استفاده از بهترین مواد و تکنولوژی‌های مدرن، کاسه نمدهایی با کیفیت بالا و دوام بیشتر ارائه می‌دهد که نیازهای مختلف مشتریان را برآورده می‌کند و به‌ویژه در زمینه‌های خودرویی از جمله زانتیا و مدل‌های مشابه، عملکرد بی‌نظیری را تضمین می‌نماید.</p>
-  </div>
-  <!-- car-types --------------------------------------------------------------------------------->
-  <div class="product-description" id="car-types" style="display: none;">
-    <h3>این محصول قابل استفاده برای خودروی‌های زیر می‌باشد:</h3>
-    <ul>
-      <li><strong>پژو ۴۰۵ (تمامی مدل‌ها)</strong></li>
-      <li><strong>پژو ۲۰۶ (تمامی مدل‌ها)</strong></li>
-      <li><strong>خانواده‌ی سمند(ال ایکس - سورن و غیره)</strong></li>
-      <li><strong>زانتیا ۱۸۰۰ و ۲۰۰۰</strong></li>
-    </ul>
-    <p>نکته: در صورت نیاز به راهنمایی بیش‌تر قبل از سفارش با تیم پشتیبانی تماس بگیرید.</p>
-  </div>
-  <!-- Warantty --------------------------------------------------------------------------------->
-  <div class="product-description" id="warranty" style="display: none;">
-    <h3>شرایط گارانتی</h3>
-    <p>محصولات شرکت BHA دارای یک سال گارانتی از تاریخ خرید هستند. در صورت بروز هرگونه مشکل در طول این مدت، لطفاً با تیم پشتیبانی ما تماس بگیرید تا راهنمایی‌های لازم را دریافت کنید. شرایط گارانتی شامل:</p>
-    <ul>
-      <li>گارانتی فقط برای خرابی‌های ناشی از نقص تولید معتبر است.</li>
-      <li>در صورت استفاده نادرست یا نصب غیر اصولی، گارانتی باطل خواهد شد.</li>
-      <li>تعویض و تعمیرات تحت گارانتی باید توسط تعمیرکاران مجاز انجام شود.</li>
-    </ul>
-    <p>نکته: عدم نصب صحیح، چسب زدن به لبه‌ی داخلی و غیره موجب ابطال گارانتی محصول می‌شود! در صورت نیاز به راهنمایی بیش‌تر با تیم پشتیبانی تماس برقرار نمایید.</p>
-  </div>
-  <!-- Install Instruction --------------------------------------------------------------------------------->
-  <div class="product-description" id="instruction" style="display: none;">
-    <h3>تعمیرکاران عزیز در زمان نصب به نکات زیر توجه فرمایید:</h3>
-    <ul>
-      <li><strong>به لبه‌ی داخلی کاسه نمد چسب نزنید!</strong></li>
-      <li><strong>پیش از نصب محل نصب را تراش‌کاری و تمیز نمایید.</strong></li>
-      <li><strong>پیش از نصب لبه‌ی بیرونی را کمی با روغن چرب نمایید.</strong></li>
-      <li><strong>در زمان نصب از ضربه‌های مکرر به‌خصوص با ابزارهای نوک تیز خودداری نمایید!</strong></li>
-    </ul>
-    <p>نکته: عدم نصب صحیح، چسب زدن به لبه‌ی داخلی و غیره موجب ابطال گارانتی محصول می‌شود! در صورت نیاز به راهنمایی بیش‌تر با تیم پشتیبانی تماس برقرار نمایید.</p>
-  </div>
-  <!-- Reviews --------------------------------------------------------------------------------->
-  <div class="product-description" id="reviews">
-    <h3>نظرات مشتریان:</h3>
-    <div class="customers-reviews">
-      <div class="review">
-        <h4>تهران پارت</h4>
-        <p class="review-date">۱۲ روز پیش</p>
-        <ul>
-          <li>سرعت عمل در ارسال کالا</li>
-          <li>بسته‌بندی مناسب کالا</li>
-          <li>امکان تست محصول پیش از دریافت</li>
-        </ul>
+  <div class="details-container">
+    <div class="product-tabs" id="product-tabs">
+      <button class="tab-button active" data-target="description" onclick="showTab('description')">
+        <i class="fas fa-info-circle"></i> معرفی کامل محصول </button>
+      <button class="tab-button" data-target="car-types" onclick="showTab('car-types')">
+        <i class="fas fa-car"></i> مناسب برای خودرو </button>
+      <button class="tab-button" data-target="warranty" onclick="showTab('warranty')">
+        <i class="fas fa-shield-alt"></i> خدمات و ضمانت محصول </button>
+      <button class="tab-button" data-target="instruction" onclick="showTab('instruction')">
+        <i class="fas fa-tools"></i> دستورالعمل نصب تعمیرکاران </button>
+      <button class="tab-button" data-target="reviews" onclick="showTab('reviews')">
+        <i class="fas fa-star"></i> نظرات خریداران </button>
+    </div>
+    <!-- Product Description --------------------------------------------------------------------------------->
+    <div class="product-description active" id="description">
+      <h3>معرفی کاسه نمد کوچک پلوس شرکت بی اِچ اِی | BHA</h3>
+      <p>کاسه نمد یا <strong>Oil Seal</strong> یکی از اجزای حیاتی در سیستم‌های مختلف خودروها و ماشین‌آلات صنعتی است. این قطعه حیاتی به‌طور ویژه برای جلوگیری از نشت سیالاتی مانند روغن و ورود آلودگی‌ها به محفظه‌های حاوی سیالات طراحی شده است. کاسه نمد کوچک پلوس، به‌عنوان یکی از انواع پیشرفته این قطعه، در محل اتصال پلوس و دیفرانسیل یا جعبه‌دنده خودرو قرار می‌گیرد و نقش اساسی در عملکرد بهینه و طول عمر سیستم‌های انتقال قدرت ایفا می‌کند.</p>
+      <h3>کاربرد و اهمیت کاسه نمد کوچک پلوس</h3>
+      <p> در خودروهای مدرن مانند پژو 405، سمند، پارس با جعبه فرمان سری پژو و همچنین مدل‌های زانتیا و...، از کاسه نمد کوچک پلوس به‌عنوان یکی از اجزای اصلی استفاده می‌شود. در خودروهای دیگر، مانند خانواده پراید و تیبا، از کاسه نمدهای هم سایز به کار می‌رود. خرابی کاسه نمد یکی از علل اصلی نشتی روغن در خودروها است که نشان‌دهنده زمان تعویض این قطعه حیاتی می‌باشد. کاسه نمد کوچک پلوس به‌عنوان یک مانع فیزیکی با کیفیت، از نشت روغن از جعبه‌دنده و محفظه دیفرانسیل جلوگیری می‌کند. این قطعه با ایجاد یک مهر و موم قوی و دقیق، از ورود گرد و خاک و ذرات آلاینده به داخل گیربکس و سیستم‌های انتقال قدرت ممانعت می‌کند. این ویژگی‌ها موجب افزایش عمر مفید گیربکس و کاهش نیاز به تعمیرات مکرر می‌شود.</p>
+      <h3>عوامل خرابی کاسه نمد پلوس</h3>
+      <ul>
+        <li><strong>روغن و قدرت تحمل شفت و سوراخ</strong>: استفاده از روغن‌های ناپایدار و تحمل پایین شفت می‌تواند باعث خرابی کاسه نمد و کاهش عمر مفید آن شود.</li>
+        <li><strong>سرعت شفت و رطوبت</strong>: سرعت بالا و رطوبت زیاد می‌تواند به فرسودگی زودهنگام کاسه نمد منجر شود.</li>
+        <li><strong>درجه حرارت</strong>: حرارت بالاتر از حد مجاز می‌تواند باعث عملکرد ضعیف و وارفتگی کاسه نمد شود.</li>
+        <li><strong>فشار داخلی</strong>: فشار زیاد می‌تواند باعث تکه‌تکه شدن و خرد شدن کاسه نمد شود.</li>
+        <li><strong>سختی شفت</strong>: سختی بالای شفت می‌تواند به فرسودگی سریع کاسه نمد منجر شود.</li>
+        <li><strong>ناهمواری شفت</strong>: محوریت ناهموار شفت از عمر کاسه نمد می‌کاهد و باعث فرسایش آن می‌شود.</li>
+      </ul>
+      <h3>اجزای اصلی سازنده‌ی کاسه نمد</h3>
+      <ul>
+        <li><strong>پلاستیک حرارت‌دیده</strong>: کاسه نمد از ماده پلاستیکی با کیفیت بالا و حرارت‌دیده تولید شده است که به آن توانایی تحمل دماهای بالا و تغییرات حرارتی را می‌دهد.</li>
+        <li><strong>فنر کربنایز شده</strong>: فنر به کار رفته در کاسه نمد، کربنایز شده و با خواص ارتجاعی بالا، به کاسه نمد حالت کشسانی و انعطاف‌پذیری می‌دهد تا از نشت سیال جلوگیری کند و در عین حال دوام بالایی داشته باشد.</li>
+      </ul>
+      <p>برای مقاومت در برابر دما، فشار و مواد شیمیایی، از پلاستیک‌های با کیفیت و فنرهای کربنایز شده استفاده می‌شود. این قطعه در قسمت‌های مختلف خودرو از جمله ورودی و خروجی گیربکس، پلوس، میل لنگ، شیر فرمان و سوپاپ‌ها به کار می‌رود و نقش کلیدی در عملکرد بهینه سیستم‌ها ایفا می‌کند.</p>
+      <h3>کاسه نمدهای جدید و ترکیب مواد</h3>
+      <p>با توجه به نیازهای مدرن موتورهای خودرو، کاسه نمدها با استفاده از مواد پیشرفته مانند Viton تولید می‌شوند که دارای ویژگی‌های برجسته‌ای از جمله مقاومت بالا در برابر حرارت، فشار و مواد شیمیایی هستند. Viton به دلیل ویژگی‌های حرارتی و شیمیایی عالی، به‌طور گسترده‌ای در شرایط سخت و محیط‌های صنعتی به کار می‌رود. این مواد حتی در شرایط کمبود روانکاری نیز عملکرد عالی را حفظ می‌کنند و از نظر عمر مفید و کارایی، مزیت‌های رقابتی چشمگیری دارند.</p>
+      <h3>ویژگی‌ها و مزایای Viton در تولید کاسه نمد خودرو</h3>
+      <p><strong>ویتون (Viton)</strong>، نوعی لاستیک مصنوعی با ویژگی‌های استثنایی است که به‌طور گسترده در تولید کاسه نمدهای با کیفیت بالا استفاده می‌شود. این ماده به دلیل ویژگی‌های منحصر به فرد خود، مزایای زیادی نسبت به سایر مواد اولیه دارد:</p>
+      <ul>
+        <li><strong>مقاومت حرارتی بالا</strong>: ویتون قادر است دماهای بسیار بالا را بدون تغییر خواص خود تحمل کند. این ویژگی باعث می‌شود که کاسه نمدهای ساخته شده از ویتون در شرایط دمایی بالا، مانند موتورهای با کارایی بالا، عملکرد پایدار و طولانی‌مدتی داشته باشند.</li>
+        <li><strong>مقاومت شیمیایی عالی</strong>: ویتون در برابر انواع مواد شیمیایی، از جمله روغن‌ها، سوخت‌ها و مواد شیمیایی صنعتی، مقاومت بالایی دارد. این خصوصیت باعث می‌شود که کاسه نمدهای ویتونی در برابر خوردگی و آسیب‌های شیمیایی مقاومت کنند و عملکرد بهینه خود را حفظ کنند.</li>
+        <li><strong>مقاومت در برابر سایش</strong>: ویتون دارای مقاومت بالایی در برابر سایش و فرسایش است، که موجب افزایش طول عمر کاسه نمد و کاهش نیاز به تعویض مکرر می‌شود.</li>
+        <li><strong>مقاومت در برابر فشار</strong>: ویتون به دلیل خاصیت الاستیک و انعطاف‌پذیری بالای خود، قادر است فشارهای بالا را به‌خوبی تحمل کند، که این ویژگی در محیط‌های با فشار بالا و دماهای متغیر بسیار مهم است.</li>
+        <li><strong>حفظ شکل و دوام طولانی‌مدت</strong>: ویتون دارای خاصیت "حافظه پلاستیکی" است، به این معنی که در صورت حرارت دادن و تغییر شکل، به فرم اولیه خود بازمی‌گردد. این ویژگی باعث می‌شود که کاسه نمدها به‌طور مؤثر عملکرد خود را حتی پس از استفاده طولانی‌مدت حفظ کنند.</li>
+      </ul>
+      <h3>کاسه نمدهای یکپارچه چیست؟</h3>
+      <p>کاسه نمدهای یکپارچه نسل جدیدی از این قطعات هستند که به دلیل طراحی مدرن خود، زمان تولید موتورهای سریالی را به‌طور قابل توجهی کاهش می‌دهند. این کاسه نمدها با شفت در تعامل بوده و دارای نوار لاستیکی یا نمدی اضافی هستند که به‌عنوان یک مانع موثر در برابر ذرات آلودگی عمل می‌کند. برخی از این کاسه نمدها حتی با حسگرهای چرخش شفت تجهیز شده‌اند، که باعث افزایش دقت و کنترل در سیستم‌های پیچیده‌تر می‌شود.</p>
+      <h3>جمع‌بندی موارد</h3>
+      <p>کاسه نمد کوچک پلوس، یکی از اجزای کلیدی و حیاتی در سیستم‌های مختلف خودرو و ماشین‌آلات صنعتی است که با جلوگیری از نشت روغن و ورود آلودگی‌ها به محفظه‌های سیالات، عملکرد بهینه و طول عمر سیستم‌ها را تضمین می‌کند. شرکت BHA با استفاده از بهترین مواد و تکنولوژی‌های مدرن، کاسه نمدهایی با کیفیت بالا و دوام بیشتر ارائه می‌دهد که نیازهای مختلف مشتریان را برآورده می‌کند و به‌ویژه در زمینه‌های خودرویی از جمله زانتیا و مدل‌های مشابه، عملکرد بی‌نظیری را تضمین می‌نماید.</p>
+    </div>
+    <!-- car-types --------------------------------------------------------------------------------->
+    <div class="product-description" id="car-types" style="display: none;">
+      <h3>این محصول قابل استفاده برای خودروی‌های زیر می‌باشد:</h3>
+      <ul>
+        <li>
+          <img src="../img/cars/car_405.png" alt="پژو ۴۰۵" style="width: 100px; height: auto;" />
+          <strong>پژو ۴۰۵ (تمامی مدل‌ها)</strong>
+        </li>
+        <li>
+          <img src="../img/cars/car_pars.png" alt="پژو ۴۰۵" style="width: 100px; height: auto;" />
+          <strong>پژو پارس (تمامی مدل‌ها)</strong>
+        </li>
+        <li>
+          <img src="../img/cars/car_206.png" alt="پژو ۲۰۶" style="width: 100px; height: auto;" />
+          <strong>پژو ۲۰۶ (تمامی مدل‌ها)</strong>
+        </li>
+        <li>
+          <img src="../img/cars/car_206sd.png" alt="پژو ۲۰۶" style="width: 100px; height: auto;" />
+          <strong>پژو ۲۰۶ صندوق‌دار</strong>
+        </li>
+        <li>
+          <img src="../img/cars/car_207.png" alt="پژو ۲۰۷" style="width: 100px; height: auto;" />
+          <strong>پژو ۲۰۷</strong>
+        </li>
+        <li>
+          <img src="../img/cars/car_207sd.png" alt="پژو ۲۰۷ صندوق‌دار" style="width: 100px; height: auto;" />
+          <strong>پژو ۲۰۷ صندوق‌دار</strong>
+        </li>
+        <li>
+          <img src="../img/cars/car_samand.png" alt="خانواده‌ی سمند" style="width: 100px; height: auto;" />
+          <strong>خانواده‌ی سمند (ال ایکس - سورن و غیره)</strong>
+        </li>
+        <li>
+          <img src="../img/cars/car_xantia.png" alt="زانتیا" style="width: 100px; height: auto;" />
+          <strong>زانتیا ۱۸۰۰ و ۲۰۰۰</strong>
+        </li>
+      </ul>
+      <p>نکته: در صورت نیاز به راهنمایی بیش‌تر قبل از سفارش با تیم پشتیبانی تماس بگیرید.</p>
+      <div class="support-section">
+        <img src="../img/support_now.png" alt="تماس با پشتیبانی">
+        <h3>نیاز به راهنمایی و مشاوره دارید؟</h3>
+        <p>برای کسب اطلاعات بیش‌تر در هر لحظه از شبانه‌روز با واحد فروش شرکت به صورت مستقیم تماس بگیرید.</p>
+        <a class="support-button" href="tel:+989104008141">تماس مستقیم با واحد فروش</a>
       </div>
-      <div class="review">
-        <h4>تهران پارت</h4>
-        <p class="review-date">۱۲ روز پیش</p>
-        <p>از کیفت محصول رضایت داشتم و تعدادی خریداری کردم. امیدوارم روی ماشین‌ها خوب جواب بده.</p>
-        <ul>
-          <li>سرعت عمل در ارسال کالا</li>
-          <li>بسته‌بندی مناسب کالا</li>
-          <li>امکان تست محصول پیش از دریافت</li>
-        </ul>
+    </div>
+    <!-- Warantty --------------------------------------------------------------------------------->
+    <div class="product-description" id="warranty" style="display: none;">
+      <h3>خدمات و ضمانت محصول (گارانتی)</h3>
+      <p>محصولات شرکت BHA دارای یک سال گارانتی از تاریخ خرید هستند. در صورت بروز هرگونه مشکل در طول این مدت، لطفاً با تیم پشتیبانی ما تماس بگیرید تا راهنمایی‌های لازم را دریافت کنید. شرایط گارانتی شامل:</p>
+      <ul>
+        <li>گارانتی فقط برای خرابی‌های ناشی از نقص تولید معتبر است.</li>
+        <li>در صورت استفاده نادرست یا نصب غیر اصولی، گارانتی باطل خواهد شد.</li>
+        <li>تعویض و تعمیرات تحت گارانتی باید توسط تعمیرکاران مجاز انجام شود.</li>
+      </ul>
+      <p>نکته: عدم نصب صحیح، چسب زدن به لبه‌ی داخلی و غیره موجب ابطال گارانتی محصول می‌شود! در صورت نیاز به راهنمایی بیش‌تر با تیم پشتیبانی تماس برقرار نمایید.</p>
+      <div class="product-video">
+        <video controls>
+          <source src="movie.mp4" type="..videos/warantty.mp4" alt="ویدیوی آموزش نصب">
+        </video>
+      </div>
+      <div class="support-section">
+        <img src="../img/support_now.png" alt="تماس با پشتیبانی">
+        <h3>نیاز به راهنمایی و مشاوره دارید؟</h3>
+        <p>برای کسب اطلاعات بیش‌تر در هر لحظه از شبانه‌روز با واحد پشتیانی شرکت به صورت مستقیم تماس بگیرید.</p>
+        <a class="support-button" href="tel:+989104008141">تماس مستقیم با واحد پشتیبانی</a>
+      </div>
+    </div>
+    <!-- Install Instruction --------------------------------------------------------------------------------->
+    <div class="product-description" id="instruction" style="display: none;">
+      <h3>تعمیرکاران عزیز در زمان نصب به نکات زیر توجه فرمایید:</h3>
+      <ul>
+        <li><strong>به لبه‌ی داخلی کاسه نمد چسب نزنید!</strong></li>
+        <li><strong>پیش از نصب محل نصب را تراش‌کاری و تمیز نمایید.</strong></li>
+        <li><strong>پیش از نصب لبه‌ی بیرونی را کمی با روغن چرب نمایید.</strong></li>
+        <li><strong>در زمان نصب از ضربه‌های مکرر به‌خصوص با ابزارهای نوک تیز خودداری نمایید!</strong></li>
+      </ul>
+      <p>نکته: عدم نصب صحیح، چسب زدن به لبه‌ی داخلی و غیره موجب ابطال گارانتی محصول می‌شود! در صورت نیاز به راهنمایی بیش‌تر با تیم پشتیبانی تماس برقرار نمایید.</p>
+      <div class="product-video">
+        <video controls>
+          <source src="movie.mp4" type="..videos/video_1.mp4" alt="ویدیوی آموزش نصب">
+        </video>
+      </div>
+      <div class="support-section">
+        <img src="../img/support_now.png" alt="تماس با پشتیبانی">
+        <h3>نیاز به آموزش و مشاوره دارید؟</h3>
+        <p>برای کسب اطلاعات بیش‌تر در هر لحظه از شبانه‌روز با واحد آموزش شرکت به صورت مستقیم تماس بگیرید.</p>
+        <a class="support-button" href="tel:+989104008141">تماس مستقیم با واحد آموزش</a>
+      </div>
+    </div>
+    <!-- Reviews --------------------------------------------------------------------------------->
+    <div class="product-description" id="reviews">
+      <h3>نظرات دریافت‌شده از خریداران:</h3>
+      <div class="customers-reviews">
+        <div class="review">
+          <h4>تهران پارت</h4>
+          <ul>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <li>سرعت عمل در ارسال کالا</li>
+            <li>بسته‌بندی مناسب کالا</li>
+            <li>امکان تست محصول پیش از دریافت</li>
+          </ul>
+          <p class="review-date">۱۱:۲۳ ۱۴۰۳-۰۵-۰۲</p>
+        </div>
+        <div class="review">
+          <h4>دینا پارت تبریز</h4>
+          <div class="rating">
+            <i class="far fa-star"></i>
+            <i class="fa fa-star-half-alt"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <p>از کیفت محصول رضایت داشتم و تعدادی خریداری کردم. امیدوارم روی ماشین‌ها خوب جواب بده.</p>
+          <ul>
+            <li>سرعت عمل در ارسال کالا</li>
+            <li>بسته‌بندی مناسب کالا</li>
+            <li>امکان تست محصول پیش از دریافت</li>
+          </ul>
+          <p class="review-date">۱۶:۴۲ ۱۴۰۳-۰۵-۰۴</p>
+        </div>
       </div>
     </div>
   </div>
-
-  <hr>
   <!-- Blog --------------------------------------------------------------------------------->
   <section class="blog">
     <div class="container">
@@ -567,7 +643,7 @@
     <div class="footer-content">
       <div class="footer-section company-intro">
         <h3>درباره ما</h3>
-        <p>شرکت ما با هدف ارائه بهترین خدمات و محصولات با کیفیت بالا تأسیس شده است. ما متعهد به رضایت مشتریان و ایجاد تجربه‌ای بی‌نظیر برای آنها هستیم.</p>
+        <p>شرکت BHA با تخصص در تولید کاسه نمدهای با کیفیت، بهبود عملکرد و دوام سیستم‌های انتقال قدرت خودرو را تضمین می‌کند. محصولات ما با استفاده از مواد پیشرفته مانند ویتون، مقاوم در برابر حرارت و شیمیایی، برای اطمینان از کارایی بالا و عمر طولانی‌مدت طراحی شده‌اند.</p>
       </div>
       <div class="footer-section site-links">
         <h3>لینک‌های مرتبط</h3>
@@ -579,8 +655,8 @@
       </div>
       <div class="footer-section contact-info">
         <h3>تماس با ما</h3>
-        <p>آدرس: اصفهان، خیابان امام‌خمینی، کوچه ۶۳ (مفتح)</p>
-        <p>کد پستی: ۱۱۱۱۱۱۱۱۱۱</p>
+        <p>آدرس: اصفهان، خیابان امام‌خمینی، کوچه ۶۳ (مفتح)، پلاک ۶۴</p>
+        <p>کد پستی: ۸۱۳۹۷۵۷۶۰۹ </p>
         <p>شماره تماس: <a title="تماس تلفنی مستقیم" href="tel:09104008141">۰۹۱۰۴۰۰۸۱۴۱</a></p>
         <p>آدرس ایمیل: <a title="ارسال ایمیل مستقیم" href="mailto:ali@example.com">BHACO.Official@gmail.com</a></p>
         <div class="social-media">
@@ -609,68 +685,36 @@
     <p>&copy کلیه‌ی حقوق مادی و معنوی سایت نزد شرکت بی اِچ اِی | BHA Group محفوط می‌باشد.</p>
   </div>
   <script>
-  function changeImage(src) {
-      document.getElementById('mainImage').src = src;
+    function changeImage(imageUrl) {
+      document.getElementById('mainImage').src = imageUrl;
     }
-
-    function showTab(tabId) {
-      const tabs = document.querySelectorAll('.product-description');
+    document.addEventListener("DOMContentLoaded", function () {
+      const tabs = document.querySelectorAll('.tab-button');
       tabs.forEach(tab => {
-        tab.style.display = tab.id === tabId ? 'block' : 'none';
+        tab.addEventListener('click', function () {
+          const targetId = this.getAttribute('data-target');
+          const targetElement = document.getElementById(targetId);
+          // Remove active class from all tabs and hide all content
+          tabs.forEach(btn => btn.classList.remove('active'));
+          document.querySelectorAll('.product-description').forEach(tabContent => tabContent.style.display = 'none');
+          this.classList.add('active');
+          targetElement.style.display = 'block';
+          const offset = window.matchMedia("(max-width: 768px)").matches ? -460 : -230;
+          scrollToWithOffset(targetElement, offset);
+        });
       });
-      const buttons = document.querySelectorAll('.tab-button');
-      buttons.forEach(button => {
-        button.classList.toggle('active', button.getAttribute('onclick').includes(tabId));
-      });
-    }
-    showTab('description');
 
-    function showTab(tabId) {
-      // مخفی کردن همه تب‌ها
-      const tabs = document.querySelectorAll('.product-description');
-      tabs.forEach(tab => tab.style.display = 'none');
-
-      // نمایش تب انتخابی
-      const activeTab = document.getElementById(tabId);
-      if (activeTab) {
-        activeTab.style.display = 'block';
-      }
-
-      // غیر فعال کردن تمام دکمه‌های تب
-      const tabButtons = document.querySelectorAll('.tab-button');
-      tabButtons.forEach(button => button.classList.remove('active'));
-
-      // فعال کردن دکمه تب انتخابی
-      const activeButton = document.querySelector(`.tab-button[data-target="${tabId}"]`);
-      if (activeButton) {
-        activeButton.classList.add('active');
-      }
-
-      // تعیین offset بر اساس اندازه صفحه
-      let offset = 0;
-      if (window.innerWidth < 768) {
-        // موبایل
-        offset = 80;
-      } else {
-        // دسکتاپ
-        offset = 100;
-      }
-
-      // موقعیت عنصر تب‌ها
-      const element = document.querySelector('.product-tabs');
-      if (element) {
+      function scrollToWithOffset(element, offset) {
         const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-
-        // اسکرول به موقعیت مورد نظر با در نظر گرفتن offset
+        const offsetPosition = elementPosition + offset;
         window.scrollTo({
-          top: elementPosition - offset,
+          top: offsetPosition,
           behavior: 'smooth'
         });
       }
-    }
+    });
+
   </script>
-
-
 </body>
 
 </html>

@@ -28,6 +28,13 @@ body {
   background-color: var(--color-bg);
 }
 
+a, p, h1, h2, h3, h4 {
+  user-select: none; /* برای مرورگرهای مدرن */
+  -webkit-user-select: none; /* برای مرورگرهای Webkit مثل Chrome و Safari */
+  -moz-user-select: none; /* برای Firefox */
+  -ms-user-select: none;
+}
+
 hr {
   width: 90%;
   border: 0.03125rem solid #e0e0e0;
@@ -37,13 +44,16 @@ a {
   font-size: 1rem;
   color: var(--color-text);
   text-decoration: none;
+  user-select: none; /* برای مرورگرهای مدرن */
+  -webkit-user-select: none; /* برای مرورگرهای Webkit مثل Chrome و Safari */
+  -moz-user-select: none; /* برای Firefox */
+  -ms-user-select: none;
 }
 
 p {
-  font-size: 0.875rem;
-  line-height: 2rem;
+  font-size: 0.975rem;
+  line-height: 2.25rem;
   text-align: justify;
-  margin: 0;
 }
 
 h2 {
@@ -226,10 +236,6 @@ header i {
   background-color: rgba(248, 249, 250, 1);
 }
 
-.products {
-  padding: 1.25rem 5%;
-}
-
 .view-options {
   text-align: left;
   margin-bottom: 1.625rem;
@@ -245,6 +251,10 @@ header i {
   border-radius: 0.25rem;
 }
 
+.products {
+  padding: 1.25rem 5%;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
@@ -253,9 +263,19 @@ header i {
 
 .product-card {
   border: 0.0625rem solid var(--color-border);
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   padding: 1.75rem;
+  box-shadow: 0 0.15rem 0.375rem rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+  box-shadow: 0 0.45rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+
+.product-card hr {
+  margin: 2rem 0;
+  width: 100%;
 }
 
 .product-carousel {
@@ -272,7 +292,7 @@ header i {
   background: rgba(244, 244, 244, 0.7);
   border: none;
   padding: 0.5rem 0.875rem;
-  border-radius: 50%;
+  border-radius: 100%;
 }
 
 .next:hover,
@@ -289,15 +309,6 @@ header i {
   left: 0;
 }
 
-.product-card:hover {
-  box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.15);
-}
-
-.product-card hr {
-  margin-top: 1.75rem;
-  width: 100%;
-}
-
 .product-details {
   display: flex;
   flex-wrap: wrap;
@@ -305,21 +316,21 @@ header i {
 }
 
 .chips {
-  background-color: #ffefe8;
-  border: 0.0625rem solid #ffe7db;
-  padding: 0.375rem 0.875rem;
-  border-radius: 1.5rem;
-  font-size: 0.75rem;
-  margin-top: 0.125rem;
+  background-color: #FFEAE3;
+  color: #151515;
+  padding: 0.5rem 0.925rem;
+  border-radius: 1.25rem;
+  font-size: 0.825rem;
+  margin-top: 0.1875rem;
 }
 
 .show-button {
-  background-color: var(--color-bg);
-  color: var(--color-primary);
-  border: 0.0625rem dashed var(--color-primary);
-  padding: 0.625rem 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  border: none;
+  padding: 0.825rem 1rem;
   font-size: 0.875rem;
-  border-radius: 0.5rem;
+  border-radius: 0.625rem;
   margin-top: 1.75rem;
   width: 100%;
 }
@@ -330,7 +341,7 @@ header i {
 }
 
 .benefits {
-  background: linear-gradient(45deg, #013966, #4091c3, #013966);
+  background: linear-gradient(45deg, #A1DD70, #003285, #EE4E4E);
   padding: 4.5rem 0;
   margin-top: 4.125rem;
 }
@@ -347,8 +358,8 @@ header i {
   background-color: var(--color-bg);
   color: var(--color-primary);
   border-radius: 0.75rem;
-  padding: 2rem;
-  width: 16.25rem;
+  padding: 1.5rem 2rem;
+  width: 17.5rem;
   text-align: center;
   box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.15);
 }
@@ -359,7 +370,7 @@ header i {
 }
 
 .about {
-  padding: 3.25rem 5%;
+  padding: 2.25rem 5%;
 }
 
 .about-content {
@@ -450,11 +461,12 @@ h3 {
 .testimonial-item {
   border: 0.0625rem solid var(--color-border);
   border-radius: 0.5rem;
-  padding: 1.25rem;
+  padding: 1.75rem;
   width: 16.25rem;
   text-align: center;
   flex: 0 0 33.33%;
   transition: transform 0.5s ease;
+  background-color: #fff;
 }
 
 .title p {
@@ -518,9 +530,20 @@ h3 {
   transition: transform 0.3s ease;
 }
 
+.team-member.active {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  transform: scale(1.06);
+  box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+
 .team-member img {
   width: 8.75rem;
   border-radius: 50%;
+}
+
+.team-member h3 {
+  margin-bottom: 0px;
 }
 
 .contact-icons {
@@ -545,15 +568,8 @@ h3 {
   box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.15);
 }
 
-.team-member.active {
-  background-color: var(--color-primary);
-  color: var(--color-bg);
-  transform: scale(1.06);
-  box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.2);
-}
-
 .appointment {
-  margin: 2rem 0;
+  margin: 5rem 0;
   padding: 0 5%;
 }
 
@@ -615,7 +631,7 @@ h3 {
 }
 
 footer {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-dark);
   color: var(--color-footer-text);
   margin-top: 2rem;
   padding: 3rem 5%;
@@ -661,6 +677,9 @@ footer p {
   flex: 1;
 }
 
+.site-links a:hover{
+  color: #fff;
+}
 .company-intro h3,
 .site-links h3,
 .contact-info h3 {
@@ -806,10 +825,6 @@ footer p {
 
   .product-grid {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  }
-
-  .product-card {
-    padding: 16px;
   }
 
   .benefits {
