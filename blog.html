@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لیست پست‌های وبلاگ</title>
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js" defer></script>
+</head>
+<style>
+
+  .blog-list-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .blog-item {
+    flex: 1 1 30%;
+    margin: 4px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    height: 380px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .blog-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .blog-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+    transition: filter 0.3s ease;
+  }
+
+  .blog-item:hover img {
+    filter: brightness(50%);
+  }
+
+  .blog-item-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+  }
+
+  .blog-item-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .blog-item-content p {
+    font-size: 16px;
+    color: #eee;
+    margin: 5px 0;
+  }
+
+  .blog-item-content .post-info {
+    font-size: 12px;
+    color: #ccc;
+  }
+
+  @media (max-width: 768px) {
+    .blog-item {
+      flex: 1 1 100%;
+      height: 300px;
+    }
+
+    .blog-item-content h2 {
+      font-size: 24px;
+    }
+
+    .blog-item-content p {
+      font-size: 14px;
+    }
+  }
+
+</style>
+<body>
+
+  <!-- Header --------------------------------------------------------------------------------->
+  <header>
+    <button class="hamburger-menu">&#9776;</button>
+    <nav>
+      <ul class="menu-items">
+        <li><a title="صفحه‌ی اصلی" href="#section1"><i class="fas fa-home icon"></i>خانه</a></li>
+        <li><a title="صفحه‌ی درباره‌ی ما" href="#section2"><i class="fas fa-info-circle icon"></i>معرفی شرکت</a></li>
+        <li><a title="صفحه‌ی لیست محصول‌ها" href="#section3"><i class="fas fa-list icon"></i>لیست محصول‌ها</a></li>
+        <li><a title="صفحه‌ی تماس با ما" href="#section4"><i class="fas fa-phone icon"></i>ارتباط با ما</a></li>
+        <li><a title="مجله BHA" href="#section5"><i class="fas fa-blog icon"></i>وبلاگ</a></li>
+      </ul>
+    </nav>
+    <div class="logo">
+      <a href="/">
+        <img title="لوگو شرکت/ رفتن به صفحه‌ اصلی" src="../img/logo.png" alt="Logo" loading="lazy">
+      </a>
+    </div>
+  </header>
+  <section class="container">
+  <h1>وبلاگ بی اِچ اِی</h1>
+  <!-- Blog List Section -->
+  <section class="blog-list-section">
+    <!-- Blog Item 1 -->
+    <div class="blog-item">
+      <img src="../img/blog/post-1/banner-1.png" alt="پست شماره 1">
+      <div class="blog-item-content">
+        <h2>مکانیزم فنی کاسه نمد</h2>
+        <p>توضیحات کوتاه در مورد پست</p>
+        <div class="post-info">
+          <span>نویسنده: علی</span> |
+          <span>تاریخ انتشار: ۱۴۰۳/۰۶/۳۰</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Item 2 -->
+    <div class="blog-item">
+      <img src="../img/blog/post-1/banner-1.png" alt="پست شماره 2">
+      <div class="blog-item-content">
+        <h2>مکانیزم فنی کاسه نمد</h2>
+        <p>توضیحات کوتاه در مورد پست</p>
+        <div class="post-info">
+          <span>نویسنده: علی</span> |
+          <span>تاریخ انتشار: ۱۴۰۳/۰۶/۳۰</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Item 3 -->
+    <div class="blog-item">
+      <img src="../img/blog/post-1/banner-1.png" alt="پست شماره 3">
+      <div class="blog-item-content">
+        <h2>مکانیزم فنی کاسه نمد</h2>
+        <p>توضیحات کوتاه در مورد پست</p>
+        <div class="post-info">
+          <span>نویسنده: علی</span> |
+          <span>تاریخ انتشار: ۱۴۰۳/۰۶/۳۰</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Item 4 -->
+    <div class="blog-item">
+      <img src="../img/blog/post-1/banner-1.png" alt="پست شماره 4">
+      <div class="blog-item-content">
+        <h2>مکانیزم فنی کاسه نمد</h2>
+        <p>توضیحات کوتاه در مورد پست</p>
+        <div class="post-info">
+          <span>نویسنده: علی</span> |
+          <span>تاریخ انتشار: ۱۴۰۳/۰۶/۳۰</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Item 5 -->
+    <div class="blog-item">
+      <img src="../img/blog/post-1/banner-1.png" alt="پست شماره 5">
+      <div class="blog-item-content">
+        <h2>مکانیزم فنی کاسه نمد</h2>
+        <p>توضیحات کوتاه در مورد پست</p>
+        <div class="post-info">
+          <span>نویسنده: علی</span> |
+          <span>تاریخ انتشار: ۱۴۰۳/۰۶/۳۰</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Item 6 -->
+    <div class="blog-item">
+      <img src="../img/blog/post-1/banner-1.png" alt="پست شماره 6">
+      <div class="blog-item-content">
+        <h2>مکانیزم فنی کاسه نمد</h2>
+        <p>توضیحات کوتاه در مورد پست</p>
+        <div class="post-info">
+          <span>نویسنده: علی</span> |
+          <span>تاریخ انتشار: ۱۴۰۳/۰۶/۳۰</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Item 7 -->
+    <div class="blog-item">
+      <img src="../img/blog/post-1/banner-1.png" alt="پست شماره 7">
+      <div class="blog-item-content">
+        <h2>مکانیزم فنی کاسه نمد</h2>
+        <p>توضیحات کوتاه در مورد پست</p>
+        <div class="post-info">
+          <span>نویسنده: علی</span> |
+          <span>تاریخ انتشار: ۱۴۰۳/۰۶/۳۰</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Item 8 -->
+    <div class="blog-item">
+      <img src="../img/blog/post-1/banner-1.png" alt="پست شماره 8">
+      <div class="blog-item-content">
+        <h2>مکانیزم فنی کاسه نمد</h2>
+        <p>توضیحات کوتاه در مورد پست</p>
+        <div class="post-info">
+          <span>نویسنده: علی</span> |
+          <span>تاریخ انتشار: ۱۴۰۳/۰۶/۳۰</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Item 9 -->
+    <div class="blog-item">
+      <img src="../img/blog/post-1/banner-1.png" alt="پست شماره 9">
+      <div class="blog-item-content">
+        <h2>مکانیزم فنی کاسه نمد</h2>
+        <p>توضیحات کوتاه در مورد پست</p>
+        <div class="post-info">
+          <span>نویسنده: علی</span> |
+          <span>تاریخ انتشار: ۱۴۰۳/۰۶/۳۰</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+  <!-- Footer --------------------------------------------------------------------------------->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section company-intro">
+        <h3>درباره ما</h3>
+        <p>شرکت BHA با تخصص در تولید کاسه نمدهای با کیفیت، بهبود عملکرد و دوام سیستم‌های انتقال قدرت خودرو را تضمین می‌کند. محصولات ما با استفاده از مواد پیشرفته مانند ویتون، مقاوم در برابر حرارت و شیمیایی، برای اطمینان از کارایی بالا و عمر طولانی‌مدت طراحی شده‌اند.</p>
+      </div>
+      <div class="footer-section site-links">
+        <h3>لینک‌های مرتبط</h3>
+        <p><a title="صفحه‌ی اصلی" href="index.html">• خانه</a></p>
+        <p><a title="صفحه‌ی درباره‌ی ما" href="/about">• درباره ما</a></p>
+        <p><a title="صفحه‌ی لیست محصول‌ها" href="/services">• لیست محصولات</a></p>
+        <p><a title="صفحه تماس با ما" href="/contact">• تماس با ما</a></p>
+        <p><a title="مجله BHA" href="/contact">• وبلاگ</a></p>
+      </div>
+      <div class="footer-section contact-info">
+        <h3>تماس با ما</h3>
+        <p>آدرس: اصفهان، خیابان امام‌خمینی، کوچه ۶۳ (مفتح)، پلاک ۶۴</p>
+        <p>کد پستی: ۸۱۳۹۷۵۷۶۰۹ </p>
+        <p>شماره تماس: <a title="تماس تلفنی مستقیم" href="tel:09104008141">۰۹۱۰۴۰۰۸۱۴۱</a></p>
+        <p>آدرس ایمیل: <a title="ارسال ایمیل مستقیم" href="mailto:ali@example.com">BHACO.Official@gmail.com</a></p>
+        <div class="social-media">
+          <a href="https://facebook.com" title="آدرس فیس‌بوک" target="_blank" class="social-icon">
+            <img src="../img/social-media/facebook.png" alt="فیس‌بوک">
+          </a>
+          <a href="https://twitter.com" title="آدرس ایکس" target="_blank" class="social-icon">
+            <img src="../img/social-media/x.png" alt="ایکس">
+          </a>
+          <a href="https://instagram.com" title="آدرس اینستاگرام" target="_blank" class="social-icon">
+            <img src="../img/social-media/instagram.png" alt="اینستاگرام">
+          </a>
+          <a href="https://linkedin.com" title="آدرس لینکدین" target="_blank" class="social-icon">
+            <img src="../img/social-media/linkedin.png" alt="لینکدین">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-logos">
+      <a href="https://ecunion.ir/" title="مجوز اتحادیه کسب و کارهای اینترنتی"><img src="../img/licenses/license-1.png" alt="اتحادیه‌ی کسب و کارهای اینترنتی"></a>
+      <a href="https://reg2.enamad.ir/" title="مجوز ای‌نماد"><img src="../img/licenses/license-2.png" alt="ای‌نماد"></a>
+      <a href="https://samandehi.ir/" title="مجوز ساماندهی"><img src="../img/licenses/license-3.png" alt="سامان‌دهی"></a>
+    </div>
+  </footer>
+  <div class="copywrite">
+    <p>&copy کلیه‌ی حقوق مادی و معنوی سایت نزد شرکت بی اِچ اِی | BHA Group محفوط می‌باشد.</p>
+  </div>
+
+</body>
+</html>
