@@ -48,7 +48,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- محصولات -->
   <url>
     <loc>http://www.oseal.ir/products/product-1.html</loc>
     <lastmod>2024-09-21</lastmod>
@@ -61,8 +60,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <!-- ادامه برای دیگر محصولات تا product-13.html -->
-  <!-- کاتالوگ‌ها -->
   <url>
     <loc>http://www.oseal.ir/catalogs/catalog-1.html</loc>
     <lastmod>2024-09-21</lastmod>
@@ -75,8 +72,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <!-- ادامه برای دیگر کاتالوگ‌ها تا catalog-13.html -->
-  <!-- وبلاگ‌ها -->
   <url>
     <loc>http://www.oseal.ir/blog/blog-post-1.html</loc>
     <lastmod>2024-09-21</lastmod>
@@ -89,5 +84,4 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
-  <!-- ادامه برای دیگر وبلاگ‌ها تا blog-post-30.html -->
 </urlset>
