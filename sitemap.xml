@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1">
+  <url>
+    <loc>http://www.oseal.ir/index.html</loc>
+    <lastmod>2024-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://www.oseal.ir/aboutUs.html</loc>
+    <lastmod>2024-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://www.oseal.ir/contactUs.html</loc>
+    <lastmod>2024-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.oseal.ir/policy&amp;privacy.html</loc>
+    <lastmod>2024-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.oseal.ir/faq.html</loc>
+    <lastmod>2024-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.oseal.ir/products.html</loc>
+    <lastmod>2024-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://www.oseal.ir/catalogs.html</loc>
+    <lastmod>2024-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://www.oseal.ir/blog.html</loc>
+    <lastmod>2024-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- محصولات -->
+  <url>
+    <loc>http://www.oseal.ir/products/product-1.html</loc>
+    <lastmod>2024-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>http://www.oseal.ir/products/product-2.html</loc>
+    <lastmod>2024-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- ادامه برای دیگر محصولات تا product-13.html -->
+  <!-- کاتالوگ‌ها -->
+  <url>
+    <loc>http://www.oseal.ir/catalogs/catalog-1.html</loc>
+    <lastmod>2024-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>http://www.oseal.ir/catalogs/catalog-2.html</loc>
+    <lastmod>2024-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- ادامه برای دیگر کاتالوگ‌ها تا catalog-13.html -->
+  <!-- وبلاگ‌ها -->
+  <url>
+    <loc>http://www.oseal.ir/blog/blog-post-1.html</loc>
+    <lastmod>2024-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.oseal.ir/blog/blog-post-2.html</loc>
+    <lastmod>2024-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- ادامه برای دیگر وبلاگ‌ها تا blog-post-30.html -->
+</urlset>
