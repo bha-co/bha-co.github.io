@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>http://www.oseal.ir/index.html</loc>
     <lastmod>2024-09-21</lastmod>
@@ -19,7 +20,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.oseal.ir/policy&amp;privacy.html</loc>
+    <loc>http://www.oseal.ir/policy&privacy.html</loc>
     <lastmod>2024-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -62,6 +63,7 @@
     <priority>0.6</priority>
   </url>
   <!-- ادامه برای دیگر محصولات تا product-13.html -->
+
   <!-- کاتالوگ‌ها -->
   <url>
     <loc>http://www.oseal.ir/catalogs/catalog-1.html</loc>
@@ -76,6 +78,7 @@
     <priority>0.6</priority>
   </url>
   <!-- ادامه برای دیگر کاتالوگ‌ها تا catalog-13.html -->
+
   <!-- وبلاگ‌ها -->
   <url>
     <loc>http://www.oseal.ir/blog/blog-post-1.html</loc>
