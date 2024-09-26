@@ -1,3 +1,11 @@
+document.querySelectorAll('.product-description').forEach(function (description) {
+        const maxLength = 104; // حداکثر تعداد کاراکترها
+        if (description.textContent.length > maxLength) {
+            const truncatedText = description.textContent.slice(0, maxLength) + '...';
+            description.textContent = truncatedText;
+        }
+    });
+
 document.addEventListener('DOMContentLoaded', function() {
   const hamburgerMenu = document.querySelector('.hamburger-menu');
   const header = document.querySelector('header');
