@@ -28,12 +28,12 @@ body {
   background-color: var(--color-bg);
 }
 
-a, p, h1, h2, h3, h4 {
-  user-select: none; /* برای مرورگرهای مدرن */
-  -webkit-user-select: none; /* برای مرورگرهای Webkit مثل Chrome و Safari */
-  -moz-user-select: none; /* برای Firefox */
-  -ms-user-select: none;
-}
+/* a, p, h1, h2, h3, h4 { */
+  /* user-select: none; /* برای مرورگرهای مدرن */ */
+  /* -webkit-user-select: none; /* برای مرورگرهای Webkit مثل Chrome و Safari */ */
+  /* -moz-user-select: none; /* برای Firefox */ */
+  /* -ms-user-select: none; */
+/* } */
 
 hr {
   width: 90%;
@@ -264,7 +264,7 @@ header i {
 .product-card {
   border: 0.0625rem solid var(--color-border);
   border-radius: 0.75rem;
-  padding: 1.75rem;
+  padding: 1.25rem;
   box-shadow: 0 0.15rem 0.375rem rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s;
 }

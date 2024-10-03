@@ -2,3 +2,6 @@ User-agent: *
 Disallow: /admin/
 Disallow: /login/
 Disallow: /private/
+Allow: /
+
+Sitemap: https://oseal.ir/sitemap.xml
