@@ -16,11 +16,13 @@
 }
 
 @font-face {
-  font-family: 'Vazir';
+  font-family: 'IRANSharp';
+  /* font-family: 'Vazir'; */
 }
 
 body {
-  font-family: 'Vazir', Tahoma, Arial, 'Segoe UI', sans-serif;
+  /* font-family: 'Vazir', Tahoma, Arial, 'Segoe UI', sans-serif; */
+  font-family: 'IRANSharp', Tahoma, Arial, 'Segoe UI', sans-serif;
   direction: rtl;
   margin: 0;
   line-height: 1.6;
@@ -79,7 +81,7 @@ header {
   top: 0;
   width: 100%;
   background-color: var(--color-bg);
-  padding: 0.5rem 0;
+  padding: 0.225rem 0;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
@@ -106,7 +108,7 @@ header {
 }
 
 .logo img {
-  height: 3.375rem;
+  height: 4.75rem;
 }
 
 .hamburger-menu {
@@ -252,19 +254,19 @@ header i {
 }
 
 .products {
-  padding: 1.25rem 5%;
+  padding: 1.25rem 4%;
 }
 
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .product-card {
   border: 0.0625rem solid var(--color-border);
   border-radius: 0.75rem;
-  padding: 1.25rem;
+  padding: 1rem;
   box-shadow: 0 0.15rem 0.375rem rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s;
 }
@@ -274,7 +276,7 @@ header i {
 }
 
 .product-card hr {
-  margin: 2rem 0;
+  margin: 1.25rem 0;
   width: 100%;
 }
 
