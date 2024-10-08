@@ -16,13 +16,13 @@
 }
 
 @font-face {
-  font-family: 'IRANSharp';
-  /* font-family: 'Vazir'; */
+  /* font-family: 'IRANSharp'; */
+  font-family: 'Vazir';
 }
 
 body {
-  /* font-family: 'Vazir', Tahoma, Arial, 'Segoe UI', sans-serif; */
-  font-family: 'IRANSharp', Tahoma, Arial, 'Segoe UI', sans-serif;
+  font-family: 'Vazir', Tahoma, Arial, 'Segoe UI', sans-serif;
+  /* font-family: 'IRANSharp', Tahoma, Arial, 'Segoe UI', sans-serif; */
   direction: rtl;
   margin: 0;
   line-height: 1.6;

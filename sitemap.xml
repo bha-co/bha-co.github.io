@@ -19,6 +19,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://oseal.ir/priceList.html</loc>
+    <lastmod>2024-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://oseal.ir/aboutUs.html</loc>
     <lastmod>2024-09-21</lastmod>
     <changefreq>monthly</changefreq>
