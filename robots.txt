@@ -4,4 +4,5 @@ Disallow: /login/
 Disallow: /private/
 Allow: /
 
+# نوار هدایتی به موتورهای جستجو
 Sitemap: https://oseal.ir/sitemap.xml

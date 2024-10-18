@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function() {
+        const header = document.querySelector('header');
+        const banner = document.querySelector('.temporary-banner');
+
+        if (banner) {
+            // اگر بنر وجود دارد، فاصله به اندازه ارتفاع بنر اضافه می‌شود
+            const bannerHeight = banner.offsetHeight;
+            header.style.marginTop = `${bannerHeight}px`;
+        }
+    });
+
 document.querySelectorAll('.product-description').forEach(function (description) {
         const maxLength = 104; // حداکثر تعداد کاراکترها
         if (description.textContent.length > maxLength) {
