@@ -1,1 +1,56 @@
+# فعال‌سازی ماژول Rewrite
+RewriteEngine On
+
+# تغییر مسیر HTTP به HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ریدایرکت index.html به آدرس اصلی
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/.*index\.html\s [NC]
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+# هدایت faq به faq.html
+RewriteRule ^faq$ faq.html [L]
+
+# هدایت policy-privacy به policy-privacy.html
+RewriteRule ^policy-privacy$ policy-privacy.html [L]
+
+# حذف .html از URL و پشتیبانی از فایل‌های واقعی
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/.]+)$ $1.html [L]
+
+# هدایت URLهای نامعتبر به /404.html و تغییر URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /404.html [L,R=302]
+
+# تنظیم صفحات خطای سفارشی
 ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+ErrorDocument 500 /500.html
+
+# جلوگیری از نمایش فهرست دایرکتوری‌ها
+Options -Indexes
+
+# افزودن HSTS (HTTP Strict Transport Security)
+<IfModule mod_headers.c>
+Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# جلوگیری از حملات MIME Sniffing
+<IfModule mod_headers.c>
+Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# فعال‌سازی کش مرورگر
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    ExpiresByType text/html "access plus 1 week"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
